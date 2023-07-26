@@ -1,5 +1,5 @@
 class TransportationSearch
-  def all_tansportations
+  def all_transportations
     service = TransportationService.new
     request = service.all_transportations
     @transportations = request[:data].map do |t|
