@@ -1,0 +1,3 @@
+class TransportationsController < ApplicationController
+
+end
