@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+    "id": 1,
+    "name": "Bilbo",
+    "email": "BilboBobs@email.email",
+    "city": "Hobbiton",
+    "state": "Shire",
+    "zip": 45678,
+    "password": "goldrings"
+    }
+  ]
+}

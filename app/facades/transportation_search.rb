@@ -1,9 +1,9 @@
-class MarketSearch
-  def all_markets
-    service = MarketSearch.new
-    request = service.all_markets
-    @markets = request[:data].map do |mark|
-      Market.new(mark)
+class TransportationSearch
+  def all_transportations
+    service = TransportationService.new
+    request = service.all_transportations
+    @transportations = request[:data].map do |t|
+      Transportation.new(t)
     end
   end
 end

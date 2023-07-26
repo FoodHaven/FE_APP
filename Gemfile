@@ -56,12 +56,16 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
+end
+
+group :test do
   gem 'rspec-rails', '~> 4.0.1'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'orderly'
+  gem 'webmock'
 end
 
 group :development do

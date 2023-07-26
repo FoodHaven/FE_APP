@@ -1,4 +1,4 @@
-class MarketService
+class UserService
   def conn
     Faraday.new(url: "https://foodhaven-be.onrender.com")
   end
@@ -8,7 +8,11 @@ class MarketService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def all_markets
-    get_url("/api/v1/markets")
+  def all_users
+    get_url("/api/v1/users")
+  end
+
+  def one_user(id)
+    get_url("/api/v1/users/#{id}")
   end
 end
