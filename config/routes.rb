@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
   resources :markets, only: [:index]
-
+  resources :users, only: [:show]
   get "/login", to: "sessions#login_form"
   post "/login", to: "sessions#login"
   get "auth/:provider/callback", to: "sessions#omniauth"
+  
 end
