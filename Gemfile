@@ -67,6 +67,10 @@ group :test do
   gem 'orderly'
   gem 'webmock'
 end
+gem "dotenv-rails"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
