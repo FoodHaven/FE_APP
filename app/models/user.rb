@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  serialize :favorites, Array
 
   def self.from_omniauth(response)
     User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |user|
