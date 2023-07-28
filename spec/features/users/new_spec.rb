@@ -8,7 +8,7 @@ RSpec.describe "Register" do
 
     fill_in :name, with: "Bob"
     fill_in :email, with: "Bob@email.com"
-    fill_in :passsword, with: "1234"
+    fill_in :password, with: "1234"
     fill_in :password_confirmation, with: "1234"
 
     click_on "Create Account"
