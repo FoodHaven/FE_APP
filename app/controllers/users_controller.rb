@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     user[:name] = user[:name].downcase
     new_user = User.create(user)
     if new_user.save
-      flash[:success] = "Welcome to #{new_user.name.capitalize}"
+      flash[:success] = "Welcome #{new_user.name.capitalize}"
       redirect_to root_path
     else
       redirect_to new_user_path
