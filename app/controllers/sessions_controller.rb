@@ -1,10 +1,8 @@
 class SessionsController < ApplicationController
   def landing
-    
   end
 
   def new
-
   end
 
   def create
