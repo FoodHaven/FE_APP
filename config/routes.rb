@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   root "sessions#landing"
 
   resources :markets, only: [:index]
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:show, :new, :create] do
+    resource :favorites, only: [:create, :destroy], module: :users
+  end
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
   get "markets/search", to: "markets#search"
-  
+
   get "auth/:provider/callback", to: "sessions#omniauth"
-  
 end
