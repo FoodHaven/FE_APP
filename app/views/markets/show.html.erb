@@ -1,0 +1,3 @@
+<% if user_signed_in? %>
+  <%= button_to "Add to Favorites", api_add_to_favorites_path(@market), method: :patch, remote: true %>
+<% end %>
