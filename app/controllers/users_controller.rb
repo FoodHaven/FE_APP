@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       redirect_to new_user_path
-      flash[:alert] = "Name and Email must be valid"
+      flash[:alert] = "Name, Email, and password must be valid"
     end
   end
 
