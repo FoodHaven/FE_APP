@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "sessions#landing"
 
-  resources :sessions, only: [:new, :create]
   resources :markets, only: [:index]
-  resources :users, only: [:show]
-  get "/login", to: "sessions#login_form"
-  post "/login", to: "sessions#login"
+  resources :users, only: [:show, :new, :create]
+
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  get "markets/search", to: "markets#search"
+  
   get "auth/:provider/callback", to: "sessions#omniauth"
   
 end

@@ -1,0 +1,14 @@
+<%= form_with url: markets_path, method: :get do |f| %>
+  <%= f.label "Enter Address" %> <br>
+  <%= f.text_field :search %> <br>
+
+  <%= f.label "within" %> <br>
+  <%= f.check_box :distance_5 %>
+  <%= f.label :distance_5, "5 miles" %>
+  <%= f.check_box :distance_10 %>
+  <%= f.label :distance_10, "10 miles" %>
+  <%= f.check_box :distance_15 %>
+  <%= f.label :distance_15, "15 miles" %> <br>
+  <br>
+  <%= f.submit "Search" %>
+<% end %>

@@ -1,8 +1,8 @@
 <%= button_to "Login", login_path, method: :get %>
-<%= button_to "Register for new account", new_session_path, method: :get %>
+<%= button_to "Register for new account", new_user_path, method: :get %>
 
 <h1>FOODHAVEN</h1>
 
-<%= button_to "Find a market near you", markets_path, method: :get %>
+<%= button_to "Find a market near you", markets_search_path, method: :get %>
 
 <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
