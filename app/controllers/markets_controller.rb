@@ -1,4 +1,7 @@
 class MarketsController < ApplicationController
+  def search
+  end
+
   def index
     if params[:use_my_location] != "0"
       location = Geocoder.search(params[:use_my_location])
@@ -15,8 +18,5 @@ class MarketsController < ApplicationController
   def show
     response = Faraday.get("https://foodhaven-be.onrender.com/api/v1/markets/#{params[:id]}")
     @market = JSON.parse(response.body, symbolize_names: true)[:data]
-  end
-
-  def search
   end
 end
