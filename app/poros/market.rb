@@ -1,18 +1,18 @@
 class Market
   attr_reader :name,
               :address,
-              :location_description,
-              :site_description,
-              :payment,
-              :FNAP,
-              :SNAP
-  def initialize(data)
-    @name = data[:listing_name]
-    @address = data[:location_address]
-    @location_description = data[:location_description]
-    @site_description = data[:location_site]
-    @payment = data[:acceptedpayment]
-    @FNAP = data[:FNAP]
-    @SNAP = data[:SNAP_option]
+              :description,
+              :site,
+              :accepted_payment,
+              :fnap,
+              :snap_option
+  def initialize(attributes)
+    @name = attributes[:name]
+    @address = attributes[:address]
+    @location_description = attributes[:description]
+    @site_description = attributes[:site]
+    @payment = attributes[:accepted_payment]
+    @FNAP = attributes[:fnap]
+    @SNAP = attributes[:snap_option]
   end
 end
