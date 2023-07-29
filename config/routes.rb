@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "sessions#landing"
 
-  resources :markets, only: [:index]
+  get "markets/search", to: "markets#search"
+  
+  resources :markets, only: [:index, :show]
   resources :users, only: [:show, :new, :create]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   
-  get "markets/search", to: "markets#search"
   
   get "auth/:provider/callback", to: "sessions#omniauth"
   
