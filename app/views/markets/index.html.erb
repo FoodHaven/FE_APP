@@ -2,4 +2,5 @@
 
 <% @markets.each do |market| %>
   <%= link_to market[:attributes][:name], market_path(market)  %> <br>
+  <%= market[:attributes][:snap_option] %> <br>
 <% end %>
