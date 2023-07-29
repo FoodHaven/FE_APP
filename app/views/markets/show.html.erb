@@ -1,11 +1,13 @@
 <% if @market.present? %>
-  <%= @market.market.name %> <br>
-  <%= @market.market.address %> <br>
-  <%= @market.market.site %> <br>
-  <%= @market.market.description %> <br>
-  <%= @market.market.fnap %> <br>
-  <%= @market.market.snap_option %> <br>
-  <%= @market.market.accepted_payment %> <br>
+<%= @market.market.name %> <br>
+<p>
+  Address: <%= @market.market.address %> <br>
+  Site: <%= @market.market.site %> <br>
+  Location Description: <%= @market.market.description %> <br>
+  FNAP: <%= @market.market.fnap %> <br>
+  SNAP: <%= @market.market.snap_option %> <br>
+  Accepted Payments: <%= @market.market.accepted_payment %> <br>
+</p>
   <%="Find Route For:" %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market[:id].to_i) %>
