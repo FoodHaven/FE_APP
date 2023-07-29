@@ -1,6 +1,5 @@
 <h1> Nearby Markets based on your location</h1>
 
 <% @markets.each do |market| %>
-  <%= market[:attributes][:name] %> <br>
-  <%= link_to "Info", market_path(market) %> <br>
+  <%= link_to market[:attributes][:name], market_path(market)  %> <br>
 <% end %>

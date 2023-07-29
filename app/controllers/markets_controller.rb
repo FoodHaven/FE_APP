@@ -8,13 +8,13 @@ class MarketsController < ApplicationController
     params[:latitude] = location.first.coordinates[0]
     params[:longitude] = location.first.coordinates[1]
     params[:radius] = params[:radius].to_f
-    response = Faraday.get("http://localhost:3001/api/v1/markets", params)
+    response = Faraday.get("https://foodhaven-be.onrender.com/api/v1/markets", params)
     @markets = JSON.parse(response.body, symbolize_names: true)[:data]
   end
 
   def show
-    response = Faraday.get("http://localhost:3001/api/v1/markets/#{params[:id]}")
-    @markets = JSON.parse(response.body, symbolize_names: true)[:data]
+    response = Faraday.get("https://foodhaven-be.onrender.com/api/v1/markets/#{params[:id]}")
+    @market = JSON.parse(response.body, symbolize_names: true)[:data]
   end
 
   def search
