@@ -1,10 +1,21 @@
-<p>
-<%= @market[:attributes][:name] %> <br>
-Address: <%= @market[:attributes][:address] %> <br>
-Site: <%= @market[:attributes][:site] %> <br>
-Description: <%= @market[:attributes][:description] %> <br>
-FNAP: <%= @market[:attributes][:fnap] %> <br>
-SNAP Option: <%= @market[:attributes][:snap_option] %> <br>
-Accepted Payment: <%= @market[:attributes][:accepted_payment] %> <br>
-<%="Find Route For:" %> <br>
-</p>
+<% if @market.present? %>
+  <%= @market[:attributes][:name] %> <br>
+  <%= @market[:attributes][:address] %> <br>
+  <%= @market[:attributes][:site] %> <br>
+  <%= @market[:attributes][:description] %> <br>
+  <%= @market[:attributes][:fnap] %> <br>
+  <%= @market[:attributes][:snap_option] %> <br>
+  <%= @market[:attributes][:accepted_payment] %> <br>
+  <%="Find Route For:" %> <br>
+  <% if user_signed_in? %>
+    <% if current_user.favorites.include?(@market[:id].to_i) %>
+      <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market[:id]), method: :delete, remote: true %>
+    <% else %>
+      <%= button_to "Add to Favorites", add_to_favorites_market_path(@market[:id]), method: :patch, remote: true %>
+    <% end %>
+  <% else %>
+    <%= link_to "Sign in to add to favorites", login_path %>
+  <% end %>
+<% else %>
+  <p>Market not found.</p>
+<% end %>
