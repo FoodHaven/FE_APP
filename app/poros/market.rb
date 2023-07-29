@@ -5,14 +5,16 @@ class Market
               :site,
               :accepted_payment,
               :fnap,
-              :snap_option
+              :snap_option,
+              :id
   def initialize(attributes)
-    @name = attributes[:name]
-    @address = attributes[:address]
-    @location_description = attributes[:description]
-    @site_description = attributes[:site]
-    @payment = attributes[:accepted_payment]
-    @FNAP = attributes[:fnap]
-    @SNAP = attributes[:snap_option]
+    @name = attributes[:attributes][:name]
+    @address = attributes[:attributes][:address]
+    @location_description = attributes[:attributes][:description]
+    @site_description = attributes[:attributes][:site]
+    @payment = attributes[:attributes][:accepted_payment]
+    @FNAP = attributes[:attributes][:fnap]
+    @SNAP = attributes[:attributes][:snap_option]
+    @id = attributes[:id].to_i
   end
 end

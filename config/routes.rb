@@ -6,15 +6,20 @@ Rails.application.routes.draw do
   root "sessions#landing"
 
   get "markets/search", to: "markets#search"
+
+  resources :markets, only: [:index, :show] do
+    patch 'add_to_favorites', to: 'users/favorites#create', on: :member
+    delete 'remove_from_favorites', to: 'users/favorites#destroy', on: :member
+    resources :users, only: [:show]
+  end
   
-  resources :markets, only: [:index, :show]
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:new, :create]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  
-  
+
+
   get "auth/:provider/callback", to: "sessions#omniauth"
-  
+
 end
