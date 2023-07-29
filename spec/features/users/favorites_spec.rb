@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Favorites', type: :feature do
-  let(:user) { create(:user) }
+  let(:user) { create(:user, password: 'password', password_confirmation: 'password') }
+  let(:market_id) { "123" }
 
   before do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit login_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
   end
 
   it 'User can add a market to favorites' do
     market_data = {
-      "id" => "123",
+      "id" => market_id,
       "type" => "market",
       "attributes" => {
         "name" => "Wolfeboro Area Farmers Market",
@@ -24,22 +28,23 @@ RSpec.describe 'Favorites', type: :feature do
       }
     }
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/123")
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
       .to_return(body: { data: market_data }.to_json, status: 200)
 
-    visit market_path(123)
-    save_and_open_page
+    visit market_path(market_id)
+
     click_button 'Add to Favorites'
+
+    expect(page).to have_content('Market added to favorites!')
 
     user.reload
 
-    expect(page).to have_content('Market added to favorites!')
     expect(user.favorites).to include(123)
   end
 
   it 'User can remove a market from favorites' do
     market_data = {
-      "id" => "123",
+      "id" => market_id,
       "type" => "market",
       "attributes" => {
         "name" => "Wolfeboro Area Farmers Market",
@@ -54,16 +59,15 @@ RSpec.describe 'Favorites', type: :feature do
       }
     }
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/123")
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
     .to_return(body: { data: market_data }.to_json, status: 200)
 
-    user.favorites << 123
+    user.favorites << market_id.to_i
     user.save
 
-    visit market_path(123)
+    visit market_path(market_id)
 
     click_button 'Remove from Favorites'
-
     user.reload
 
     expect(page).to have_content('Market removed from favorites.')
