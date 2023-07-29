@@ -1,4 +1,11 @@
-<% if user_signed_in? %>
+<%= @market[:attributes][:name] %> <br>
+<%= @market[:attributes][:address] %> <br>
+<%= @market[:attributes][:site] %> <br>
+<%= @market[:attributes][:description] %> <br>
+<%= @market[:attributes][:fnap] %> <br>
+<%= @market[:attributes][:snap_option] %> <br>
+<%= @market[:attributes][:accepted_payment] %> <br>
+<%="Find Route For:" %> <br><% if user_signed_in? %>
   <% if current_user.favorites.include?(@market.id) %>
 <%= button_to "Remove from Favorites", user_favorite_path(current_user.id, @market.id), method: :delete, remote: true %>
   <% else %>
