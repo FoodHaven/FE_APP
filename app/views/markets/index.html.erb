@@ -2,5 +2,5 @@
 
 <% @markets.each do |market| %>
   <%= market[:attributes][:name] %> <br>
-  <%= link_to info, market_path(market) %> <br>
+  <%= link_to "Info", market_path(market) %> <br>
 <% end %>

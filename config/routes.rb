@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "sessions#landing"
 
-  resources :markets, only: [:index]
+  resources :markets, only: [:index, :show]
   resources :users, only: [:show, :new, :create]
 
   get "/login", to: "sessions#new"

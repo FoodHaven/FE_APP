@@ -9,9 +9,12 @@ RSpec.describe "Search for markets" do
     expect(page).to have_content("Within")
   end
   it "can search for market by address" do
+    visit root_path
+    click_on "Find a market near you"
     fill_in :search, with: "Denver, Colorado"
-    select :distance_5
+    fill_in :radius, with: 15
 
     click_on "Search"
+    expect(page).to have_content("Info")
   end
 end
