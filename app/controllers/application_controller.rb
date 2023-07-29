@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
+  def log_out
+    session.delete(:user_id)
+    @_current_user = nil
+  end
 end

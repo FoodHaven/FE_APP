@@ -16,7 +16,7 @@ class MarketsController < ApplicationController
   end
 
   def show
-    response = Faraday.get("https://foodhaven-be.onrender.com/api/v1/markets/#{params[:id]}")
-    @market = JSON.parse(response.body, symbolize_names: true)[:data]
+    market_service = MarketService.new
+    @market = market_service.find_market(params[:id])[:data]
   end
 end
