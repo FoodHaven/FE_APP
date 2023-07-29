@@ -8,4 +8,10 @@ RSpec.describe "Search for markets" do
     expect(page).to have_content("Enter address")
     expect(page).to have_content("Within")
   end
+  it "can search for market by address" do
+    fill_in :search, with: "Denver, Colorado"
+    select :distance_5
+
+    click_on "Search"
+  end
 end
