@@ -1,10 +1,9 @@
 <h1> Nearby Markets based on your location</h1>
-
-<% @markets.each do |market| %>
-  <%= link_to market[:attributes][:name], market_path(market)  %> <br>
-  <% if market[:attributes][:snap_option] == nil %>
+<% @markets.all_markets.each do |market| %>
+  <%= link_to market.name, market_path(market.id)  %> <br>
+  <% if market.snap_option == nil %>
     <%= "Snap option: none" %> <br>
   <% else %>
-    <%= Snap Option: market[:attributes][:snap_option] %> <br>
+    <%= Snap Option: market.snap_option %> <br>
   <% end %>
 <% end %>

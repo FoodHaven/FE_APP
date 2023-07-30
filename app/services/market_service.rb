@@ -8,12 +8,11 @@ class MarketService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def all_markets
-    get_url("/api/v1/markets")
+  def all_markets(latitude, longitude, radius)
+    get_url("/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
   end
 
-  def find_market(id)
-    url = "/api/v1/markets/#{id}"
-    get_url(url)
+  def one_market(id)
+    get_url("/api/v1/markets/#{id}")
   end
 end
