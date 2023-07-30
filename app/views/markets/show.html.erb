@@ -11,7 +11,7 @@
   <%="Find Route For:" %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market.market.id) %>
-      <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market[:id]), method: :delete, remote: true %>
+      <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
     <% else %>
       <%= button_to "Add to Favorites", add_to_favorites_market_path(@market.id), method: :patch, remote: true %>
     <% end %>

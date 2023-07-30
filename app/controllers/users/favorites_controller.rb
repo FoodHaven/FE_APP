@@ -3,7 +3,7 @@ class Users::FavoritesController < ApplicationController
 
   def create
     market_service = MarketService.new
-    @market = market_service.find_market(params[:id])
+    @market = market_service.one_market(params[:id].to_i)
     current_user.favorites << @market[:data][:id].to_i
     if current_user.save
       flash[:success] = 'Market added to favorites!'
@@ -15,7 +15,7 @@ class Users::FavoritesController < ApplicationController
 
   def destroy
     market_service = MarketService.new
-    @market = market_service.find_market(params[:id])
+    @market = market_service.one_market(params[:id].to_i)
     current_user.favorites.delete(@market[:data][:id].to_i)
     if current_user.save
       flash[:success] = 'Market removed from favorites.'
