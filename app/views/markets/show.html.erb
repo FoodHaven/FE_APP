@@ -10,7 +10,7 @@
   latitude: <% @market.market.latitude %>
   longitude: <% @market.market.longitude %>
 </p>
-  <%= link_to "Find Routes", market_routes_path(@market) %> <br>
+  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat]) %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market.market.id) %>
       <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
