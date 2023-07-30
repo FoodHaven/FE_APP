@@ -1,16 +1,15 @@
-<%= form_tag markets_path, method: :get do %>
-  <%= label :use_my_location, "Use my location" %>
-  <%= check_box :use_my_location, params[:my_location] %> <br>
+<% javascript_include_tag 'location_form_script.js' %>
 
-  <%= label :or, "OR" %> <br>
+<div data-controller="geolocation">
 
-  <%= label :enter_address, "Enter Address" %> <br>
-  <%= text_field_tag :search, params[:location] %> <br>
-
-  <%= label :and, "AND" %> <br>
+</div>
 
 
-  <%= label :within, "within (miles)" %> <br>
-  <%= text_field_tag :radius, params[:radius] %> <br>
-  <%= submit_tag "Search" %>
+
+<%= form_with url: markets_path, method: :get do |f| %>
+  <%= f.hidden_field :latitude, id: "latitude" %>
+  <%= f.hidden_field :longitude, id: "longitude" %>
+  <%= f.text_field :location %>
+  <%= f.select :distance, [5, 10, 15, 20, 25, 50, 100], selected: params[:radius] %>
+  <%= f.submit "Find Markets" %>
 <% end %>

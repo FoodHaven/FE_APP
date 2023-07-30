@@ -12,7 +12,7 @@ RSpec.describe "Search for markets" do
   it "can search for market by address" do
     json_response = File.read('spec/fixtures/markets.json')
     latitude = 30.69035
-    longitude = 88.045015
+    longitude = - 88.045015
     radius = 5
     stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
     markets = JSON.parse(json_response, symbolize_names: true)[:data]
@@ -23,4 +23,9 @@ RSpec.describe "Search for markets" do
     expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
   end
 
+  it 'can search for market by location' do 
+    visit markets_search_path 
+
+    
+  end
 end
