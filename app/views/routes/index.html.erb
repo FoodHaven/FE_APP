@@ -4,7 +4,7 @@
     Agency: <%= route.agency_name %> <br>
     Route: <%= route.route_short_name %> <br>
     Headsign: <%= route.headsign %> <br>
-    Start Time: <%= route.start_time %> <br>
-    End Time: <%= route.end_time %> <br>
+    Start Time: <%= Time.at(route.start_time).strftime("%B %e, at %I:%M %p") %> <br>
+    End Time: <%= Time.at(route.end_time).strftime("%B %e, at %I:%M %p") %> <br>
   <p>
 <% end %>
