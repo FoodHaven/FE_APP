@@ -1,3 +1,0 @@
-class TransportationsController < ApplicationController
-
-end

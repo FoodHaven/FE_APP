@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     patch 'add_to_favorites', to: 'users/favorites#create', on: :member
     delete 'remove_from_favorites', to: 'users/favorites#destroy', on: :member
     resources :users, only: [:show]
+    resources :routes, only: [:index]
   end
-  
   resources :users, only: [:new, :create]
 
   get "/login", to: "sessions#new"

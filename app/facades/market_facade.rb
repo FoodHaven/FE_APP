@@ -4,7 +4,7 @@ class MarketFacade
     @latitude = params[:latitude]
     @longitude = params[:longitude]
     @radius = params[:radius]
-    @id = params[:id]
+    @id = params[:id] || params[:market_id]
   end
   def all_markets
     service.all_markets(@latitude, @longitude, @radius)[:data].map do |data|

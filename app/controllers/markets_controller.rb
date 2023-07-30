@@ -11,8 +11,6 @@ class MarketsController < ApplicationController
   end
 
   def show
-    # market_service = MarketService.new
-    # @market = market_service.find_market(params[:id])[:data]
     @market = MarketFacade.new(params)
   end
 end
