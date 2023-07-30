@@ -7,8 +7,10 @@
   FNAP: <%= @market.market.fnap %> <br>
   SNAP: <%= @market.market.snap_option %> <br>
   Accepted Payments: <%= @market.market.accepted_payment %> <br>
+  latitude: <% @market.market.latitude %>
+  longitude: <% @market.market.longitude %>
 </p>
-  <%="Find Route For:" %> <br>
+  <%= link_to "Find Routes", market_routes_path(@market) %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market.market.id) %>
       <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
