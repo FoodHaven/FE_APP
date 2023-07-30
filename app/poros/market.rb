@@ -8,13 +8,13 @@ class Market
               :snap_option,
               :id
   def initialize(attributes)
-    @name = attributes[:data][:attributes][:name]
-    @address = attributes[:data][:attributes][:address]
-    @location_description = attributes[:data][:attributes][:description]
-    @site_description = attributes[:data][:attributes][:site]
-    @payment = attributes[:data][:attributes][:accepted_payment]
-    @FNAP = attributes[:data][:attributes][:fnap]
-    @SNAP = attributes[:data][:attributes][:snap_option]
-    @id = attributes[:data][:id].to_i
+    @name = attributes[:attributes][:name]
+    @address = attributes[:attributes][:address]
+    @location_description = attributes[:attributes][:description]
+    @site_description = attributes[:attributes][:site]
+    @payment = attributes[:attributes][:accepted_payment]
+    @FNAP = attributes[:attributes][:fnap]
+    @SNAP = attributes[:attributes][:snap_option]
+    @id = attributes[:id].to_i
   end
 end
