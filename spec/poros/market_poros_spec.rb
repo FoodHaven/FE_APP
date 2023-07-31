@@ -21,7 +21,7 @@ RSpec.describe Market, type: :poro do
     expect(market.address).to eq('Market Address')
     expect(market.site).to eq('Market Site')
     expect(market.description).to eq('Market Description')
-    expect(market.fnap).to eq('Market FNAP')
-    expect(market.snap_option).to eq('Market SNAP Option')
+    expect(market.fnap).to eq('Market FNAP') # Update the attribute name here
+    expect(market.snap).to eq('Market SNAP Option')
   end
 end
