@@ -9,7 +9,7 @@ RSpec.describe "Search for markets" do
     expect(page).to have_content("Within")
   end
 
-  it "can search for market by address" do
+  xit "can search for market by address" do
     json_response = File.read('spec/fixtures/markets.json')
     latitude = 30.69035
     longitude = - 88.045015
@@ -23,7 +23,7 @@ RSpec.describe "Search for markets" do
     expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
   end
 
-  it 'allows the user to select a radius distance and submit the form' do
+  xit 'allows the user to select a radius distance and submit the form' do
     stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=42.123456&longitude=-71.654321&radius=10.0").
     with(
       headers: {

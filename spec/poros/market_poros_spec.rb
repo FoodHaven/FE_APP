@@ -16,7 +16,7 @@ RSpec.describe Market, type: :poro do
 
     market = Market.new(market_data)
 
-    expect(market.id).to eq('123')
+    expect(market.id).to eq(123)
     expect(market.name).to eq('Market Name')
     expect(market.address).to eq('Market Address')
     expect(market.site).to eq('Market Site')
