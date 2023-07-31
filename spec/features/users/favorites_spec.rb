@@ -90,8 +90,8 @@ RSpec.describe 'Favorites', type: :feature do
 
     user.save
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/favorites?market_ids[]=1&market_ids[]=2")
-    .to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: {})
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids[]=1&market_ids[]=2").
+      to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: { 'Content-Type' => 'application/json' })
 
     visit '/users/favorites'
 
