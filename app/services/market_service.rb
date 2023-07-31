@@ -17,7 +17,8 @@ class MarketService
   end
 
   def fetch_favorite_markets(market_ids)
-    url = "/api/v1/favorite_markets?market_ids=#{market_ids.join(',')}"
+    market_ids_param = market_ids.map { |id| "market_ids[]=#{id}" }.join('&')
+    url = "/api/v1/markets/favorites?#{market_ids_param}"
     get_url(url)
   end
 end
