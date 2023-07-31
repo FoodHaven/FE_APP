@@ -1,5 +1,4 @@
-<%= link_to "Go back to markets near me", :back %> <br>
-<% if @market.present? %>
+<%= link_to "Go back to markets near me", closest_markets_markets_path %><% if @market.present? %>
 <%= @market.market.name %> <br>
 <p>
   Address: <%= @market.market.address %> <br>
@@ -24,3 +23,4 @@
 <% else %>
   <p>Market not found.</p>
 <% end %>
+<%= link_to "Show Closest Markets", closest_markets_markets_path %>
