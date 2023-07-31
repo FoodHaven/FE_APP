@@ -11,6 +11,7 @@ class MarketsController < ApplicationController
   end
 
   def show
+    params[:id] = params[:id].to_i
     @market = MarketFacade.new(params)
   end
 end
