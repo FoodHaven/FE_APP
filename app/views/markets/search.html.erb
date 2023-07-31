@@ -32,7 +32,27 @@ function getLocation() {
 <%= form_with url: markets_path, method: :get do |f| %>
   <%= f.hidden_field :latitude, id: 'latitude-field'  %>
   <%= f.hidden_field :longitude, id: "longitude-field" %>
-  <%= f.select :distance, [5, 10, 15, 20, 25, 50, 100], selected: options_for_select(['1', '5', '10', '25', '50'], params[:radius]) %>
+  <%= f.label :zip, "Zipcode" %>
+  <%= f.text_field :zip %>
+  <%= f.label :radius, "Within (Miles)" %>
+  <%= f.select :radius, [1, 10, 25, 50] %>
 
   <%= f.submit "Find Markets" %>
 <% end %>
+
+<%# <%= form_tag markets_path, method: :get do %> %>
+  <%# <%= label :use_my_location, "Use my location" %> %>
+  <%# <%= check_box :use_my_location, params[:my_location] %> <br> %>
+
+  <%# <%= label :or, "OR" %> <br> %>
+
+  <%# <%= label :enter_address, "Enter Address" %> <br> %>
+  <%# <%= text_field_tag :search, params[:location] %> <br> %>
+
+  <%# <%= label :and, "AND" %> <br> %>
+
+  <%# <%= label :within, "within (miles)" %> <br> %>
+  <%# <%= select_tag :radius, options_for_select(['1', '5', '10', '25', '50'], params[:radius]) %> <br> %>
+
+  <%# <%= submit_tag "Search" %> %>
+<%# <% end %> %>
