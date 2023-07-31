@@ -13,6 +13,10 @@ class RouteFacade
     end
   end
 
+  def single_route
+    Route.new(service.one_route(@id))
+  end
+
   def service
     RouteService.new
   end
