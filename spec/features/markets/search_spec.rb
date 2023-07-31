@@ -75,16 +75,38 @@ RSpec.describe "Search for markets" do
       visit markets_search_path
     end
 
-    it 'Use My Location button' do 
-      expect(page).to have_button("Use My Location")
-    end
+    describe 'contents' do 
+      it 'Use My Location button' do 
+        expect(page).to have_button("Use My Location")
+      end
 
-    it 'has form elements' do 
-      expect(page).to have_content("Within (Miles)")
-      expect(page).to have_field(:radius)
-      expect(page).to have_button("Find Markets")
-      expect(page).to have_field(:zip)
-      expect(page).to have_content("Zipcode")
+      it 'has form elements' do 
+        expect(page).to have_content("Within (Miles)")
+        expect(page).to have_field(:radius)
+        expect(page).to have_button("Find Markets")
+        expect(page).to have_field(:zip)
+        expect(page).to have_content("Zipcode")
+      end
+    end
+    
+    describe 'usability' do
+      it 'geolocates based on zipcode' do 
+        fill_in :zip, with: 80111
+        select 50, from: :radius
+        click_button "Find Markets"
+
+        expect(current_path).to eq(markets_path)
+      end
+
+      xit 'geolocates based on user location' do 
+        click_button "Use My Location"
+
+        select 50, from: :radius
+
+        click_button "Find Markets"
+
+        expect(current_path).to eq(markets_path)
+      end
     end
   end
 end
