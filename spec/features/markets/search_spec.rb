@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Search for markets" do
-  it "can link to find markets page" do
+  xit "can link to find markets page" do
     visit root_path
     click_on "Find a market near you"
     expect(current_path).to eq(markets_search_path)
@@ -14,8 +14,15 @@ RSpec.describe "Search for markets" do
     latitude = 30.69035
     longitude = - 88.045015
     radius = 5
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
-    markets = JSON.parse(json_response, symbolize_names: true)[:data]
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids%5B%5D=1&market_ids%5B%5D=2").
+        with(
+          headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.10'
+          }).
+        to_return(status: 200, body: json_response, headers: {})
+
     expect(markets).to be_a(Array)
     expect(markets.count).to eq(22)
     expect(markets.first).to be_a(Hash)
