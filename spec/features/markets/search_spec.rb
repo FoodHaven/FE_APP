@@ -23,4 +23,43 @@ RSpec.describe "Search for markets" do
     expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
   end
 
+  it 'allows the user to select a radius distance and submit the form' do
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=42.123456&longitude=-71.654321&radius=10.0").
+    with(
+      headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.10'
+      }).
+    to_return(status: 200, body:
+    '{
+      "data": [
+        {
+          "id": "3786",
+          "type": "market",
+          "attributes": {
+            "name": "Alternatives Heritage Market",
+            "address": "50 Douglas Road Whitinsville, MA 01588",
+            "site": null,
+            "description": null,
+            "fnap": null,
+            "snap_option": null,
+            "accepted_payment": null,
+            "longitude": -71.67893541996273,
+            "latitude": 42.10819969064286
+          }
+        }
+      ]
+    }', headers: {})
+
+    allow(Geocoder).to receive(:search).and_return([double('location', coordinates: [42.123456, -71.654321])])
+
+    visit markets_search_path
+
+    find('input#use_my_location_').set(true)
+    select '10', from: 'radius'
+    click_button 'Search'
+    expect(page).to have_current_path(markets_path, ignore_query: true)
+    expect(page).to have_content('Nearby Markets based on your location')
+  end
 end

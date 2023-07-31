@@ -9,8 +9,8 @@
 
   <%= label :and, "AND" %> <br>
 
-
   <%= label :within, "within (miles)" %> <br>
-  <%= text_field_tag :radius, params[:radius] %> <br>
+  <%= select_tag :radius, options_for_select(['1', '5', '10', '25', '50'], params[:radius]) %> <br>
+
   <%= submit_tag "Search" %>
 <% end %>
