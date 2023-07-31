@@ -14,6 +14,7 @@ class Market
     @site = attributes[:attributes][:site]
     @payment = attributes[:attributes][:accepted_payment]
     @snap = attributes[:attributes][:snap_option]
+    @fnap = attributes[:attributes][:fnap]
     @id = attributes[:id].to_i
   end
 end
