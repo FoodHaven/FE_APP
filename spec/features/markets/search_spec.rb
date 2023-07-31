@@ -59,7 +59,6 @@ RSpec.describe "Search for markets" do
     find('input#use_my_location_').set(true)
     select '10', from: 'radius'
     click_button 'Search'
-      save_and_open_page
     expect(page).to have_current_path(markets_path, ignore_query: true)
     expect(page).to have_content('Nearby Markets based on your location')
   end
