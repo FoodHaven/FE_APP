@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://foodhaven-be.onrender.com/api/v1/markets/2212/transit_routes?destination_lat=40.77709768562554&destination_lon=-73.87400881765025&original_lat=40.748594902847515&original_lon=-73.98564294463469
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 31 Jul 2023 21:20:22 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7ef8e278fb3407f4-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"9eb880d48d37609808c247287c917f07"
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Render-Origin-Server:
+      - Render
+      X-Request-Id:
+      - e4a3fd11-c9d5-4244-bca3-56b62ad41ed2
+      X-Runtime:
+      - '2.748076'
+      X-Xss-Protection:
+      - '0'
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690838652000,"end_time":1690838958000},{"agency_name":"MTA
+        New York City Transit","route_short_name":"F","headsign":"Manhattan \u0026
+        Queens","start_time":1690838958000,"end_time":1690840278000},{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690840278000,"end_time":1690840441000},{"agency_name":"MTA
+        Bus Company","route_short_name":"Q70-SBS","headsign":"Terminals C / B","start_time":1690840924000,"end_time":1690841464000},{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690841464000,"end_time":1690842269000}]'
+  recorded_at: Mon, 31 Jul 2023 21:20:22 GMT
+recorded_with: VCR 6.2.0

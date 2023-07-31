@@ -99,4 +99,33 @@ RSpec.describe 'Favorites', type: :feature do
     expect(page).to have_link('Market 1', href: market_path(favorite_market1[:id]))
     expect(page).to have_link('Market 2', href: market_path(favorite_market2[:id]))
   end
+
+  describe "not logged in" do
+
+    it "User can't add market to favorites if not logged in" do
+        visit root_path
+        click_button 'Logout'
+        market_data = {
+        "id" => market_id,
+        "type" => "market",
+        "attributes" => {
+          "name" => "Wolfeboro Area Farmers Market",
+          "address" => "233 South Main St, Wolfeboro, New Hampshire 03894",
+          "site" => "Local government building grounds;",
+          "description" => "Across from Huggins, behind the Clark House Museum.",
+          "fnap" => "SNAP;Accept EBT at a central location;;",
+          "snap_option" => "Accept EBT at a central location;",
+          "accepted_payment" => "Debit card/Credit card;",
+          "longitude" => -71.202747,
+          "latitude" => 43.580593
+        }
+      }
+
+      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
+        .to_return(body: { data: market_data }.to_json, status: 200)
+      visit market_path(market_id)
+
+      expect(page).to have_content("Sign in to add to favorites")
+    end
+  end
 end
