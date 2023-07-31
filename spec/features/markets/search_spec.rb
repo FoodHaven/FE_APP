@@ -9,10 +9,10 @@ RSpec.describe "Search for markets" do
     expect(page).to have_content("Within")
   end
 
-  xit "can search for market by address" do
+  it "can search for market by address" do
     json_response = File.read('spec/fixtures/markets.json')
     latitude = 30.69035
-    longitude = - 88.045015
+    longitude = -88.045015
     radius = 5
     stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids%5B%5D=1&market_ids%5B%5D=2").
         with(
@@ -23,6 +23,7 @@ RSpec.describe "Search for markets" do
           }).
         to_return(status: 200, body: json_response, headers: {})
 
+    markets = JSON.parse(json_response, symbolize_names: true)[:data]
     expect(markets).to be_a(Array)
     expect(markets.count).to eq(22)
     expect(markets.first).to be_a(Hash)
@@ -30,7 +31,7 @@ RSpec.describe "Search for markets" do
     expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
   end
 
-  xit 'allows the user to select a radius distance and submit the form' do
+  it 'allows the user to select a radius distance and submit the form' do
     stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=42.123456&longitude=-71.654321&radius=10.0").
     with(
       headers: {
@@ -63,11 +64,10 @@ RSpec.describe "Search for markets" do
 
     visit markets_search_path
 
-    find('input#use_my_location_').set(true)
-    select '10', from: 'radius'
-    click_button 'Search'
+    select 10, from: :radius
+    click_button 'Find Markets'
     expect(page).to have_current_path(markets_path, ignore_query: true)
-    expect(page).to have_content('Nearby Markets based on your location')
+    expect(page).to have_content("Closest Farmer's Markets")
   end
 
   describe 'geolocation' do 

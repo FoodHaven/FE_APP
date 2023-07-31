@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Routes" do
 
   it "can find routes for market", :vcr do
+    json_response = File.read('./fixtures/transit_search.json')
     destination_lat = 40.77709768562554
     destination_lon = -73.87400881765025
     original_lat = 40.748594902847515
