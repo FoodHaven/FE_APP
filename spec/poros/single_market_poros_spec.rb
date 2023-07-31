@@ -12,17 +12,16 @@ RSpec.describe SingleMarket, type: :poro do
           location_description: 'Market Description',
           accepted_payment: 'Market Payment',
           fnap: 'Market FNAP',
-          snap_option: 'Market SNAP Option'
+          snap_option: 'Market SNAP Option',
+          longitude: '12.3456',
+          latitude: '78.9012'
         },
-        longitude: '12.3456',
-        latitude: '78.9012'
       }
     }
   end
 
   it 'can be initialized with data' do
     market = SingleMarket.new(market_data)
-
     expect(market.id).to eq(123)
     expect(market.name).to eq('Market Name')
     expect(market.address).to eq('Market Address')

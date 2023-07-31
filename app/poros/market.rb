@@ -6,7 +6,9 @@ class Market
               :accepted_payment,
               :fnap,
               :snap,
-              :id
+              :id,
+              :latitude,
+              :longitude
 
   def initialize(attributes)
     @name = attributes[:attributes][:name]
@@ -17,5 +19,7 @@ class Market
     @fnap = attributes[:attributes][:fnap] 
     @snap = attributes[:attributes][:snap_option]
     @id = attributes[:id].to_i
+    @latitude = attributes[:attributes][:latitude]
+    @longitude = attributes[:attributes][:longitude]
   end
 end
