@@ -1,6 +1,13 @@
 class Users::FavoritesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    def index
+      market_ids = current_user.favorites.join(',')
+      @favorite_markets = MarketService.new.fetch_favorite_markets(market_ids)
+    end
+  end
+
   def create
     market_service = MarketService.new
     @market = market_service.find_market(params[:id])

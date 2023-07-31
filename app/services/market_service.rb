@@ -16,4 +16,9 @@ class MarketService
     url = "/api/v1/markets/#{id}"
     get_url(url)
   end
+
+  def fetch_favorite_markets(market_ids)
+    url = "/api/v1/favorite_markets?market_ids=#{market_ids.join(',')}"
+    get_url(url)
+  end
 end

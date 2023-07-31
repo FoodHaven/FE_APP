@@ -64,7 +64,14 @@ RSpec.describe 'Favorites', type: :feature do
 
     user.favorites << market_id.to_i
     user.save
-
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/1").
+    with(
+      headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.10'
+      }).
+    to_return(status: 200, body: "", headers: {})
     visit market_path(market_id)
 
     click_button 'Remove from Favorites'
@@ -73,4 +80,24 @@ RSpec.describe 'Favorites', type: :feature do
     expect(page).to have_content('Market removed from favorites.')
     expect(user.favorites).not_to include(123)
   end
+
+  it 'displays a list of favorite markets' do
+    favorite_market1 = { id: 1, attributes: { name: 'Market 1' } }
+    favorite_market2 = { id: 2, attributes: { name: 'Market 2' } }
+
+    user.favorites << favorite_market1[:id]
+    user.favorites << favorite_market2[:id]
+
+    user.save
+
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorite_markets?market_ids=1,2")
+      .to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: {})
+
+    visit '/users/favorites'
+  
+    expect(page).to have_content('Favorite Markets')
+    expect(page).to have_link('Market 1', href: market_path(favorite_market1[:id]))
+    expect(page).to have_link('Market 2', href: market_path(favorite_market2[:id]))
+  end
+
 end
