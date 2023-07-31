@@ -67,6 +67,7 @@ group :test do
   gem 'orderly'
   gem 'webmock'
   gem 'factory_bot_rails'
+  gem 'vcr'
 end
 
 gem "dotenv-rails"
