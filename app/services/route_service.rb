@@ -1,6 +1,6 @@
 class RouteService
   def conn
-    Faraday.new(url: "http://localhost:3001")
+    Faraday.new(url: "https://foodhaven-be.onrender.com")
   end
 
   def get_url(url)
