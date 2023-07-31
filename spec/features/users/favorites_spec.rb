@@ -90,14 +90,13 @@ RSpec.describe 'Favorites', type: :feature do
 
     user.save
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorite_markets?market_ids=1,2")
-      .to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: {})
+    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/favorites?market_ids[]=1&market_ids[]=2")
+    .to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: {})
 
     visit '/users/favorites'
-  
+
     expect(page).to have_content('Favorite Markets')
     expect(page).to have_link('Market 1', href: market_path(favorite_market1[:id]))
     expect(page).to have_link('Market 2', href: market_path(favorite_market2[:id]))
   end
-
 end
