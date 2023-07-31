@@ -1,12 +1,37 @@
-<div data-controller="geolocation">
+<button id="location">Use My Location</button>
 
-</div>
+<script>
+document.getElementById("location").addEventListener("click", getLocation)
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        // Set the values in the hidden fields
+        var latitudeField = document.getElementById('latitude-field');
+        var longitudeField = document.getElementById('longitude-field');
+
+        if (latitudeField && longitudeField) {
+          latitudeField.value = latitude;
+          longitudeField.value = longitude;
+        }
+      },
+      function(error) {
+        console.error('Error getting geolocation:', error);
+      }
+    );
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+</script>
 
 <%= form_with url: markets_path, method: :get do |f| %>
-  <%= f.hidden_field :latitude, id: "latitude" %>
-  <%= f.hidden_field :longitude, id: "longitude" %>
-  <%= f.select :location %>
+  <%= f.hidden_field :latitude, id: 'latitude-field'  %>
+  <%= f.hidden_field :longitude, id: "longitude-field" %>
   <%= f.select :distance, [5, 10, 15, 20, 25, 50, 100], selected: options_for_select(['1', '5', '10', '25', '50'], params[:radius]) %>
 
   <%= f.submit "Find Markets" %>

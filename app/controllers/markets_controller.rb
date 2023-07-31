@@ -3,6 +3,7 @@ class MarketsController < ApplicationController
   end
 
   def index
+    require 'pry'; binding.pry
     location = Geocoder.search(params[:search])
     params[:latitude] = location.first.coordinates[0]
     params[:longitude] = location.first.coordinates[1]

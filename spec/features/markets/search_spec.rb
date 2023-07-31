@@ -69,4 +69,8 @@ RSpec.describe "Search for markets" do
     expect(page).to have_current_path(markets_path, ignore_query: true)
     expect(page).to have_content('Nearby Markets based on your location')
   end
+
+  describe 'geolocation' do 
+    
+  end
 end
