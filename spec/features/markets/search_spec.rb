@@ -70,7 +70,13 @@ RSpec.describe "Search for markets" do
     expect(page).to have_content('Nearby Markets based on your location')
   end
 
-  describe 'geolocation' do 
-    
+  describe 'geolocation', js: true do 
+    it 'Use My Location button' do 
+      visit markets_search_path
+
+      expect(page).to have_button("Use My Location")
+    end
+
+    it 'has '
   end
 end
