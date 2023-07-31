@@ -1,0 +1,13 @@
+<h1>Favorite Markets</h1>
+
+<% if @favorite_markets[:data].present? %>
+  <ul>
+    <% @favorite_markets[:data].each do |market| %>
+      <li><%= link_to market[:attributes][:name], market_path(market[:id]) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No favorite markets found.</p>
+<% end %>
+
+<%= link_to "Find More Markets", markets_search_path %>
