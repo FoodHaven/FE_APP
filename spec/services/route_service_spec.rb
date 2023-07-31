@@ -11,6 +11,7 @@ RSpec.describe RouteService do
       destination_lat = 37.7749
       destination_lon = -122.4194
 
+
       stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}/transit_routes?original_lat=#{original_lat}&original_lon=#{original_lon}&destination_lat=#{destination_lat}&destination_lon=#{destination_lon}")
         .to_return(status: 200, body: '[{"name": "Route 1"}, {"name": "Route 2"}]', headers: { 'Content-Type' => 'application/json' })
 

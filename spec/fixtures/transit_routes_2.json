@@ -1,0 +1,37 @@
+[
+  {
+      "agency_name": null,
+      "route_short_name": null,
+      "headsign": null,
+      "start_time": 1690842419000,
+      "end_time": 1690842725000
+  },
+  {
+      "agency_name": "MTA New York City Transit",
+      "route_short_name": "F",
+      "headsign": "Manhattan & Queens",
+      "start_time": 1690842725000,
+      "end_time": 1690843985000
+  },
+  {
+      "agency_name": null,
+      "route_short_name": null,
+      "headsign": null,
+      "start_time": 1690843985000,
+      "end_time": 1690844148000
+  },
+  {
+      "agency_name": "MTA Bus Company",
+      "route_short_name": "Q70-SBS",
+      "headsign": "Terminals C / B",
+      "start_time": 1690844322000,
+      "end_time": 1690844802000
+  },
+  {
+      "agency_name": null,
+      "route_short_name": null,
+      "headsign": null,
+      "start_time": 1690844802000,
+      "end_time": 1690845607000
+  }
+]
