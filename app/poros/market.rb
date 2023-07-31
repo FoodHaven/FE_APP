@@ -1,27 +1,20 @@
 class Market
-  attr_reader :id,
-              :name,
+  attr_reader :name,
               :address,
-              :site,
               :description,
+              :site,
+              :accepted_payment,
               :fnap,
               :snap_option,
-              :accepted_payment,
-              :longitude,
-              :latitude
-
-  def initialize(data)
-    return unless data && data[:attributes]
-
-    @id = data[:id]
-    @name = data[:attributes][:name]
-    @address = data[:attributes][:address]
-    @site = data[:attributes][:site]
-    @description = data[:attributes][:description]
-    @fnap = data[:attributes][:fnap]
-    @snap_option = data[:attributes][:snap_option]
-    @accepted_payment = data[:attributes][:accepted_payment]
-    @longitude = data[:attributes][:longitude]
-    @latitude = data[:attributes][:latitude]
+              :id
+  def initialize(attributes)
+    @name = attributes[:attributes][:name]
+    @address = attributes[:attributes][:address]
+    @location_description = attributes[:attributes][:description]
+    @site_description = attributes[:attributes][:site]
+    @payment = attributes[:attributes][:accepted_payment]
+    @FNAP = attributes[:attributes][:fnap]
+    @SNAP = attributes[:attributes][:snap_option]
+    @id = attributes[:id].to_i
   end
 end

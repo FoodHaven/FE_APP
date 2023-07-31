@@ -1,17 +1,21 @@
 <% if @market.present? %>
-  <%= @market[:attributes][:name] %> <br>
-  <%= @market[:attributes][:address] %> <br>
-  <%= @market[:attributes][:site] %> <br>
-  <%= @market[:attributes][:description] %> <br>
-  <%= @market[:attributes][:fnap] %> <br>
-  <%= @market[:attributes][:snap_option] %> <br>
-  <%= @market[:attributes][:accepted_payment] %> <br>
-  <%="Find Route For:" %> <br>
+<%= @market.market.name %> <br>
+<p>
+  Address: <%= @market.market.address %> <br>
+  Site: <%= @market.market.site %> <br>
+  Location Description: <%= @market.market.description %> <br>
+  FNAP: <%= @market.market.fnap %> <br>
+  SNAP: <%= @market.market.snap_option %> <br>
+  Accepted Payments: <%= @market.market.accepted_payment %> <br>
+  latitude: <% @market.market.latitude %>
+  longitude: <% @market.market.longitude %>
+</p>
+  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat]) %> <br>
   <% if user_signed_in? %>
-    <% if current_user.favorites.include?(@market[:id].to_i) %>
-      <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market[:id]), method: :delete, remote: true %>
+    <% if current_user.favorites.include?(@market.market.id) %>
+      <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
     <% else %>
-      <%= button_to "Add to Favorites", add_to_favorites_market_path(@market[:id]), method: :patch, remote: true %>
+      <%= button_to "Add to Favorites", add_to_favorites_market_path(@market.id), method: :patch, remote: true %>
     <% end %>
   <% else %>
     <%= link_to "Sign in to add to favorites", login_path %>
