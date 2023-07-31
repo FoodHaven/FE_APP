@@ -8,10 +8,10 @@
   FNAP: <%= @market.market.fnap %> <br>
   SNAP: <%= @market.market.snap %> <br>
   Accepted Payments: <%= @market.market.payment %> <br>
-  latitude: <% @market.market.latitude %>
-  longitude: <% @market.market.longitude %>
+  latitude: <%= @market.market.latitude %> <br>
+  longitude: <%= @market.market.longitude %>
 </p>
-  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat]) %> <br>
+  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.market.latitude, longitude: @market.market.longitude) %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market.market.id) %>
       <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
