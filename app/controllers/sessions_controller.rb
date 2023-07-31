@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
-      session[:user_id] = user.id
+      log_in(user)
       flash[:success] = "Welcome, #{user.name.capitalize}"
       redirect_to root_path
     else
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.clear
+    log_out
     redirect_to root_path
   end
 
