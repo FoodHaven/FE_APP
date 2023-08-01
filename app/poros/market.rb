@@ -16,6 +16,7 @@ class Market
     @payment = attributes[:attributes][:accepted_payment]
     @fnap = attributes[:attributes][:fnap] 
     @snap = attributes[:attributes][:snap_option]
+    @fnap = attributes[:attributes][:fnap]
     @id = attributes[:id].to_i
   end
 end

@@ -1,16 +1,41 @@
-<%= form_tag markets_path, method: :get do %>
-  <%= label :use_my_location, "Use my location" %>
-  <%= check_box :use_my_location, params[:my_location] %> <br>
+<button id="location">Use My Location</button>
 
-  <%= label :or, "OR" %> <br>
+<script>
+document.getElementById("location").addEventListener("click", getLocation)
 
-  <%= label :enter_address, "Enter Address" %> <br>
-  <%= text_field_tag :search, params[:location] %> <br>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
 
-  <%= label :and, "AND" %> <br>
+        // Set the values in the hidden fields
+        var latitudeField = document.getElementById('latitude-field');
+        var longitudeField = document.getElementById('longitude-field');
 
-  <%= label :within, "within (miles)" %> <br>
-  <%= select_tag :radius, options_for_select(['1', '5', '10', '25', '50'], params[:radius]) %> <br>
+        if (latitudeField && longitudeField) {
+          latitudeField.value = latitude;
+          longitudeField.value = longitude;
+        }
+      },
+      function(error) {
+        console.error('Error getting geolocation:', error);
+      }
+    );
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+</script>
 
-  <%= submit_tag "Search" %>
+<%= form_with url: markets_path, method: :get do |f| %>
+  <%= f.hidden_field :latitude, id: 'latitude-field'  %>
+  <%= f.hidden_field :longitude, id: "longitude-field" %>
+  <%= f.label :zip, "Zipcode" %>
+  <%= f.text_field :zip %>
+  <%= f.label :radius, "Within (Miles)" %>
+  <%= f.select :radius, [1, 10, 25, 50] %>
+
+  <%= f.submit "Find Markets" %>
 <% end %>
