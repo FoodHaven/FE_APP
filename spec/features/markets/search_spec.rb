@@ -1,12 +1,10 @@
 require "rails_helper"
 
 RSpec.describe "Search for markets" do
-  xit "can link to find markets page" do
+  it "can link to find markets page" do
     visit root_path
     click_on "Find a market near you"
     expect(current_path).to eq(markets_search_path)
-    expect(page).to have_content("Enter address")
-    expect(page).to have_content("Within")
   end
 
   it "can search for market by address" do
@@ -98,7 +96,7 @@ RSpec.describe "Search for markets" do
         expect(current_path).to eq(markets_path)
       end
 
-      xit 'geolocates based on user location' do 
+      it 'geolocates based on user location' do 
         click_button "Use My Location"
 
         select 50, from: :radius

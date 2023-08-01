@@ -81,7 +81,7 @@ RSpec.describe 'Favorites', type: :feature do
     expect(user.favorites).not_to include(123)
   end
 
-  xit 'displays a list of favorite markets' do
+  it 'displays a list of favorite markets' do
     favorite_market1 = { id: 1, attributes: { name: 'Market 1' } }
     favorite_market2 = { id: 2, attributes: { name: 'Market 2' } }
 

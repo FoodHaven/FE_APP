@@ -9,6 +9,7 @@ class SingleMarket
               :id,
               :longitude,
               :latitude
+
   def initialize(attributes)
     @name = attributes[:data][:attributes][:name]
     @address = attributes[:data][:attributes][:address]
