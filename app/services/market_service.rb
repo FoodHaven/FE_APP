@@ -20,4 +20,15 @@ class MarketService
     market_ids_param = market_ids.map { |id| "market_ids[]=#{id}" }.join('&')
     get_url("/api/v1/favorites?#{market_ids_param}")
   end
+
+  def self.nearby_markets(latitude, longitude, radius)
+    uri = URI.parse("http://backend_service_url/api/v1/markets/nearby?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
+
+    response = Net::HTTP.get_response(uri)
+    if response.code == '200'
+      JSON.parse(response.body)
+    else
+      []
+    end
+  end
 end
