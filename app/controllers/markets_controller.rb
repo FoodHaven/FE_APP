@@ -3,11 +3,15 @@ class MarketsController < ApplicationController
   end
 
   def index
-    location = Geocoder.search(params[:search])
-    params[:latitude] = location.first.coordinates[0]
-    params[:longitude] = location.first.coordinates[1]
-    params[:radius] = params[:radius].to_f
-    @markets = MarketFacade.new(params).all_markets
+    if params[:latitude] && params[:longitude]
+      @markets = MarketFacade.new(params).all_markets
+    else
+      location = Geocoder.search(params[:zip])
+      params[:latitude] = location.first.coordinates[0]
+      params[:longitude] = location.first.coordinates[1]
+      params[:radius] = params[:radius].to_f
+      @markets = MarketFacade.new(params).all_markets
+    end
   end
 
   def show
