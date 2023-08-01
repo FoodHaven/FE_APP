@@ -1,1 +1,13 @@
-<%= @route.global_route_id %>
+<% if @route.present? %>
+  <p>
+    <%= @route.route_name %> Details: <br>
+    Route ID: <%= @route.global_route_id %> <br>
+    Route Latitude: <%= @route.stop_lat %> <br>
+    Route Longitude: <%= @route.stop_lon %> <br>
+    Route: <%= @route.stop_name %> <br>
+    Wheelchair Accesibility: <%= @route.wheelchair_boarding %> <br>
+    Mode of Transport: <%= @route.model_name %> <br>
+  </p>
+<% else %>
+  <h1>No details for route available </h1>
+<% end %>
