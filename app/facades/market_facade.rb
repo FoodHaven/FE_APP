@@ -14,7 +14,7 @@ class MarketFacade
   end
 
   def market
-    SingleMarket.new(service.one_market(@id))
+    Market.new(service.one_market(@id)[:data])
   end
 
   def service
