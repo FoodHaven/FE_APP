@@ -7,6 +7,9 @@ class RoutesController < ApplicationController
   end
 
   def show
-    @route = RouteFacade.new(params).single_route
+    begin
+      @route = RouteFacade.new(params).single_route
+    rescue JSON::ParserError
+    end
   end
 end
