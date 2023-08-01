@@ -6,6 +6,9 @@
       Headsign: <%= route.headsign %> <br>
       Start Time: <%= Time.at(route.start_time).strftime("%B %e, at %I:%M %p") %> <br>
       End Time: <%= Time.at(route.end_time).strftime("%B %e, at %I:%M %p") %> <br>
+      <% if route.global_route_id.present? %>
+        <%= link_to "Stop Details", market_route_path(params[:market_id], route.global_route_id) %> 
+      <% end %>
     <p>
   <% end %>
 <% else %>
