@@ -15,7 +15,7 @@ RSpec.describe SingleMarket, type: :poro do
           snap_option: 'Market SNAP Option',
           longitude: '12.3456',
           latitude: '78.9012'
-        },
+        }
       }
     }
   end
