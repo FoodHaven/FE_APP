@@ -20,4 +20,5 @@ RSpec.describe "Routes" do
     routes = JSON.parse(json_response, symbolize_names: true)[:plan][:itineraries]
     expect(routes).to be_a(Array)
   end
+  
 end

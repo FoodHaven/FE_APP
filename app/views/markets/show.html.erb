@@ -1,19 +1,19 @@
 <%= link_to "Go back to markets near me", :back %> <br>
 <% if @market.present? %>
-<%= @market.market.name %> <br>
+<%= @market.name %> <br>
 <p>
-  Address: <%= @market.market.address %> <br>
-  Site: <%= @market.market.site %> <br>
-  Location Description: <%= @market.market.location_description %> <br>
-  FNAP: <%= @market.market.fnap %> <br>
-  SNAP: <%= @market.market.snap %> <br>
-  Accepted Payments: <%= @market.market.payment %> <br>
-  latitude: <%= @market.market.latitude %> <br>
-  longitude: <%= @market.market.longitude %>
+  Address: <%= @market.address %> <br>
+  Site: <%= @market.site %> <br>
+  Location Description: <%= @market.location_description %> <br>
+  FNAP: <%= @market.fnap %> <br>
+  SNAP: <%= @market.snap %> <br>
+  Accepted Payments: <%= @market.payment %> <br>
+  latitude: <%= @market.latitude %> <br>
+  longitude: <%= @market.longitude %>
 </p>
-  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.market.latitude, longitude: @market.market.longitude) %> <br>
+  <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.latitude, longitude: @market.longitude) %> <br>
   <% if user_signed_in? %>
-    <% if current_user.favorites.include?(@market.market.id) %>
+    <% if current_user.favorites.include?(@market.id) %>
       <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true %>
     <% else %>
       <%= button_to "Add to Favorites", add_to_favorites_market_path(@market.id), method: :patch, remote: true %>

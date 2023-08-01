@@ -1,5 +1,5 @@
 <h1>Closest Farmer's Markets</h1>
-<% @markets.all_markets.each do |market| %>
+<% @markets.each do |market| %>
   <%= link_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]) %> <br>
  <p>
     <% if market.snap == "" %>

@@ -22,7 +22,6 @@ RSpec.describe SingleMarket, type: :poro do
 
   it 'can be initialized with data' do
     market = SingleMarket.new(market_data)
-
     expect(market.id).to eq(123)
     expect(market.name).to eq('Market Name')
     expect(market.address).to eq('Market Address')
