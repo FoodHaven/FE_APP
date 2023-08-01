@@ -12,10 +12,10 @@ RSpec.describe SingleMarket, type: :poro do
           location_description: 'Market Description',
           accepted_payment: 'Market Payment',
           fnap: 'Market FNAP',
-          snap_option: 'Market SNAP Option'
-        },
-        longitude: '12.3456',
-        latitude: '78.9012'
+          snap_option: 'Market SNAP Option',
+          longitude: '12.3456',
+          latitude: '78.9012'
+        }
       }
     }
   end
