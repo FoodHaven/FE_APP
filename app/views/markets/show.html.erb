@@ -4,13 +4,13 @@
 <p>
   Address: <%= @market.address %> <br>
   Site: <%= @market.site %> <br>
-  Location Description: <%= @market.location_description %> <br>
+  Location Description: <%= @market.description %> <br>
   FNAP: <%= @market.fnap %> <br>
   SNAP: <%= @market.snap %> <br>
   Accepted Payments: <%= @market.payment %> <br>
   latitude: <%= @market.latitude %> <br>
   longitude: <%= @market.longitude %>
-</p>
+  </p>
   <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.latitude, longitude: @market.longitude) %> <br>
   <% if user_signed_in? %>
     <% if current_user.favorites.include?(@market.id) %>

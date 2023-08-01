@@ -3,7 +3,7 @@ class Market
               :address,
               :description,
               :site,
-              :accepted_payment,
+              :payment,
               :fnap,
               :snap,
               :id,

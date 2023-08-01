@@ -25,7 +25,7 @@ RSpec.describe RouteFacade, :vcr do
     it 'returns a single market' do
       market = subject.market
 
-      expect(market).to be_a(SingleMarket)
+      expect(market).to be_a(Market)
     end
   end
 end
