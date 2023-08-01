@@ -1,5 +1,8 @@
 class RoutesController < ApplicationController
   def index
-    @routes = RouteFacade.new(params).all_routes
+    begin
+      @routes = RouteFacade.new(params).all_routes
+    rescue JSON::ParserError
+    end
   end
 end
