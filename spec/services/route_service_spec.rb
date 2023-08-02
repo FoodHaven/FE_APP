@@ -23,4 +23,15 @@ RSpec.describe RouteService do
       expect(response[1][:name]).to eq('Route 2')
     end
   end
+  
+  describe "#route_details" do
+    it "gets details of a route" do
+      id = "MTABC:33875"
+      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/route_details?global_route_id=#{id}")
+        .to_return(status: 200, body: '[{"name": "Route 1"}, {"name": "Route 2"}]', headers: { 'Content-Type' => 'application/json' })
+      response = route_service.one_route(id)
+
+      expect(response).to be_an(Array)
+    end
+  end
 end

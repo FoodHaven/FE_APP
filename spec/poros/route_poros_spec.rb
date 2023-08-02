@@ -7,7 +7,8 @@ RSpec.describe Route, type: :poro do
       route_short_name: 'Route 123',
       headsign: 'Head Sign',
       start_time: '10:00 AM',
-      end_time: '11:30 AM'
+      end_time: '11:30 AM',
+      global_route_id: "Special route"
     }
   end
 
@@ -19,5 +20,6 @@ RSpec.describe Route, type: :poro do
     expect(route.headsign).to eq('Head Sign')
     expect(route.start_time).to eq('10:00 AM')
     expect(route.end_time).to eq('11:30 AM')
+    expect(route.global_route_id).to eq("Special route")
   end
 end

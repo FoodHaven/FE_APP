@@ -5,4 +5,11 @@ class RoutesController < ApplicationController
     rescue JSON::ParserError
     end
   end
+
+  def show
+    begin
+      @route = RouteFacade.new(params).single_route
+    rescue JSON::ParserError
+    end
+  end
 end
