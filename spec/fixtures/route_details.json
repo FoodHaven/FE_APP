@@ -1,0 +1,159 @@
+{
+  "data": [
+      {
+          "type": "route",
+          "attributes": {
+              "headsign": "Terminals C / B",
+              "stops": [
+                  {
+                      "global_stop_id": "MTABC:33875",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690932960,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791188-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690932960,
+                          "trip_search_key": "MTABC:42848234:205:2:116",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "553332",
+                      "stop_code": "553332",
+                      "stop_lat": 40.74567731104018,
+                      "stop_lon": -73.90210722249947,
+                      "stop_name": "Roosevelt Av / 61 St",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:33876",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690933020,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791218-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690933020,
+                          "trip_search_key": "MTABC:42848234:205:2:115",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "551576",
+                      "stop_code": "551576",
+                      "stop_lat": 40.74654065856226,
+                      "stop_lon": -73.89068585423871,
+                      "stop_name": "74 St / Roosevelt Av Station",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:36085",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690933020,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791169-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690933020,
+                          "trip_search_key": "MTABC:42848234:205:2:114",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "904246",
+                      "stop_code": "904246",
+                      "stop_lat": 40.7720723628869,
+                      "stop_lon": -73.87585606190643,
+                      "stop_name": "LaGuardia Rd / 94 St",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:38529",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690932720,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791198-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690932720,
+                          "trip_search_key": "MTABC:42848234:205:2:113",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "503848",
+                      "stop_code": "503848",
+                      "stop_lat": 40.77029170862262,
+                      "stop_lon": -73.86451563247587,
+                      "stop_name": "LaGuardia / Terminal C",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:38485",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690932900,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791198-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690932900,
+                          "trip_search_key": "MTABC:42848234:205:2:113",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "904242",
+                      "stop_code": "904242",
+                      "stop_lat": 40.77284577837543,
+                      "stop_lon": -73.87247461744498,
+                      "stop_name": "LaGuardia / Terminal B",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:33880",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690932720,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791208-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690932720,
+                          "trip_search_key": "MTABC:42848234:205:2:110",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "505192",
+                      "stop_code": "505192",
+                      "stop_lat": 40.74681944786626,
+                      "stop_lon": -73.89125242605007,
+                      "stop_name": "Roosevelt Av / 74 St",
+                      "wheelchair_boarding": 1
+                  },
+                  {
+                      "global_stop_id": "MTABC:33881",
+                      "location_type": 0,
+                      "next_departure": {
+                          "departure_time": 1690932660,
+                          "is_cancelled": false,
+                          "is_real_time": false,
+                          "rt_trip_id": "36791158-LGPC3-LG_C3-Weekday-03",
+                          "scheduled_departure_time": 1690932660,
+                          "trip_search_key": "MTABC:42848234:205:2:109",
+                          "wheelchair_accessible": 1
+                      },
+                      "parent_station_global_stop_id": null,
+                      "route_type": 3,
+                      "rt_stop_id": "982205",
+                      "stop_code": "982205",
+                      "stop_lat": 40.74492188195837,
+                      "stop_lon": -73.90332130495239,
+                      "stop_name": "Woodside Av / 61 St",
+                      "wheelchair_boarding": 1
+                  }
+              ]
+          }
+      }
+  ]
+}

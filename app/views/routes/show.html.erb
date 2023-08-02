@@ -1,13 +1,18 @@
 <% if @route.present? %>
   <p>
-    <%= @route.route_name %> Details: <br>
-    Route ID: <%= @route.global_route_id %> <br>
-    Route Latitude: <%= @route.stop_lat %> <br>
-    Route Longitude: <%= @route.stop_lon %> <br>
-    Route: <%= @route.stop_name %> <br>
-    Wheelchair Accesibility: <%= @route.wheelchair_boarding %> <br>
-    Mode of Transport: <%= @route.model_name %> <br>
-  </p>
+    <% @route[0].each do |stop| %> <br>
+      <%= stop.stop_name %> <br>
+      Stop Lat: <%= stop.stop_lat %> <br>
+      Stop Lon: <%= stop.stop_lon %> <br>
+      Has Wheelchair Acessibility? <% if stop.wheelchair_boarding == 1 %>
+          <%= "Yes" %>
+        <% else %>
+          <%= "No" %>
+        <% end %>
+        <br>
+      Scheduled departure time: <%= Time.at(stop.departure_time).strftime("%B %e, at %I:%M %p")  %> <br>
+    </p>
+  <% end %>
 <% else %>
   <h1>No details for route available </h1>
 <% end %>

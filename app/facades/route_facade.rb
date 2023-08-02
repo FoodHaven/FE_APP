@@ -15,7 +15,11 @@ class RouteFacade
   end
 
   def single_route
-    Route.new(service.one_route(@global_id, @id))
+    service.one_route(@global_id)[:data].map do |data|
+      data[:attributes][:stops].map do |stop|
+        RouteStop.new(stop)
+      end
+    end
   end
 
   def service

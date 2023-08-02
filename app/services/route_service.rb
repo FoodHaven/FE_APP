@@ -12,7 +12,7 @@ class RouteService
     get_url("/api/v1/markets/#{id}/transit_routes?original_lat=#{original_lat}&original_lon=#{original_lon}&destination_lat=#{destination_lat}&destination_lon=#{destination_lon}")
   end
 
-  def one_route(id, market_id)
-    get_url("/api/v1/markets/#{market_id}/transit_routes?#{id}")
+  def one_route(id)
+    get_url("/api/v1/route_details?global_route_id=#{id}")
   end
 end

@@ -1,6 +1,6 @@
 class MarketService
   def conn
-    Faraday.new(url: "https://foodhaven-be.onrender.com")
+    Faraday.new(url: "http://localhost:3001")
   end
 
   def get_url(url)
