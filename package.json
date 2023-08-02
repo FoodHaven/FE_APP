@@ -10,5 +10,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^5.3.1"
+  }
 }

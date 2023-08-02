@@ -1,43 +1,26 @@
-<h1>FOODHAVEN</h1>
-<%= button_to "Find a market near you", markets_search_path, method: :get %>
-<% if session[:user_id] %>
-  <%= button_to "Logout", logout_path, method: :delete %>
-<% else %>
-  <%= button_to "Register for new account", new_user_path, method: :get %> <br>
-  <%= button_to "Login", login_path, method: :get %> <br>
-  <%= button_to "Login with Google", '/auth/google_oauth2'  %> <br>
-<% end %>
-
-------------------------------
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <div class="container p-5 my-5 bg-primary text-white">
-      <h1>FOODHAVEN</h1>
-    </div>
-  </head>
-
-  <body>
-    <div class="container p-5 my-5 bg-primary text-white">
-      <a href="markets_search_path">
-        <button type="button" class="btn btn-outline-info">Find a market near you</button><br>
-      </a><br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand" href="#">FoodHaven</a>
+    <div>
       <% if session[:user_id] %>
-        <a href="logout_path">
-          <button type="button" class="btn btn-outline-info">Logout</button><br>
-        </a><br>
+        <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-danger me-2 btn-lg" %>
       <% else %>
-        <a href="new_user_path">
-          <button type="button" class="btn btn-outline-info">Register for new account</button><br>
-        </a><br>
-        <a href="login_path">
-          <button type="button" class="btn btn-outline-info">Login</button><br>
-        </a><br>
-        <a href="/auth/google_oauth2">
-          <button type="button" class="btn btn-outline-info">Login with Google</button><br>
-        </a>
+        <%= button_to "Login", login_path, method: :get, class: "btn btn-outline-primary me-2 btn-lg" %>
       <% end %>
+      <%= button_to "Favorites", users_favorites_path, method: :get, class: "btn btn-outline-success btn-lg" %>
     </div>
-  </body>
-</html>
+  </div>
+</nav>
+
+<div class="container text-center my-5">
+  <h1 class="display-1">FOODHAVEN</h1>
+
+  <div class="row justify-content-center my-3">
+    <div class="col-md-4 text-center">
+      <%= button_to "Find a market near you", markets_search_path, method: :get, class: "btn btn-primary btn-lg w-100" %>
+    </div>
+    <div class="col-md-4 text-center">
+      <%= button_to "Register for new account", new_user_path, method: :get, class: "btn btn-primary btn-lg w-100" %>
+    </div>
+  </div>
+</div>
