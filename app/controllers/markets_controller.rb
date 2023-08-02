@@ -7,7 +7,7 @@ class MarketsController < ApplicationController
       @markets = MarketFacade.new(params).all_markets
     else
       geolocate_by_zip
-      @markets = MarketFacade.new(params).all_markets
+      @markets = MarketFacade.new(params)
     end
   end
 
