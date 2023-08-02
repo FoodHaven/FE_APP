@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Routes" do
+RSpec.describe "Routes index page" do
 
   it "can find routes for market", :vcr do
-    json_response = File.read('spec/fixtures/transit_search.json')
+    json_response = File.read('spec/fixtures/transit_routes.json')
     destination_lat = 40.77709768562554
     destination_lon = -73.87400881765025
     original_lat = 40.748594902847515
@@ -17,8 +17,13 @@ RSpec.describe "Routes" do
       'User-Agent'=>'Faraday v2.7.10'
       })
     .to_return(status: 200, body: json_response, headers: {})
-    routes = JSON.parse(json_response, symbolize_names: true)[:plan][:itineraries]
+    routes = JSON.parse(json_response, symbolize_names: true)
     expect(routes).to be_a(Array)
+    expect(routes[3][:end_time]).to eq(1690844802000)
+    expect(routes[3][:start_time]).to eq(1690844322000)
+    expect(routes[3][:headsign]).to eq("Terminals C / B")
+    expect(routes[3][:route_short_name]).to eq("Q70-SBS")
+    expect(routes[3][:agency_name]).to eq("MTA Bus Company")
   end
   
 end
