@@ -26,4 +26,8 @@ RSpec.describe "Routes index page" do
     expect(routes[3][:agency_name]).to eq("MTA Bus Company")
   end
   
+  it "doesnt show routes if unavailable" do
+    visit market_routes_path(1)
+    expect(page).to have_content("No routes found")
+  end
 end
