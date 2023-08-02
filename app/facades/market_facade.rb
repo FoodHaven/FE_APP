@@ -8,7 +8,7 @@ class MarketFacade
   end
   
   def all_markets
-    service.all_markets(@latitude, @longitude, @radius)[:data].map do |data|
+    service.all_markets(@latitude, @longitude, @radius).map do |data|
       Market.new(data)
     end
   end
@@ -21,4 +21,9 @@ class MarketFacade
     MarketService.new
   end
 
+  def nearby_markets
+    MarketService.nearby_markets(@latitude, @longitude, @radius).map do |data|
+      Market.new(data)
+    end
+  end
 end

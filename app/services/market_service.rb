@@ -9,9 +9,11 @@ class MarketService
   end
 
   def all_markets(latitude, longitude, radius)
-    get_url("/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
+    get_url("/api/v1/markets/nearby?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}").map do |data|
+      Market.new({ id: data[:id], type: 'market', attributes: data })
+    end
   end
-
+  
   def one_market(id)
     get_url("/api/v1/markets/#{id}")
   end
