@@ -1,5 +1,5 @@
 class RouteStop
-  attr_reader :stop_lat, :stop_lon, :wheelchair_boarding, :departure_time, :headsign, :departure_time, :stop_name
+  attr_reader :stop_lat, :stop_lon, :wheelchair_boarding, :departure_time, :headsign, :stop_name, :next_departure
   def initialize(data)
     @stop_name = data[:stop_name]
     @headsign = data[:headsign]
