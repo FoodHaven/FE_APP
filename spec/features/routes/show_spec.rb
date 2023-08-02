@@ -18,5 +18,11 @@ RSpec.describe "Routes show page" do
     expect(response[:data][0][:attributes][:stops][0][:stop_lat]).to eq(40.74567731104018)
     expect(response[:data][0][:attributes][:stops][0][:stop_lon]).to eq(-73.90210722249947)
   end
+  
+  it "doesnt show route details if unavailable" do
+    visit market_route_path(1, 2)
+    expect(page).to have_content("No details for route available")
+  end
+
 end
 end
