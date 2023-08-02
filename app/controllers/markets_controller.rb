@@ -14,12 +14,4 @@ class MarketsController < ApplicationController
   def show
     @market = MarketFacade.new(params).market
   end
-
-  private
-
-  def geolocate_by_zip 
-    location = Geocoder.search(params[:zip])
-    params[:latitude] = location.first.data['lat']
-    params[:longitude] = location.first.data['lon']
-  end
 end

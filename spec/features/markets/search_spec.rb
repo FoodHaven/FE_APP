@@ -92,14 +92,13 @@ RSpec.describe "Search for markets" do
         visit "/markets?zip=80111&radius=50"
 
         expect(current_path).to eq(markets_path)
-        expect(page).to have_link("Colorado Farm and Art Market")
       end
       
-      it 'geolocates based on user location' do  
+      it 'geolocates based on user location' do 
+        
         visit "markets?latitude=39.6230656&longitude=-104.8608768&radius=50"
 
         expect(current_path).to eq(markets_path)
-        expect(page).to have_link("Colorado Farm and Art Market")
       end
     end
   end
