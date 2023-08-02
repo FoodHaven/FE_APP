@@ -31,7 +31,7 @@ Rails Version: 7.0.6
 - Run `rails db:{drop,create,migrate,seed}`
 
 - Google Oauth 2.0
-  - Food Haven features Google Outh as an option to login. When using locally a OAuth client ID and client secret are needed for this to function correctly.
+  - Food Haven features Google Outh as an option to login. When running this program on a local server, users will need OAuth client ID and client secret for this feature to function correctly.
     You can follow the steps to get the required credentials here: https://developers.google.com/identity/protocols/oauth2/web-server
       - Once you have the required credentials make an .env file at the root directory and put the crederntials in that .env file.
         - GOOGLE_CLIENT_ID = YOUR_GOOGLE_CLIENT_ID
