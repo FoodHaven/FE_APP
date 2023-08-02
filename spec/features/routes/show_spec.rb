@@ -17,6 +17,12 @@ RSpec.describe "Routes show page" do
       expect(response[:data][0][:attributes][:stops][0][:stop_name]).to eq("Roosevelt Av / 61 St")
       expect(response[:data][0][:attributes][:stops][0][:stop_lat]).to eq(40.74567731104018)
       expect(response[:data][0][:attributes][:stops][0][:stop_lon]).to eq(-73.90210722249947)
+      visit market_route_path(1, id)
+      expect(page).to have_content("Roosevelt Av / 61 St")
+      expect(page).to have_content("Stop Lat: 40.74567731104018")
+      expect(page).to have_content("Stop Lon: -73.90210722249947")
+      expect(page).to have_content("Has Wheelchair Acessibility? Yes")
+      expect(page).to have_content("Scheduled departure time:")
     end
 
     it "doesnt show route details if unavailable" do
