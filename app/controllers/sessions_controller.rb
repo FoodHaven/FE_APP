@@ -23,19 +23,11 @@ class SessionsController < ApplicationController
     if user.valid?
       session[:user_id] = user.id
       redirect_to root_path
-    else
-      redirect_to root_path
     end
   end
   
   def destroy
     log_out
     redirect_to root_path
-  end
-
-  private
-
-  def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
   end
 end
