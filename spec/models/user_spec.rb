@@ -28,18 +28,26 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "self.from_omniauth" do
-    it "creates a new user when user with uid and provider does not exist" do
-      response = { uid: "12345", provider: "google", info: { name: "John Doe", email: "john@example.com" } }
-      expect do
-        User.from_omniauth(response)
-      end.to change(User, :count).by(1)
-    end
+  it "creates or updates itself from an oauth hash" do
+    auth = {
+      provider: "google_oauth2",
+      uid: "12345678910",
+      info: {
+        email: "user@email.com",
+        name: "User",
+      }
+    }
+    User.from_omniauth(auth)
+    new_user = User.first
+    expect(new_user.provider).to eq("google_oauth2")
+    expect(new_user.uid).to eq("12345678910")
+    expect(new_user.email).to eq("user@email.com")
+    expect(new_user.name).to eq("User")
   end
-
+  
   describe "uniqueness of :email" do
     let!(:existing_user) { create(:user, email: "existing@example.com") }
-
+    
     it "is case-insensitive" do
       user = build(:user, email: "Existing@example.com")
       expect(user).to be_invalid
