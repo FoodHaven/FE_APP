@@ -8,7 +8,7 @@ RSpec.describe RouteFacade, type: :model do
         original_lon: "original_lon",
         latitude: "latitude",
         longitude: "longitude",
-        market_id: "1"
+        market_id: "1",
         global_id: "36"
       }
       route_facade = RouteFacade.new(params)
@@ -36,7 +36,7 @@ RSpec.describe RouteFacade, type: :model do
 
     it "#single_route" do
       params = {
-        market_id: "1"
+        market_id: "1",
         global_id: "36"
       }
       route_facade = RouteFacade.new(params)
