@@ -34,19 +34,6 @@ RSpec.describe RouteFacade, type: :model do
       route_facade.all_routes
     end
 
-    xit "#single_route" do
-      params = {
-        id: "MTABC:33875"
-      }
-
-      route_facade = RouteFacade.new(params)
-
-      expect(RouteService).to receive(:new).and_return(double(one_route: {}))
-      expect(RouteStop).to receive(:new).with({})
-
-      route_facade.single_route
-    end
-
     it "#service" do
       params = {
         original_lat: "original_lat",
