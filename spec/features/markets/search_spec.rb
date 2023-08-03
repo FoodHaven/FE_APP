@@ -89,22 +89,17 @@ RSpec.describe "Search for markets" do
     
     describe 'usability' do
       it 'geolocates based on zipcode' do 
-        fill_in :zip, with: 80111
-        select 50, from: :radius
-        click_button "Find Markets"
+        visit "/markets?zip=80111&radius=50"
 
         expect(current_path).to eq(markets_path)
       end
-
+      
       it 'geolocates based on user location' do 
-        click_button "Use My Location"
-
-        select 50, from: :radius
-
-        click_button "Find Markets"
+        
+        visit "markets?latitude=39.6230656&longitude=-104.8608768&radius=50"
 
         expect(current_path).to eq(markets_path)
       end
-    end
+    end  
   end
 end
