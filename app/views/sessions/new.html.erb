@@ -1,11 +1,32 @@
-<%= form_with url: "/login", method: :post do |f| %>
-  <%= f.label :email, "Email" %>
-  <%= f.text_field :email %>
+<!doctype html>
+<html>
+  <nav class="navbar navbar-expand-sm bg-primary">
+    <div class="container-fluid">
+      <form action="nav-bar">
+        <ul class="navbar-nav">
+          <div class="align-items-end">
+            <% if current_user %>
+                <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-danger me-2 btn-lg" %>
+                <%= button_to "Favorites", users_favorites_path, method: :get, class: "btn btn-outline-danger me-2 btn-lg" %>
+              <% else %>
+                <%= button_to "Login", login_path, method: :get, class: "btn btn-outline-danger me-2 btn-lg" %>
+            <% end %>
+          </div>
+        </ul>
+      </form>
+    </div>
+  </nav>
 
-  <%= f.label :password, "Password" %>
-  <%= f.text_field :password %>
-
-  <%= f.submit "Login" %>
-<% end %>
-<br>
-<%= button_to "Login with Google", '/auth/google_oauth2'  %> <br>
+  <form action="/user_login.php">
+    <p class="text-center">USER LOGIN PAGE</p>
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <br>
+    <%= button_to "Login", login_path, method: :get, class: "btn btn-outline-danger me-2 btn-lg" %>
+    <%= button_to "Login with Google", url: "/auth/google_oauth2", method: :get, class: "btn btn-outline-danger me-2 btn-lg" %>
+  </form>
+</html>
