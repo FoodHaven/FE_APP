@@ -1,11 +1,16 @@
-<h1>Closest Farmer's Markets</h1>
-<% @markets.each do |market| %>
-  <%= link_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]) %> <br>
- <p>
-    <% if market.snap == "" %>
-      Snap option: none <br>
-    <% else %>
-      Snap Option: <%= market.snap %> <br>
-    <% end %>
-  </p>
-<% end %>
+<%= stylesheet_link_tag "markets" %>
+<header><h1>Closest Farmer's Markets</h1></header>
+<body>
+  <% @markets.each do |market| %>
+    <%= button_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]), method: :get %> <br>
+    <div class="market">
+      <p>
+          <% if market.snap == "" %>
+            Snap option: none <br>
+          <% else %>
+            Snap Option: <%= market.snap %> <br>
+          <% end %>
+      </p>
+      <% end %>
+    </div>
+</body>
