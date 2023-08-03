@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://foodhaven-be.onrender.com/api/v1/markets/123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 Aug 2023 18:56:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7f10c7ec2b0f271b-DEN
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"95e62ef9c5c2fa471c51185a8e68317d"
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Render-Origin-Server:
+      - Render
+      X-Request-Id:
+      - aeb87c7c-d848-4a35-97df-8bb53495bfac
+      X-Runtime:
+      - '0.105886'
+      X-Xss-Protection:
+      - '0'
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"123","type":"market","attributes":{"name":"Wolfeboro
+        Area Farmers Market","address":"233 South Main St, Wolfeboro, New Hampshire
+        03894","site":"Local government building grounds;","description":"Across from
+        Huggins, behind the Clark House Museum.","fnap":"SNAP;Accept EBT at a central
+        location;;","snap_option":"Accept EBT at a central location;","accepted_payment":"Debit
+        card/Credit card;","longitude":-71.202747,"latitude":43.580593}}}'
+  recorded_at: Thu, 03 Aug 2023 18:56:30 GMT
+recorded_with: VCR 6.2.0

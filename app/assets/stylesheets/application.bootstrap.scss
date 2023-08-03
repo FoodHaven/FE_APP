@@ -1,2 +1,11 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+.custom-btn {
+  background-color: #009FB7 !important;
+  border-color: #009FB7 !important;
+}
+.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+  background-color: darken(#009FB7, 10%) !important;
+  border-color: darken(#009FB7, 10%) !important;
+}
