@@ -8,7 +8,16 @@
     "build:css": "yarn build:css:compile && yarn build:css:prefix",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
+  "dependencies": {  
+      "@hotwired/stimulus": "^3.0.1",  
+      "@hotwired/turbo-rails": "^7.1.0",  
+      "@popperjs/core": "^2.11.0",  
+      "bootstrap": "^5.1.3",  
+      "esbuild": "^0.14.5",  
+      "sass": "^1.45.0"  
+    },
   "browserslist": [
     "defaults"
   ]
 }
+
