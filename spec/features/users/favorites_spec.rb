@@ -127,7 +127,7 @@ RSpec.describe 'Favorites', type: :feature do
 
       expect(page).to have_content("Sign in to add to favorites")
     end
-    
+
     it "User can't view favorites if not logged in" do
       visit root_path
       click_on "Logout"
@@ -136,6 +136,4 @@ RSpec.describe 'Favorites', type: :feature do
       expect(page).to have_content("You must be signed in to do that.")
     end
   end
-
-
 end
