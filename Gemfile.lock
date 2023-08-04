@@ -339,7 +339,7 @@ DEPENDENCIES
   simplecov
   sprockets-rails
   stimulus-rails
-  turbo-rails
+  turbo-rails (~> 1.0.0)
   tzinfo-data
   vcr
   web-console
