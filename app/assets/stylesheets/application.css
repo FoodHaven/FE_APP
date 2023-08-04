@@ -1,0 +1,79 @@
+@import 'application.bootstrap';
+@import 'FoodHaven_palette';
+
+.btn-primary {
+  color: white;
+  background-color: #009FB7;
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color: #018fa4;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 55px;
+  margin-top: 0px;
+}
+
+header {
+  color: #009FB7;
+  text-align: center;
+}
+
+.market {
+  height: 60px;
+}
+
+.footer-image {
+  width: 30%;
+  height: auto;
+}
+.footer-image {
+  width: 5%;
+  height: auto;
+  margin-top: 500px;
+}
+
+.navbar-brand {
+  color: #4C2C69 !important;
+  font-weight: bold !important;
+}
+
+.display-1 {
+  color: #4C2C69 !important;
+  font-weight: bold !important;
+}
+
+.mb-4 {
+  color: #4C2C69 !important;
+  font-weight: bold !important;
+}
+
+.btn-danger {
+  background-color: #EF5B5B !important;
+  color: #FFFFFF !important;
+  border-color: #EF5B5B !important;
+}
+
+.btn-danger:hover {
+  background-color: #EF5B5B !important;
+  border-color: #EF5B5B !important;
+}
+
+a:link {
+  color: #009FB7;
+}
+
+a:visited {
+  color: #4C2C69;
+}
+
+a:hover {
+  color: #4C2C69;
+}
+
+a:active {
+  color: #009FB7;
+}
