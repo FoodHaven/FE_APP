@@ -1,16 +1,14 @@
 <header>
-<%= stylesheet_link_tag "markets" %>
-  <div class="col d-flex justify-content-center"><h2>Closest Farmer's Markets<h2></div>
+<div class="col d-flex justify-content-center"><h2>Closest Farmer's Markets<h2></div>
 </header>
 <body>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <% @markets.each do |market| %>
     <div class="col d-flex justify-content-center">
       <div class="my-3 card" style="width:500px">
-        <div style="background-color: rgba(0, 159, 183, 1)">
+        <div style="background-color: rgba(239, 91, 91)">
           <div class="card-body">
-            <div style="background-color: rbga(43, 200, 117)">
-              <div class="d-flex justify-content-center"><%= button_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]), method: :get %></div>
-            </div>
+            <div class="d-flex justify-content-center"><%= button_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]), method: :get, class: "btn btn-primary btn-lg w-100" %></div>
             <div class="d-flex justify-content-center">
               <% if market.snap == "" %>
                 Snap option: none <br>
