@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="display text-center">
+  <div class="display-1 text-center">
     <h1>
       Find a Market
     </h1>
@@ -8,8 +8,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="d-grid">
-      <button class="btn btn-info" style="background-color: rgba(0, 159, 183, 1)" id="location">
+    <div class="s">
+      <button class="btn btn-primary" id="location">
               Use My Location
       </button>
     </div>
@@ -17,7 +17,7 @@
 </div><br>
 
 <div class="d-flex justify-content-center">
-  <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
+  <div class="spinner-grow" role="status" style="display: none" id ="spinner" >
   <span class="visually-hidden"></span>
   </div>
 </div><br>
@@ -79,7 +79,7 @@ function getLocation() {
 
 <div class="container">
   <div class="d-grid">
-    <%= f.submit "Find Markets", class:  "btn btn-info", style: "background-color: rgba(0, 159, 183, 1)"%>
+    <%= f.submit "Find Markets", class:  "btn btn-primary"%>
   </div>
 </div>
 <% end %>

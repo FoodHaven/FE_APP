@@ -1,5 +1,4 @@
 @import 'application.bootstrap';
-@import 'markets';
 @import 'FoodHaven_palette';
 
 .btn-primary {
@@ -31,6 +30,7 @@ header {
   width: 30%;
   height: auto;
 }
+
 .footer-image {
   width: 5%;
   height: auto;
@@ -92,4 +92,8 @@ a:active {
 .registration-form .form-control {
   border: 1px solid #2BC875;
   border-radius: 3px;
+}
+
+.spinner-grow {
+  color: #F5E663;
 }
