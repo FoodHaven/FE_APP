@@ -1,16 +1,28 @@
-<% if @routes.present? %>
-  <% @routes.each do |route| %>
-    <p>
-      Agency: <%= route.agency_name %> <br>
-      Route: <%= route.route_short_name %> <br>
-      Headsign: <%= route.headsign %> <br>
-      Start Time: <%= Time.at(route.start_time).strftime("%B %e, at %I:%M %p") %> <br>
-      End Time: <%= Time.at(route.end_time).strftime("%B %e, at %I:%M %p") %> <br>
-      <% if route.global_route_id.present? %>
-        <%= link_to "Stop Details", market_route_path(params[:market_id], route.global_route_id) %> 
+<div class="container mt-5">
+  <h1 class="mb-4">Routes</h1>
+
+  <% if @routes.present? %>
+    <div class="row">
+      <% @routes.each do |route| %>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Agency: <%= route.agency_name %></h5>
+              <p class="card-text">
+                Route: <%= route.route_short_name %> <br>
+                Headsign: <%= route.headsign %> <br>
+                Start Time: <%= Time.at(route.start_time).strftime("%B %e, at %I:%M %p") %> <br>
+                End Time: <%= Time.at(route.end_time).strftime("%B %e, at %I:%M %p") %> <br>
+                <% if route.global_route_id.present? %>
+                  <%= link_to "Stop Details", market_route_path(params[:market_id], route.global_route_id), class: 'btn btn-primary' %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
       <% end %>
-    <p>
+    </div>
+  <% else %>
+    <h1>No routes found</h1>
   <% end %>
-<% else %>
-  <h1>No routes found</h1>
-<% end %>
+</div>
