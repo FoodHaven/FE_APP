@@ -78,3 +78,18 @@ a:hover {
 a:active {
   color: #009FB7;
 }
+.foodhaven-heading {
+  color: #4C2C69;
+  font-weight: bold;
+}
+
+.registration-form {
+  border: 5px solid #2BC875;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.registration-form .form-control {
+  border: 1px solid #2BC875;
+  border-radius: 3px;
+}

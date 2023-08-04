@@ -1,12 +1,34 @@
-<%= form_with url: users_path, method: :post do|f| %>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
-  <%= f.label :email, "Email" %>
-  <%= f.text_field :email %>
-  <%= f.label :password, "Password" %>
-  <%= f.text_field :password %>
-  <%= f.label :password_confirmation, "Confirm Password" %>
-  <%= f.text_field :password_confirmation %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center foodhaven-heading">FoodHaven</h1>
+      <h2 class="text-center mb-4">User Registration</h2>
 
-  <%= f.submit "Create Account" %>
-<% end %>
+      <%= form_with url: users_path, method: :post, local: true, html: { class: "registration-form" } do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "Name", class: "form-label" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-3">
+          <%= f.label :email, "Email", class: "form-label" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-3">
+          <%= f.label :password, "Password", class: "form-label" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-3">
+          <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-4">
+          <%= f.submit "Create Account", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
