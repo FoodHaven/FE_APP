@@ -7,7 +7,7 @@
       Start Time: <%= Time.at(route.start_time).strftime("%B %e, at %I:%M %p") %> <br>
       End Time: <%= Time.at(route.end_time).strftime("%B %e, at %I:%M %p") %> <br>
       <% if route.global_route_id.present? %>
-        <%= link_to "Stop Details", market_route_path(params[:market_id], route.global_route_id) %> 
+        <%= link_to "Stop Details", market_route_path(params[:market_id], route.global_route_id), class: "btn btn-outline-primary me-2 btn-lg" %> 
       <% end %>
     <p>
   <% end %>
