@@ -1,16 +1,41 @@
-<button id="location">Use My Location</button>
+<div class="container">
+  <div class="display text-center">
+    <h1>
+      Find a Market
+    </h1>
+  </div>
+</div><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="d-grid">
+      <button class="btn btn-info" style="background-color: rgba(0, 159, 183, 1)" id="location">
+              Use My Location
+      </button>
+    </div>
+  </div>
+</div><br>
+
+<div class="d-flex justify-content-center">
+  <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
+  <span class="visually-hidden"></span>
+  </div>
+</div><br>
 
 <script>
+
 document.getElementById("location").addEventListener("click", getLocation)
 
 function getLocation() {
+  var spinner = document.getElementById('spinner');
+  spinner.style.display = 'block';
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
 
-        // Set the values in the hidden fields
         var latitudeField = document.getElementById('latitude-field');
         var longitudeField = document.getElementById('longitude-field');
 
@@ -18,13 +43,16 @@ function getLocation() {
           latitudeField.value = latitude;
           longitudeField.value = longitude;
         }
+        spinner.style.display = 'none';
       },
       function(error) {
         console.error('Error getting geolocation:', error);
+        spinner.style.display = 'none';
       }
     );
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
+    spinner.style.display = 'none';
   }
 }
 </script>
@@ -32,10 +60,26 @@ function getLocation() {
 <%= form_with url: markets_path, method: :get do |f| %>
   <%= f.hidden_field :latitude, id: 'latitude-field'  %>
   <%= f.hidden_field :longitude, id: "longitude-field" %>
-  <%= f.label :zip, "Zipcode" %>
-  <%= f.text_field :zip %>
-  <%= f.label :radius, "Within (Miles)" %>
-  <%= f.select :radius, [1, 10, 25, 50] %>
 
-  <%= f.submit "Find Markets" %>
+<div class="container">
+  <h6 class="text-center"><%= f.label :zip, "Zipcode:" %></h6>
+  <div class="d-grid justify-content-center">
+    <%= f.text_field :zip %>
+  </div>
+</div><br><br>
+
+<div class="container">
+  <h6 class="text-center"><%= f.label :radius, "Keep Search Within (miles):" %></h6>
+  <div class="dropdown">
+    <div class="d-grid justify-content-center">
+      <%= f.select :radius, [1, 10, 25, 50] %>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="container">
+  <div class="d-grid">
+    <%= f.submit "Find Markets", class:  "btn btn-info", style: "background-color: rgba(0, 159, 183, 1)"%>
+  </div>
+</div>
 <% end %>

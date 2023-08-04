@@ -1,7 +1,6 @@
-   
 button {
   color:white;
-  background-color: #009FB7;
+  background-color: #2BC875;
   display: inline-block;
   border-radius: 5px;
   margin-left: auto;
@@ -16,22 +15,10 @@ button:hover {
   color: white;
   background-color: #018fa4;
 }
-
-p {
-  text-align: center;
-  margin-bottom: 55px;
-  margin-top: 0px;
-  font-size: 16px;
-  font-family:Arial, Helvetica, sans-serif
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
-
-header {
-  color: #EF5B5B;
-  text-align: center;
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif
-}
-
-.market {
-  height: 60px;
+.row > div[class*='col-'] {
+  display: flex;
 }
