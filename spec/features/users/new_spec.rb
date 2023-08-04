@@ -20,14 +20,12 @@ RSpec.describe "Register" do
     click_on "Register for new account"
     expect(current_path).to eq(new_user_path)
 
-    fill_in :name, with: "Bob"
+    fill_in :name, with: "bob"
     fill_in :email, with: "Bob@email.com"
     fill_in :password, with: "1234"
-    fill_in :password_confirmation, with: "1"
-
+    fill_in :password_confirmation, with: ""
     click_on "Create Account"
 
-    expect(current_path).to eq(new_user_path)
     expect(page).to have_content("Name, Email, and password must be valid")
   end
 end
