@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= button_to "Go back to markets near me", :back, class: "btn btn-outline-primary me-2 btn-lg" %> <br>
+<%= button_to "Go back to markets near me", :back, method: :get, class: "btn btn-outline-primary me-2 btn-lg" %> <br>
 <% if @market.present? %>
   <div class="col d-flex justify-content-center">
     <div class="card" style="width:500pxpx">
