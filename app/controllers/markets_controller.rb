@@ -3,7 +3,7 @@ class MarketsController < ApplicationController
   end
 
   def index
-    if params[:latitude] && params[:longitude]
+    if params[:latitude] != '' && params[:longitude] != ''
       @markets = MarketFacade.new(params).all_markets
     else
       geolocate_by_zip
