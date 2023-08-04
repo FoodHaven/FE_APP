@@ -8,7 +8,7 @@
       <div class="my-3 card" style="width:500px">
         <div style="background-color: rgba(239, 91, 91)">
           <div class="card-body">
-            <div class="d-flex justify-content-center"><%= button_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]), method: :get, class: "btn btn-primary btn-lg w-100" %></div>
+            <div class="d-flex justify-content-center"><%= link_to market.name, market_path(market.id, original_lat: params[:latitude], original_lon: params[:longitude]), method: :get, class: "btn btn-outline-primary me-2 btn-lg" %></div>
             <div class="d-flex justify-content-center">
               <% if market.snap == "" %>
                 Snap option: none <br>

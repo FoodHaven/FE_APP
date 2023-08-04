@@ -63,7 +63,13 @@ header {
 }
 
 a:link {
-  color: #009FB7;
+  color: white;
+  background-color: #009FB7;
+}
+
+a:hover {
+  color: white;
+  background-color: #018fa4;
 }
 
 a:visited {
