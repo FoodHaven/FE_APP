@@ -1,18 +1,29 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% if @route.present? %>
-  <p>
-    <% @route[0].each do |stop| %> <br>
-      <%= stop.stop_name %> <br>
-      Stop Lat: <%= stop.stop_lat %> <br>
-      Stop Lon: <%= stop.stop_lon %> <br>
-      Has Wheelchair Acessibility? <% if stop.wheelchair_boarding == 1 %>
-          <%= "Yes" %>
-        <% else %>
-          <%= "No" %>
-        <% end %>
-        <br>
-      Scheduled departure time: <%= Time.at(stop.departure_time).strftime("%B %e, at %I:%M %p")  %> <br>
-    </p>
+<div class="row">
+<% @route[0].each do |stop| %> <br>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="my-3 card" style="width:500px">
+        <div style="background-color: rgba(239, 91, 91)">
+          <div class="card-header col d-flex justify-content-center"><%= stop.stop_name %></div>
+          <div class="card-body">
+            <p>
+              Stop Lat: <%= stop.stop_lat %> <br>
+              Stop Lon: <%= stop.stop_lon %> <br>
+              Has Wheelchair Acessibility? <% if stop.wheelchair_boarding == 1 %>
+                  <%= "Yes" %>
+                <% else %>
+                  <%= "No" %>
+                <% end %>
+                <br>
+              Scheduled departure time: <%= Time.at(stop.departure_time).strftime("%B %e, at %I:%M %p")  %> <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
 <% else %>
   <h1>No details for route available </h1>
 <% end %>
