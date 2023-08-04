@@ -22,8 +22,8 @@ RSpec.describe "Application Landing Page", type: :feature do
       click_on "Register for new account"
       expect(current_path).to eq(new_user_path)
   
-      fill_in :name, with: "Bob"
-      fill_in :email, with: "Bob@email.com"
+      fill_in :name, with: "George"
+      fill_in :email, with: "George@email.com"
       fill_in :password, with: "1234"
       fill_in :password_confirmation, with: "1234"
   
@@ -31,10 +31,12 @@ RSpec.describe "Application Landing Page", type: :feature do
       click_on "Login"
       expect(current_path).to eq(login_path)
 
-      fill_in :email, with: "Bob@email.com"
+      fill_in :email, with: "George@email.com"
       fill_in :password, with: "1234"
 
-      click_on "Login"
+      within("#login") do
+        click_on "Login"
+      end
   
       expect(current_path).to eq(root_path)
       expect(page).to_not have_content("Log in")

@@ -20,7 +20,9 @@ RSpec.describe "log in" do
     fill_in :email, with: "Bob@email.com"
     fill_in :password, with: "1234"
 
-    click_on "Login"
+    within("#login") do
+      click_on "Login"
+    end
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Welcome, Bob")
@@ -44,7 +46,9 @@ RSpec.describe "log in" do
     fill_in :email, with: "Bob@email.com"
     fill_in :password, with: "1"
 
-    click_on "Login"
+    within("#login") do
+      click_on "Login"
+    end
     expect(current_path).to eq("/login")
     expect(page).to have_content("Sorry, your credentials are bad")
   end

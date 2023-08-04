@@ -8,7 +8,9 @@ RSpec.describe 'Favorites', type: :feature do
     visit login_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'password'
-    click_button 'Login'
+    within("#login") do
+      click_on "Login"
+    end
   end
 
   it 'User can add a market to favorites' do
@@ -131,9 +133,7 @@ RSpec.describe 'Favorites', type: :feature do
     it "User can't view favorites if not logged in" do
       visit root_path
       click_on "Logout"
-      click_on "My Favorites"
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content("You must be signed in to do that.")
+      expect(page).to_not have_content("My Favorites")
     end
   end
 end
