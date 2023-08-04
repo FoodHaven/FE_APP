@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>FoodHavenFeApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -15,12 +17,12 @@
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
     <% end %>
-  <footer>
-    <%= image_tag "transit-api-badge.png", alt: "Transit badge" %>
-  </footer>
     <%= yield %>
-
+  <footer>
+    <%= image_tag "transit-api-badge@3x.png", alt: "Transit Badge", class: "footer-image", style: "width: 8%;" %>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
 
