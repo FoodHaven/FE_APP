@@ -35,6 +35,7 @@ RSpec.describe "Search for markets" do
       expect(markets.first[:attributes][:name]).to eq("Market in The Park")
       expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
     end
+    
     it "can search for markets by zip" do
       visit markets_search_path
       fill_in :zip, with: 80041

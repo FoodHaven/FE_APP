@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  namespace :api do
-    namespace :v1 do
-      resources :markets, only: [:index, :show] do
-        resources :transit_routes, only: [:index], to: 'markets/transit_routes#index'
-      end
-      get "/route_details", to: "markets/transit_routes#show"
-      get "/favorites", to: "markets/favorites#index"
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :markets, only: [:index, :show] do
+  #       resources :transit_routes, only: [:index], to: 'markets/transit_routes#index'
+  #     end
+  #     get "/route_details", to: "markets/transit_routes#show"
+  #     get "/favorites", to: "markets/favorites#index"
+  #   end
+  # end
 
   root "sessions#landing"
 
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get "auth/:provider/callback", to: "sessions#omniauth"
 
   #farmers market db controller routes
+
 
   namespace :farmers_markets do
     resources :favorites, only: [:index], as: 'db_favorites'

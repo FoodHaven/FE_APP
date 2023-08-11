@@ -4,15 +4,15 @@ class MarketsController < ApplicationController
 
   def index
     if params[:latitude] != "" && params[:longitude] != ""
-      @markets = MarketFacade.new(params).all_markets
+      @markets = FarmersMarket.nearby_markets(coordinates, params[:radius])
     else
       geolocate_by_zip
-      @markets = MarketFacade.new(params).all_markets
+      @markets = FarmersMarket.nearby_markets(coordinates, params[:radius])
     end
   end
 
   def show
-    @market = MarketFacade.new(params).market
+    @market = FarmersMarket.find(params[:id])
   end
 
   private
@@ -21,5 +21,9 @@ class MarketsController < ApplicationController
     location = Geocoder.search(params[:zip])
     params[:latitude] = location.first.data['lat']
     params[:longitude] = location.first.data['lon']
+  end
+
+  def coordinates
+    [params[:latitude], params[:longitude]]
   end
 end
