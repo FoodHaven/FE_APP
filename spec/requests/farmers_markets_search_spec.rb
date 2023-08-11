@@ -27,7 +27,7 @@ RSpec.describe 'Markets' do
         radius: 50
       }
 
-      get '/farmers_markets/search', params: query_params
+      get farmers_market_db_search_path, params: query_params
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]
       

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   #farmers market db controller routes
   resources :farmers_markets, only: [:index, :show]
-  get '/farmers_markets/search', to: 'farmers_markets/search#index', as: 'farmers_market_db_search'
-  get '/farmers_markets/favorites', to: 'farmers_markets/favorites#index', as: 'farmers_market_db_favorites'
+  namespace :farmers_markets do 
+    resources :favorites, only: [:index], as: 'db_favorites'
+    resources :search, only: [:index], as: 'db_search'
+  end
 end
