@@ -4,51 +4,47 @@ RSpec.describe MarketService do
   let(:market_service) { MarketService.new }
 
   describe '#all_markets' do
-    it 'fetches all markets within the given radius' do
+    it 'fetches all markets within the given radius', :vcr do
+      market_params = {
+        latitude: 35.880,
+        longitude: -106.0658,
+        radius: 20
+      }
 
-      latitude = 40.7128
-      longitude = -74.0060
-      radius = 10
+      response = market_service.all_markets(market_params[:latitude], market_params[:longitude], market_params[:radius])
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
-        .to_return(status: 200, body: '[{"name": "Market 1"}, {"name": "Market 2"}]', headers: { 'Content-Type' => 'application/json' })
-      response = market_service.all_markets(latitude, longitude, radius)
-
-      expect(response).to be_an(Array)
-      expect(response.size).to eq(2)
-      expect(response[0][:name]).to eq('Market 1')
-      expect(response[1][:name]).to eq('Market 2')
+      expect(response).to be_a(Hash)
+      expect(response[:data]).to be_an(Array)
+      expect(response[:data].size).to eq(8)
+      expect(response[:data][0][:attributes][:name]).to eq('Espanola Farmers Market')
+      expect(response[:data][1][:attributes][:name]).to eq('Espanola Farmers Market') # Update accordingly
     end
   end
 
   describe '#one_market' do
-    it 'fetches a single market by ID' do
+    it 'fetches a single market by ID', :vcr do
       market_id = 1
-
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
-        .to_return(status: 200, body: '{"name": "Market 1"}', headers: { 'Content-Type' => 'application/json' })
 
       response = market_service.one_market(market_id)
 
       expect(response).to be_a(Hash)
-      expect(response[:name]).to eq('Market 1')
+      expect(response[:data]).to be_a(Hash)
+      expect(response[:data][:attributes]).to be_an(Hash)
+      expect(response[:data][:attributes][:name]).to eq('Colorado Farm and Art Market')
     end
   end
 
-  describe '#fetch_favorite_markets' do
-    it 'fetches favorite markets for given IDs' do
+  describe '#favorite_markets' do
+    it 'fetches favorite markets for given IDs', :vcr do
       market_ids = [1, 2]
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids[]=1&market_ids[]=2")
-        .to_return(status: 200, body: '[{"name": "Market 1"}, {"name": "Market 2"}]', headers: { 'Content-Type' => 'application/json' })
+      response = market_service.favorite_markets(market_ids)
 
-      response = market_service.fetch_favorite_markets(market_ids)
-
-      expect(response).to be_an(Array)
-      expect(response.size).to eq(2)
-      expect(response[0][:name]).to eq('Market 1')
-      expect(response[1][:name]).to eq('Market 2')
+      expect(response).to be_a(Hash)
+      expect(response[:data]).to be_an(Array)
+      expect(response[:data].size).to eq(2)
+      expect(response[:data][0][:attributes][:name]).to eq('Colorado Farm and Art Market')
+      expect(response[:data][1][:attributes][:name]).to eq('Market in The Park')
     end
   end
 end
-
