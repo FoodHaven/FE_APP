@@ -32,4 +32,12 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "auth/:provider/callback", to: "sessions#omniauth"
+
+  #farmers market db controller routes
+  
+  namespace :farmers_markets do 
+    resources :favorites, only: [:index], as: 'db_favorites'
+    resources :search, only: [:index], as: 'db_search'
+  end
+  resources :farmers_markets, only: [:index, :show]
 end

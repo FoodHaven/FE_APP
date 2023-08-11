@@ -30,8 +30,12 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "jsonapi-serializer"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
+
+#rails geokit
+gem 'geokit-rails'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -70,6 +74,7 @@ group :test do
   gem 'vcr'
   gem 'selenium-webdriver'
   gem "webdrivers"
+  gem 'faker'
 end
 
 gem "dotenv-rails"
