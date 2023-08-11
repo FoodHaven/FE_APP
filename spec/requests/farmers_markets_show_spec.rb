@@ -3,47 +3,47 @@ require 'rails_helper'
 RSpec.describe 'Markets' do
   before(:each) do
     create_list(:farmers_market, 10)
-    @market = Market.last
+    @farmers_market = Market.last
   end
 
-  describe 'find a single market' do
+  describe 'find a single farmers_market' do
     it 'hits the endpoint' do 
-      get api_v1_market_path(@market)
+      get api_v1_market_path(@farmers_market)
       
       expect(response).to be_successful
     end
     
-    it 'returns json object for the correct market' do 
-      get api_v1_market_path(@market)
+    it 'returns json object for the correct farmers_market' do 
+      get api_v1_market_path(@farmers_market)
 
-      market = JSON.parse(response.body, symbolize_names: true)[:data]
+      farmers_market = JSON.parse(response.body, symbolize_names: true)[:data]
       
-        expect(market[:attributes]).to have_key(:name)
-        expect(market[:attributes][:name]).to eq(@market.name)
+        expect(farmers_market[:attributes]).to have_key(:name)
+        expect(farmers_market[:attributes][:name]).to eq(@farmers_market.name)
         
-        expect(market[:attributes]).to have_key(:address)
-        expect(market[:attributes][:address]).to eq(@market.address)
+        expect(farmers_market[:attributes]).to have_key(:address)
+        expect(farmers_market[:attributes][:address]).to eq(@farmers_market.address)
 
-        expect(market[:attributes]).to have_key(:site)
-        expect(market[:attributes][:site]).to eq(@market.site)
+        expect(farmers_market[:attributes]).to have_key(:site)
+        expect(farmers_market[:attributes][:site]).to eq(@farmers_market.site)
 
-        expect(market[:attributes]).to have_key(:description)
-        expect(market[:attributes][:description]).to eq(@market.description)
+        expect(farmers_market[:attributes]).to have_key(:description)
+        expect(farmers_market[:attributes][:description]).to eq(@farmers_market.description)
 
-        expect(market[:attributes]).to have_key(:fnap)
-        expect(market[:attributes][:fnap]).to eq(@market.fnap)
+        expect(farmers_market[:attributes]).to have_key(:fnap)
+        expect(farmers_market[:attributes][:fnap]).to eq(@farmers_market.fnap)
 
-        expect(market[:attributes]).to have_key(:snap_option)
-        expect(market[:attributes][:snap_option]).to eq(@market.snap_option)
+        expect(farmers_market[:attributes]).to have_key(:snap_option)
+        expect(farmers_market[:attributes][:snap_option]).to eq(@farmers_market.snap_option)
 
-        expect(market[:attributes]).to have_key(:accepted_payment)
-        expect(market[:attributes][:accepted_payment]).to eq(@market.accepted_payment)
+        expect(farmers_market[:attributes]).to have_key(:accepted_payment)
+        expect(farmers_market[:attributes][:accepted_payment]).to eq(@farmers_market.accepted_payment)
 
-        expect(market[:attributes]).to have_key(:longitude)
-        expect(market[:attributes][:longitude]).to eq(@market.longitude)
+        expect(farmers_market[:attributes]).to have_key(:longitude)
+        expect(farmers_market[:attributes][:longitude]).to eq(@farmers_market.longitude)
 
-        expect(market[:attributes]).to have_key(:latitude)
-        expect(market[:attributes][:latitude]).to eq(@market.latitude)
+        expect(farmers_market[:attributes]).to have_key(:latitude)
+        expect(farmers_market[:attributes][:latitude]).to eq(@farmers_market.latitude)
       end
   end
 end

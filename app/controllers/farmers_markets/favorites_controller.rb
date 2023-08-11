@@ -1,5 +1,5 @@
 class FarmersMarkets::FavoritesController < ApplicationController
   def index
-    render json: MarketSerializer.new(Market.find(params[:market_ids]))
+    render json: FarmersMarketSerializer.new(FarmersMarket.find(params[:market_ids]))
   end
 end

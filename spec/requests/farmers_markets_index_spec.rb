@@ -1,34 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe 'Markets' do
-  before(:each) do
-    @market_1_id = create(:farmers_market).id
-    @market_2_id = create(:farmers_market).id
-    @market_3_id = create(:farmers_market).id
-    @market_4_id = create(:farmers_market).id
-    @market_5_id = create(:farmers_market).id
-  end
-
-  describe 'find favorites by id' do
-    it 'hits the endpoint' do 
-      query_params = {
-        market_ids: [@market_1_id, @market_2_id, @market_4_id ]
-      }
-
-      get api_v1_markets_favorites_path, params: query_params
-
+RSpec.describe 'Market Index' do
+  
+  describe 'endpoint' do
+    it 'returns all markets' do 
+      create_list(:farmers_market, 5)
+      get api_v1_markets_path
       expect(response).to be_successful
-    end
-
-    it 'returns the correct json objects' do 
-      query_params = {
-        market_ids: [@market_1_id, @market_2_id, @market_4_id ]
-      }
-
-      get api_v1_markets_favorites_path, params: query_params
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]
-      
+
+      expect(markets.count).to eq(5)
+
       markets.each do |farmers_market|
         expect(farmers_market[:attributes]).to have_key(:name)
         expect(farmers_market[:attributes][:name]).to be_a(String)
@@ -57,11 +40,6 @@ RSpec.describe 'Markets' do
         expect(farmers_market[:attributes]).to have_key(:latitude)
         expect(farmers_market[:attributes][:latitude]).to be_an(Float)
       end
-
-      market_ids = markets.map { |farmers_market| farmers_market[:attributes][:id] }
-
-      expect(markets.count == 3).to be true
-      expect(market_ids).to_not include(@market_3_id, @market_5_id)
     end
   end
 end

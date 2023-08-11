@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   get "auth/:provider/callback", to: "sessions#omniauth"
 
   #farmers market db controller routes
-  resources :farmers_markets, only: [:index, :show]
+  # resources :farmers_markets, only: [:index, :show]
+
   namespace :farmers_markets do 
     resources :favorites, only: [:index], as: 'db_favorites'
     resources :search, only: [:index], as: 'db_search'
