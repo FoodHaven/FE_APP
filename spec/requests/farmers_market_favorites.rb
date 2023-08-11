@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Markets' do
   before(:each) do
-    @market_1_id = create(:market).id
-    @market_2_id = create(:market).id
-    @market_3_id = create(:market).id
-    @market_4_id = create(:market).id
-    @market_5_id = create(:market).id
+    @market_1_id = create(:farmers_market).id
+    @market_2_id = create(:farmers_market).id
+    @market_3_id = create(:farmers_market).id
+    @market_4_id = create(:farmers_market).id
+    @market_5_id = create(:farmers_market).id
   end
 
   describe 'find favorites by id' do
@@ -29,36 +29,36 @@ RSpec.describe 'Markets' do
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]
       
-      markets.each do |market|
-        expect(market[:attributes]).to have_key(:name)
-        expect(market[:attributes][:name]).to be_a(String)
+      markets.each do |farmers_market|
+        expect(farmers_market[:attributes]).to have_key(:name)
+        expect(farmers_market[:attributes][:name]).to be_a(String)
         
-        expect(market[:attributes]).to have_key(:address)
-        expect(market[:attributes][:address]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:address)
+        expect(farmers_market[:attributes][:address]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:site)
-        expect(market[:attributes][:site]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:site)
+        expect(farmers_market[:attributes][:site]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:description)
-        expect(market[:attributes][:description]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:description)
+        expect(farmers_market[:attributes][:description]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:fnap)
-        expect(market[:attributes][:fnap]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:fnap)
+        expect(farmers_market[:attributes][:fnap]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:snap_option)
-        expect(market[:attributes][:snap_option]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:snap_option)
+        expect(farmers_market[:attributes][:snap_option]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:accepted_payment)
-        expect(market[:attributes][:accepted_payment]).to be_a(String)
+        expect(farmers_market[:attributes]).to have_key(:accepted_payment)
+        expect(farmers_market[:attributes][:accepted_payment]).to be_a(String)
 
-        expect(market[:attributes]).to have_key(:longitude)
-        expect(market[:attributes][:longitude]).to be_an(Float)
+        expect(farmers_market[:attributes]).to have_key(:longitude)
+        expect(farmers_market[:attributes][:longitude]).to be_an(Float)
 
-        expect(market[:attributes]).to have_key(:latitude)
-        expect(market[:attributes][:latitude]).to be_an(Float)
+        expect(farmers_market[:attributes]).to have_key(:latitude)
+        expect(farmers_market[:attributes][:latitude]).to be_an(Float)
       end
 
-      market_ids = markets.map { |market| market[:attributes][:id] }
+      market_ids = markets.map { |farmers_market| farmers_market[:attributes][:id] }
 
       expect(markets.count == 3).to be true
       expect(market_ids).to_not include(@market_3_id, @market_5_id)
