@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://foodhaven-farmers-markets-api.onrender.com/api/v1/markets/search?latitude=35.88&longitude=-106.0658&radius=20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 11 Aug 2023 20:03:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7f5315375af21f4d-DEN
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"f42cf8ef1c2875e1a6181e6f3eaafd7a"
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Render-Origin-Server:
+      - Render
+      X-Request-Id:
+      - fe1cef29-c68b-4e80-987f-11edac957e91
+      X-Runtime:
+      - '0.215646'
+      X-Xss-Protection:
+      - '0'
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"104","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"7073","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"14042","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"21011","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"27980","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"34949","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"41918","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}},{"id":"48887","type":"market","attributes":{"name":"Espanola
+        Farmers Market","address":"1105 N.Railroad  Avenue, Espanola, New Mexico 87532","site":null,"description":"permanent
+        site, open air market with community flower garden in front and community
+        vegetable gardens behind market vendors'' plaza","fnap":"WIC;Senior Farmers
+        Market Nutrition Program;SNAP;Accept EBT at a central location;;","snap_option":"Accept
+        EBT at a central location;","accepted_payment":"Debit card/Credit card;","longitude":-106.0658,"latitude":36.003598}}]}'
+  recorded_at: Fri, 11 Aug 2023 20:03:36 GMT
+recorded_with: VCR 6.2.0

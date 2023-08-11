@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://external.transitapp.com/v3/otp/plan?fromPlace=40.748594902847515,-73.98564294463469&toPlace=,
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - transit_api_key
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '261'
+      Connection:
+      - keep-alive
+      Ratelimit-Remaining:
+      - '4'
+      Ratelimit-Reset:
+      - '6'
+      X-Ratelimit-Limit-Minute:
+      - '5'
+      X-Ratelimit-Remaining-Minute:
+      - '4'
+      Ratelimit-Limit:
+      - '5'
+      X-Powered-By:
+      - Express
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"105-I/l4wxfEY3x/gjKS35HbpRcGShw"
+      Date:
+      - Fri, 11 Aug 2023 20:26:54 GMT
+      X-Kong-Upstream-Latency:
+      - '84'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Via:
+      - kong/3.0.2
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"plan\": {\n\t\t\"date\": 1691785645000,\n\t\t\"from\": {\n\t\t\t\"lat\":
+        40.74859110892718,\n\t\t\t\"lon\": -73.98563609526005,\n\t\t\t\"name\": \"\",\n\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t},\n\t\t\"itineraries\": [],\n\t\t\"to\": {\n\t\t\t\"lat\":
+        0,\n\t\t\t\"lon\": 0,\n\t\t\t\"name\": \"\",\n\t\t\t\"vertexType\": \"NORMAL\"\n\t\t}\n\t}\n}"
+  recorded_at: Fri, 11 Aug 2023 20:26:54 GMT
+recorded_with: VCR 6.2.0
