@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://foodhaven-be.onrender.com/api/v1/markets/2212/transit_routes?destination_lat=40.77709768562554&destination_lon=-73.87400881765025&original_lat=40.748594902847515&original_lon=-73.98564294463469
+    uri: https://foodhaven-farmers-markets-api.onrender.com/api/v1/markets/1
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 31 Jul 2023 21:20:22 GMT
+      - Fri, 11 Aug 2023 20:03:36 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,13 +27,13 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 7ef8e278fb3407f4-IAD
+      - 7f53153a6ed31f40-DEN
       Cf-Cache-Status:
       - DYNAMIC
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"9eb880d48d37609808c247287c917f07"
+      - W/"51e2bf90954a6e3c10a67dbba5ea7d86"
       Vary:
       - Accept-Encoding
       Referrer-Policy:
@@ -49,9 +49,9 @@ http_interactions:
       X-Render-Origin-Server:
       - Render
       X-Request-Id:
-      - e4a3fd11-c9d5-4244-bca3-56b62ad41ed2
+      - 877f68ed-6e7f-4497-b517-5ee44d5b26dd
       X-Runtime:
-      - '2.748076'
+      - '0.016284'
       X-Xss-Protection:
       - '0'
       Server:
@@ -60,9 +60,11 @@ http_interactions:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '[{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690838652000,"end_time":1690838958000},{"agency_name":"MTA
-        New York City Transit","route_short_name":"F","headsign":"Manhattan \u0026
-        Queens","start_time":1690838958000,"end_time":1690840278000},{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690840278000,"end_time":1690840441000},{"agency_name":"MTA
-        Bus Company","route_short_name":"Q70-SBS","headsign":"Terminals C / B","start_time":1690840924000,"end_time":1690841464000},{"agency_name":null,"route_short_name":null,"headsign":null,"start_time":1690841464000,"end_time":1690842269000}]'
-  recorded_at: Mon, 31 Jul 2023 21:20:22 GMT
+      string: '{"data":{"id":"1","type":"market","attributes":{"name":"Colorado Farm
+        and Art Market","address":"7350 Pine Creek Road, Colorado Springs, Colorado
+        80919","site":"Private business parking lot;","description":"Behind the patio
+        of the Margarita at Pine Creek, located off Woodmen road just West of I-25.","fnap":"SNAP;Accept
+        EBT at a central location;;","snap_option":"Accept EBT at a central location;","accepted_payment":"Debit
+        card/Credit card;","longitude":-104.81468,"latitude":38.937716}}}'
+  recorded_at: Fri, 11 Aug 2023 20:03:36 GMT
 recorded_with: VCR 6.2.0
