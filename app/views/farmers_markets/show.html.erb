@@ -1,0 +1,44 @@
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= button_to "Go back to markets near me", :back, method: :get, class: "btn btn-outline-primary me-2 btn-lg" %> <br>
+<% if @market.present? %>
+  <div class="col d-flex justify-content-center">
+    <div class="card" style="width:500pxpx">
+      <div style="background-color: rgba(239, 91, 91)">
+        <div class="card-header">
+          <div class="d-flex justify-content-center"><%= @market.name %></div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <p class="font-weight-bold">
+              Address: <%= @market.address %> <br>
+              Site: <%= @market.site %> <br>
+              Location Description: <%= @market.description %> <br>
+              FNAP: <%= @market.fnap %><br>
+              SNAP: <%= @market.snap_option %><br>
+              Accepted Payments: <%= @market.accepted_payment %> <br>
+              latitude: <%= @market.latitude %> <br>
+              longitude: <%= @market.longitude %>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-center">
+            <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.latitude, longitude: @market.longitude), method: :get, class: "btn btn-primary btn-lg w-100" %>
+            <% if user_signed_in? %>
+            <% if current_user.favorites.include?(@market.id) %>
+              <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true, class: "btn btn-primary btn-lg w-100" %>
+            <% else %>
+              <%= button_to "Add to Favorites", add_to_favorites_market_path(@market.id), method: :patch, remote: true, class: "btn btn-primary btn-lg w-100" %>
+            <% end %>
+          <% else %>
+            <%= button_to "Sign in to add to favorites", login_path, method: :get, class: "btn btn-primary btn-lg w-100" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <p>Market not found.</p>
+<% end %>
