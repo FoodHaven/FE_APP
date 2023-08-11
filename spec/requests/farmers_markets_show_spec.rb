@@ -3,18 +3,18 @@ require 'rails_helper'
 RSpec.describe 'Markets' do
   before(:each) do
     create_list(:farmers_market, 10)
-    @farmers_market = Market.last
+    @farmers_market = FarmersMarket.last
   end
 
   describe 'find a single farmers_market' do
     it 'hits the endpoint' do 
-      get api_v1_market_path(@farmers_market)
+      get farmers_market_path(@farmers_market)
       
       expect(response).to be_successful
     end
     
     it 'returns json object for the correct farmers_market' do 
-      get api_v1_market_path(@farmers_market)
+      get farmers_market_path(@farmers_market)
 
       farmers_market = JSON.parse(response.body, symbolize_names: true)[:data]
       

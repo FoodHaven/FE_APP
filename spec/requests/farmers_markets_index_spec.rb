@@ -5,7 +5,7 @@ RSpec.describe 'Market Index' do
   describe 'endpoint' do
     it 'returns all markets' do 
       create_list(:farmers_market, 5)
-      get api_v1_markets_path
+      get farmers_markets_path
       expect(response).to be_successful
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]

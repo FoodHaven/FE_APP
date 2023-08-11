@@ -14,7 +14,6 @@ RSpec.describe 'Markets' do
       query_params = {
         market_ids: [@market_1_id, @market_2_id, @market_4_id ]
       }
-
       get farmers_markets_db_favorites_path, params: query_params
 
       expect(response).to be_successful

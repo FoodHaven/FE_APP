@@ -15,7 +15,7 @@ RSpec.describe 'Markets' do
         radius: 50
       }
 
-      get farmers_market_db_search_path, params: query_params
+      get farmers_markets_search_path, params: query_params
 
       expect(response).to be_successful
     end
@@ -27,7 +27,7 @@ RSpec.describe 'Markets' do
         radius: 50
       }
 
-      get farmers_market_db_search_path, params: query_params
+      get farmers_markets_search_path(query_params) #, params: query_params
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]
       
