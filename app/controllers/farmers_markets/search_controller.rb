@@ -1,7 +1,6 @@
 class FarmersMarkets::SearchController < ApplicationController
   def index
-    markets = FarmersMarket.nearby_markets(coordinates, params[:radius])
-    render json: FarmersMarketSerializer.new(markets)
+    @markets = FarmersMarket.nearby_markets(coordinates, params[:radius])
   end
 
   private
