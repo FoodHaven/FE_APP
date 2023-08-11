@@ -1,0 +1,592 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://external.transitapp.com/v3/otp/plan?fromPlace=40.015,-105.2705&toPlace=39.8367,-105.0372
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Apikey:
+      - transit_api_key
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Ratelimit-Remaining:
+      - '4'
+      Ratelimit-Reset:
+      - '60'
+      X-Ratelimit-Limit-Minute:
+      - '5'
+      X-Ratelimit-Remaining-Minute:
+      - '4'
+      Ratelimit-Limit:
+      - '5'
+      X-Powered-By:
+      - Express
+      Vary:
+      - Origin, Accept-Encoding
+      Etag:
+      - W/"9bff-6SSJ/i5iQz+Ed5wjLKV5WYKLttc"
+      Date:
+      - Fri, 11 Aug 2023 19:45:00 GMT
+      X-Kong-Upstream-Latency:
+      - '410'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Via:
+      - kong/3.0.2
+    body:
+      encoding: ASCII-8BIT
+      string: "{\n\t\"plan\": {\n\t\t\"date\": 1691783131000,\n\t\t\"from\": {\n\t\t\t\"lat\":
+        40.01499752485892,\n\t\t\t\"lon\": -105.2704994497284,\n\t\t\t\"name\": \"\",\n\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t},\n\t\t\"itineraries\": [\n\t\t\t{\n\t\t\t\t\"accessiblity\":
+        \"WheelchairStrict\",\n\t\t\t\t\"duration\": 5418,\n\t\t\t\t\"endTime\": 1691789785000,\n\t\t\t\t\"legs\":
+        [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 777,\n\t\t\t\t\t\t\"duration\":
+        653,\n\t\t\t\t\t\t\"endTime\": 1691785020000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        40.01499752485892,\n\t\t\t\t\t\t\t\"lon\": -105.2704994497284,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 18,\n\t\t\t\t\t\t\t\"points\": \"ulfsFrsoaS?s@sA@?`D?vB?vD?|E@vFg@LmBf@QD_@Fm@PQDTlBL`A_@HkBf@\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691784367000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 40.01724582569765,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2765159027729,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 27900.63777893123,\n\t\t\t\t\t\t\"duration\":
+        2400,\n\t\t\t\t\t\t\"endTime\": 1691787420000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61385\",\n\t\t\t\t\t\t\t\"lat\": 40.0172368324943,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2765968416031,\n\t\t\t\t\t\t\t\"name\": \"Downtown Boulder Station Gate
+        1\",\n\t\t\t\t\t\t\t\"stopCode\": \"18977\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:18977\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        0,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:62467\",\n\t\t\t\t\t\t\"headsign\": \"Union Station All-Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61386\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00542875648927,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2716775593679,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Euclid Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12433\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12433\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        1,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61387\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00317146244719,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2672259237072,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / 20th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12434\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12434\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        2,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61388\",\n\t\t\t\t\t\t\t\t\"lat\": 39.99934035781799,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2632958938411,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Baseline Rd\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12478\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12478\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        3,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61389\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98901616036653,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.255588718566,\n\t\t\t\t\t\t\t\t\"name\": \"S Broadway / Dartmouth Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12509\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12509\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        4,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61390\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98574263434534,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2478995296975,\n\t\t\t\t\t\t\t\t\"name\": \"Table Mesa Dr / 39th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16680\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16680\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        5,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61391\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98577860715876,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2345356295121,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Table Mesa Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34195\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34195\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 6,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61392\",\n\t\t\t\t\t\t\t\t\"lat\": 39.95802558160545,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1680398839057,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / McCaslin Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"19775\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:19775\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 7,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61393\",\n\t\t\t\t\t\t\t\t\"lat\": 39.93279065299151,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1238203030095,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Flatiron Station
+        Gate D\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"25331\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:25331\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 8,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61394\",\n\t\t\t\t\t\t\t\t\"lat\": 39.9061168118408,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0851855013968,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Broomfield Station
+        Gate K\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"33535\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:33535\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 9,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61395\",\n\t\t\t\t\t\t\t\t\"lat\": 39.88799550708061,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0731436021045,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Church Ranch Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"26566\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:26566\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 10,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 191,\n\t\t\t\t\t\t\t\"points\": \"wzfsFhypaSlCm@C?B?xBzQjJaCnB_@PDlBe@rD}A~FoCZUbPkJ~@m@l@m@n@aAZm@~Qia@|AaErBeId@kA`@k@h@i@p@g@lNuIbImFjm@q_@|AgAj@c@bAkA~@oAx@uAZm@xGiQVo@t@yAx@iAbAgAzCiCc@gAQq@Cg@CcA?gq@FMD_GCqLAkAGgAYwBJw@?kKB_@b@wBt@qBhKcZpHiShDuJ~[o}@hIsUrA}D|CkKrM{d@tAsEt]}mApJi\\\\tHeXpAqE~Pom@tAkCj@u@nBwAfAcAR[F_@Ca@E_@a@kAEm@?y@Du@N{@Ry@Jy@~@eDpAaEvBoF`CaFfB_D|C}EpIyLvP}UnBwCbCyDhOiX|@yA|EuIxByC\\\\g@xSc_@jDuGpBoEnBiFjAaD~HkUt@uA|@yAp@}@nCcDl@aAf@cAHUXuAl@eFTyAhFqPbBsGdBqF|DmHrCgEfD_F`CwClQmV`EcGrC{EpAoCj@qA|CwHrDgKhGyPrKoZhAoDrEeMjAeC|AsDjAuBvFyIhFsFjBkBfB}AdFcDzDmC|CiBfCsAPC`DkB|EcCxGwElAgATYzWoPnDsBrEoCpQmIhH{DfJoFzQ}Lt@YfB{@bBq@rCu@tAYXITKZc@nAkBVWfBwB~CqCbAkAxNqJlx@oi@fF}C~Ay@vCkAhTuHtRaHdBo@h@ElEOfDQ|Bi@jA]l@Wj@]`CcBfA_AZKLE^UvCaC\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"FF1\",\n\t\t\t\t\t\t\"routeColor\":
+        \"1e4286\",\n\t\t\t\t\t\t\"routeId\": \"RTD:FF1\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Denver - Boulder Station\",\n\t\t\t\t\t\t\"routeShortName\": \"FF1\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691785020000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:61396\",\n\t\t\t\t\t\t\t\"lat\":
+        39.85742760887721,\n\t\t\t\t\t\t\t\"lon\": -105.0541229770088,\n\t\t\t\t\t\t\t\"name\":
+        \"US 36 / Sheridan Station Gate C\",\n\t\t\t\t\t\t\t\"stopCode\": \"34660\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34660\",\n\t\t\t\t\t\t\t\"stopIndex\": 11,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114461706\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 161,\n\t\t\t\t\t\t\"duration\":
+        130,\n\t\t\t\t\t\t\"endTime\": 1691787550000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.8574096224705,\n\t\t\t\t\t\t\t\"lon\": -105.0541499566189,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 9,\n\t\t\t\t\t\t\t\"points\": \"wsgrFlke`SxAy@@TRAC_@SJFZRKMkA\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691787420000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.85689700987927,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0535564051975,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 2701.842974232775,\n\t\t\t\t\t\t\"duration\":
+        420,\n\t\t\t\t\t\t\"endTime\": 1691788380000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67251\",\n\t\t\t\t\t\t\t\"lat\": 39.85696895550611,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0535833848076,\n\t\t\t\t\t\t\t\"name\": \"US 36 / Sheridan Station Gate
+        A\",\n\t\t\t\t\t\t\t\"stopCode\": \"18685\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:18685\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        0,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:10497\",\n\t\t\t\t\t\t\"headsign\": \"Englewood Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67252\",\n\t\t\t\t\t\t\t\t\"lat\": 39.85553004296932,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0542938478726,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 88th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16522\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16522\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        1,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67253\",\n\t\t\t\t\t\t\t\t\"lat\": 39.85427099449963,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0534484867572,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / Turnpike
+        Dr\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"16519\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:16519\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 2,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67254\",\n\t\t\t\t\t\t\t\t\"lat\": 39.84929775304435,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533135887069,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 84th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16517\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16517\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        3,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67255\",\n\t\t\t\t\t\t\t\t\"lat\": 39.8454576552118,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533315751136,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 82nd Pl\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16514\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16514\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        4,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67256\",\n\t\t\t\t\t\t\t\t\"lat\": 39.84066427782362,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533945275371,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 80th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16511\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16511\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        5,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67257\",\n\t\t\t\t\t\t\t\t\"lat\": 39.8375166566494,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0534035207404,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 78th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"23507\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:23507\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        6,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 26,\n\t\t\t\t\t\t\t\"points\": \"{pgrFrhe`SjAa@H?PJBHFf@CnBCfA|JmFtCcBr@Yh@Qt@Mn@C~@Bf@DbJnAxBL`B?RMpGB|BCra@HjS?NNtZ@\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"51\",\n\t\t\t\t\t\t\"routeColor\":
+        \"0076ce\",\n\t\t\t\t\t\t\"routeId\": \"RTD:51\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Sheridan Blvd\",\n\t\t\t\t\t\t\"routeShortName\": \"51\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691787960000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:67258\",\n\t\t\t\t\t\t\t\"lat\":
+        39.83395534812085,\n\t\t\t\t\t\t\t\"lon\": -105.0534215071472,\n\t\t\t\t\t\t\t\"name\":
+        \"Sheridan Blvd / W 76th Ave\",\n\t\t\t\t\t\t\t\"stopCode\": \"16504\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:16504\",\n\t\t\t\t\t\t\t\"stopIndex\": 7,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114457680\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 1657,\n\t\t\t\t\t\t\"duration\":
+        1405,\n\t\t\t\t\t\t\"endTime\": 1691789785000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.83394635491749,\n\t\t\t\t\t\t\t\"lon\": -105.0532956023002,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 31,\n\t\t\t\t\t\t\t\"points\": \"cacrFbfe`S_@AsAAAwC?gA?o@BaB?mEAkE@oEAiEAcD?kA?wA?{A?uA?y@?yC?kD?yC?mB?mA?i@?kA?aD?yC?uC?cDgJC_@Ce@?\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691788380000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.83668928194074,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0373866255653,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"startTime\":
+        1691784367000,\n\t\t\t\t\"transfers\": 1,\n\t\t\t\t\"transitTime\": 2820,\n\t\t\t\t\"walkTime\":
+        2188,\n\t\t\t\t\"wheelchairNeed\": \"None\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"accessiblity\":
+        \"WheelchairStrict\",\n\t\t\t\t\"duration\": 5869,\n\t\t\t\t\"endTime\": 1691789785000,\n\t\t\t\t\"legs\":
+        [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 881,\n\t\t\t\t\t\t\"duration\":
+        744,\n\t\t\t\t\t\t\"endTime\": 1691784660000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        40.01499752485892,\n\t\t\t\t\t\t\t\"lon\": -105.2704994497284,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 26,\n\t\t\t\t\t\t\t\"points\": \"ulfsFrsoaS?s@lA??hB@pD?nA?bB@lB?|@?n@?x@?jC@tB?P@lC?\\\\JpAf@zBFh@P~ADb@BTNx@F`@B\\\\bCq@\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691783916000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 40.0133247890349,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2785573599345,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 3422.636538221765,\n\t\t\t\t\t\t\"duration\":
+        540,\n\t\t\t\t\t\t\"endTime\": 1691785200000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64340\",\n\t\t\t\t\t\t\t\"lat\": 40.01334277544161,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2785034007143,\n\t\t\t\t\t\t\t\"name\": \"Broadway / Arapahoe Ave\",\n\t\t\t\t\t\t\t\"stopCode\":
+        \"17928\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:17928\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        23,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:10564\",\n\t\t\t\t\t\t\"headsign\": \"Fairview HS via Broadway\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64341\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00984441933655,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2765788551964,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / University Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12609\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12609\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        24,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64342\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00781195537833,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.27532879993,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / College Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12574\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12574\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        25,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64343\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00542875648927,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2716775593679,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Euclid Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12433\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12433\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        26,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64344\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00317146244719,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2672259237072,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / 20th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12434\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12434\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        27,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64345\",\n\t\t\t\t\t\t\t\t\"lat\": 39.99934035781799,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2632958938411,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Baseline Rd\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12478\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12478\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        28,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64346\",\n\t\t\t\t\t\t\t\t\"lat\": 39.99593193374647,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2609486677655,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / 27th Way\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12439\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12439\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        29,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:64347\",\n\t\t\t\t\t\t\t\t\"lat\": 39.99332390477354,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2590780814677,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Rayleigh Rd\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12473\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12473\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        30,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 29,\n\t\t\t\t\t\t\t\"points\": \"kbfsFreqaSvA]rD}A~FoCZUbPkJ~@m@l@m@n@aAZm@vE}JzDwIlBeE|AmD|AaErBeId@kA`@k@h@i@p@g@lNuIbImFrFkDve@eZr@c@tAgAbAkA~@oAPW\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"SKIP\",\n\t\t\t\t\t\t\"routeColor\":
+        \"0076ce\",\n\t\t\t\t\t\t\"routeId\": \"RTD:SKIP\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Broadway\",\n\t\t\t\t\t\t\"routeShortName\": \"SKIP\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691784660000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:64348\",\n\t\t\t\t\t\t\t\"lat\":
+        39.98901616036653,\n\t\t\t\t\t\t\t\"lon\": -105.255588718566,\n\t\t\t\t\t\t\t\"name\":
+        \"S Broadway / Dartmouth Ave\",\n\t\t\t\t\t\t\t\"stopCode\": \"12509\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:12509\",\n\t\t\t\t\t\t\t\"stopIndex\": 31,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114486168\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 0,\n\t\t\t\t\t\t\"duration\":
+        130,\n\t\t\t\t\t\t\"endTime\": 1691785330000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.98901616036653,\n\t\t\t\t\t\t\t\"lon\": -105.255588718566,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 0,\n\t\t\t\t\t\t\t\"points\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691785200000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.98901616036653,\n\t\t\t\t\t\t\t\"lon\":
+        -105.255588718566,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 23829.53140729892,\n\t\t\t\t\t\t\"duration\":
+        1800,\n\t\t\t\t\t\t\"endTime\": 1691787420000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61389\",\n\t\t\t\t\t\t\t\"lat\": 39.98901616036653,\n\t\t\t\t\t\t\t\"lon\":
+        -105.255588718566,\n\t\t\t\t\t\t\t\"name\": \"S Broadway / Dartmouth Ave\",\n\t\t\t\t\t\t\t\"stopCode\":
+        \"12509\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:12509\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        4,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:62467\",\n\t\t\t\t\t\t\"headsign\": \"Union Station All-Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61390\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98574263434534,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2478995296975,\n\t\t\t\t\t\t\t\t\"name\": \"Table Mesa Dr / 39th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16680\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16680\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        5,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61391\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98577860715876,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2345356295121,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Table Mesa Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34195\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34195\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 6,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61392\",\n\t\t\t\t\t\t\t\t\"lat\": 39.95802558160545,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1680398839057,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / McCaslin Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"19775\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:19775\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 7,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61393\",\n\t\t\t\t\t\t\t\t\"lat\": 39.93279065299151,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1238203030095,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Flatiron Station
+        Gate D\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"25331\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:25331\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 8,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61394\",\n\t\t\t\t\t\t\t\t\"lat\": 39.9061168118408,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0851855013968,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Broomfield Station
+        Gate K\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"33535\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:33535\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 9,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61395\",\n\t\t\t\t\t\t\t\t\"lat\": 39.88799550708061,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0731436021045,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Church Ranch Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"26566\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:26566\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 10,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 161,\n\t\t\t\t\t\t\t\"points\": \"qjasFfvlaSf@}@Zm@xGiQVo@t@yAx@iAbAgAzCiCc@gAQq@Cg@CcA?gq@FMD_GCqLAkAGgAYwBJw@?kKB_@b@wBt@qBhKcZpHiShDuJ~[o}@hIsUrA}D|CkKrM{d@tAsEt]}mApJi\\\\tHeXpAqE~Pom@tAkCj@u@nBwAfAcAR[F_@Ca@E_@a@kAEm@?y@Du@N{@Ry@Jy@~@eDpAaEvBoF`CaFfB_D|C}EpIyLvP}UnBwCbCyDhOiX|@yA|EuIxByC\\\\g@xSc_@jDuGpBoEnBiFjAaD~HkUt@uA|@yAp@}@nCcDl@aAf@cAHUXuAl@eFTyAhFqPbBsGdBqF|DmHrCgEfD_F`CwClQmV`EcGrC{EpAoCj@qA|CwHrDgKhGyPrKoZhAoDrEeMjAeC|AsDjAuBvFyIhFsFjBkBfB}AdFcDzDmC|CiBfCsAPC`DkB|EcCxGwElAgATYzWoPnDsBrEoCpQmIhH{DfJoFzQ}Lt@YfB{@bBq@rCu@tAYXITKZc@nAkBVWfBwB~CqCbAkAxNqJlx@oi@fF}C~Ay@vCkAhTuHtRaHdBo@h@ElEOfDQ|Bi@jA]l@Wj@]`CcBfA_AZKLE^UvCaC\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"FF1\",\n\t\t\t\t\t\t\"routeColor\":
+        \"1e4286\",\n\t\t\t\t\t\t\"routeId\": \"RTD:FF1\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Denver - Boulder Station\",\n\t\t\t\t\t\t\"routeShortName\": \"FF1\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691785620000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:61396\",\n\t\t\t\t\t\t\t\"lat\":
+        39.85742760887721,\n\t\t\t\t\t\t\t\"lon\": -105.0541229770088,\n\t\t\t\t\t\t\t\"name\":
+        \"US 36 / Sheridan Station Gate C\",\n\t\t\t\t\t\t\t\"stopCode\": \"34660\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34660\",\n\t\t\t\t\t\t\t\"stopIndex\": 11,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114461706\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 161,\n\t\t\t\t\t\t\"duration\":
+        130,\n\t\t\t\t\t\t\"endTime\": 1691787550000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.8574096224705,\n\t\t\t\t\t\t\t\"lon\": -105.0541499566189,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 9,\n\t\t\t\t\t\t\t\"points\": \"wsgrFlke`SxAy@@TRAC_@SJFZRKMkA\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691787420000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.85689700987927,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0535564051975,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 2701.842974232775,\n\t\t\t\t\t\t\"duration\":
+        420,\n\t\t\t\t\t\t\"endTime\": 1691788380000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67251\",\n\t\t\t\t\t\t\t\"lat\": 39.85696895550611,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0535833848076,\n\t\t\t\t\t\t\t\"name\": \"US 36 / Sheridan Station Gate
+        A\",\n\t\t\t\t\t\t\t\"stopCode\": \"18685\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:18685\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        0,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:10497\",\n\t\t\t\t\t\t\"headsign\": \"Englewood Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67252\",\n\t\t\t\t\t\t\t\t\"lat\": 39.85553004296932,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0542938478726,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 88th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16522\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16522\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        1,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67253\",\n\t\t\t\t\t\t\t\t\"lat\": 39.85427099449963,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0534484867572,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / Turnpike
+        Dr\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"16519\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:16519\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 2,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67254\",\n\t\t\t\t\t\t\t\t\"lat\": 39.84929775304435,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533135887069,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 84th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16517\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16517\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        3,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67255\",\n\t\t\t\t\t\t\t\t\"lat\": 39.8454576552118,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533315751136,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 82nd Pl\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16514\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16514\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        4,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67256\",\n\t\t\t\t\t\t\t\t\"lat\": 39.84066427782362,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0533945275371,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 80th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16511\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16511\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        5,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:67257\",\n\t\t\t\t\t\t\t\t\"lat\": 39.8375166566494,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0534035207404,\n\t\t\t\t\t\t\t\t\"name\": \"Sheridan Blvd / W 78th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"23507\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:23507\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        6,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 26,\n\t\t\t\t\t\t\t\"points\": \"{pgrFrhe`SjAa@H?PJBHFf@CnBCfA|JmFtCcBr@Yh@Qt@Mn@C~@Bf@DbJnAxBL`B?RMpGB|BCra@HjS?NNtZ@\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"51\",\n\t\t\t\t\t\t\"routeColor\":
+        \"0076ce\",\n\t\t\t\t\t\t\"routeId\": \"RTD:51\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Sheridan Blvd\",\n\t\t\t\t\t\t\"routeShortName\": \"51\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691787960000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:67258\",\n\t\t\t\t\t\t\t\"lat\":
+        39.83395534812085,\n\t\t\t\t\t\t\t\"lon\": -105.0534215071472,\n\t\t\t\t\t\t\t\"name\":
+        \"Sheridan Blvd / W 76th Ave\",\n\t\t\t\t\t\t\t\"stopCode\": \"16504\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:16504\",\n\t\t\t\t\t\t\t\"stopIndex\": 7,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114457680\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 1657,\n\t\t\t\t\t\t\"duration\":
+        1405,\n\t\t\t\t\t\t\"endTime\": 1691789785000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.83394635491749,\n\t\t\t\t\t\t\t\"lon\": -105.0532956023002,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 31,\n\t\t\t\t\t\t\t\"points\": \"cacrFbfe`S_@AsAAAwC?gA?o@BaB?mEAkE@oEAiEAcD?kA?wA?{A?uA?y@?yC?kD?yC?mB?mA?i@?kA?aD?yC?uC?cDgJC_@Ce@?\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691788380000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.83668928194074,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0373866255653,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"startTime\":
+        1691783916000,\n\t\t\t\t\"transfers\": 2,\n\t\t\t\t\"transitTime\": 2760,\n\t\t\t\t\"walkTime\":
+        2409,\n\t\t\t\t\"wheelchairNeed\": \"None\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"accessiblity\":
+        \"WheelchairStrict\",\n\t\t\t\t\"duration\": 8223,\n\t\t\t\t\"endTime\": 1691796202000,\n\t\t\t\t\"legs\":
+        [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 762,\n\t\t\t\t\t\t\"duration\":
+        641,\n\t\t\t\t\t\t\"endTime\": 1691788620000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        40.01499752485892,\n\t\t\t\t\t\t\t\"lon\": -105.2704994497284,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 18,\n\t\t\t\t\t\t\t\"points\": \"ulfsFrsoaS?s@sA@?`D?vB?vD?|E@vFg@LmBf@QD_@Fm@PQDTlBL`A_@HqA^\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691787979000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 40.01711992085068,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2764709367561,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 43985.01418023783,\n\t\t\t\t\t\t\"duration\":
+        3360,\n\t\t\t\t\t\t\"endTime\": 1691791980000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61385\",\n\t\t\t\t\t\t\t\"lat\": 40.0172368324943,\n\t\t\t\t\t\t\t\"lon\":
+        -105.2765968416031,\n\t\t\t\t\t\t\t\"name\": \"Downtown Boulder Station Gate
+        1\",\n\t\t\t\t\t\t\t\"stopCode\": \"18977\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:18977\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        0,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:62467\",\n\t\t\t\t\t\t\"headsign\": \"Union Station All-Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61386\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00542875648927,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2716775593679,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Euclid Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12433\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12433\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        1,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61387\",\n\t\t\t\t\t\t\t\t\"lat\": 40.00317146244719,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2672259237072,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / 20th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12434\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12434\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        2,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61388\",\n\t\t\t\t\t\t\t\t\"lat\": 39.99934035781799,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2632958938411,\n\t\t\t\t\t\t\t\t\"name\": \"Broadway / Baseline Rd\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12478\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12478\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        3,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61389\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98901616036653,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.255588718566,\n\t\t\t\t\t\t\t\t\"name\": \"S Broadway / Dartmouth Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"12509\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:12509\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        4,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61390\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98574263434534,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2478995296975,\n\t\t\t\t\t\t\t\t\"name\": \"Table Mesa Dr / 39th St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"16680\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:16680\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        5,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61391\",\n\t\t\t\t\t\t\t\t\"lat\": 39.98577860715876,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.2345356295121,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Table Mesa Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34195\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34195\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 6,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61392\",\n\t\t\t\t\t\t\t\t\"lat\": 39.95802558160545,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1680398839057,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / McCaslin Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"19775\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:19775\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 7,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61393\",\n\t\t\t\t\t\t\t\t\"lat\": 39.93279065299151,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.1238203030095,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Flatiron Station
+        Gate D\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"25331\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:25331\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 8,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61394\",\n\t\t\t\t\t\t\t\t\"lat\": 39.9061168118408,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0851855013968,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Broomfield Station
+        Gate K\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"33535\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:33535\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 9,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61395\",\n\t\t\t\t\t\t\t\t\"lat\": 39.88799550708061,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0731436021045,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Church Ranch Station
+        Gate A\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"26566\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:26566\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 10,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61396\",\n\t\t\t\t\t\t\t\t\"lat\": 39.85742760887721,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0541229770088,\n\t\t\t\t\t\t\t\t\"name\": \"US 36 / Sheridan Station
+        Gate C\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34660\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34660\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 11,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:61397\",\n\t\t\t\t\t\t\t\t\"lat\": 39.75950961074874,\n\t\t\t\t\t\t\t\t\"lon\":
+        -104.9942372358684,\n\t\t\t\t\t\t\t\t\"name\": \"Park Ave West / Wewatta St\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"23955\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:23955\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        12,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 340,\n\t\t\t\t\t\t\t\"points\": \"wzfsFhypaSlCm@C?B?xBzQjJaCnB_@PDlBe@rD}A~FoCZUbPkJ~@m@l@m@n@aAZm@~Qia@|AaErBeId@kA`@k@h@i@p@g@lNuIbImFjm@q_@|AgAj@c@bAkA~@oAx@uAZm@xGiQVo@t@yAx@iAbAgAzCiCc@gAQq@Cg@CcA?gq@FMD_GCqLAkAGgAYwBJw@?kKB_@b@wBt@qBhKcZpHiShDuJ~[o}@hIsUrA}D|CkKrM{d@tAsEt]}mApJi\\\\tHeXpAqE~Pom@tAkCj@u@nBwAfAcAR[F_@Ca@E_@a@kAEm@?y@Du@N{@Ry@Jy@~@eDpAaEvBoF`CaFfB_D|C}EpIyLvP}UnBwCbCyDhOiX|@yA|EuIxByC\\\\g@xSc_@jDuGpBoEnBiFjAaD~HkUt@uA|@yAp@}@nCcDl@aAf@cAHUXuAl@eFTyAhFqPbBsGdBqF|DmHrCgEfD_F`CwClQmV`EcGrC{EpAoCj@qA|CwHrDgKhGyPrKoZhAoDrEeMjAeC|AsDjAuBvFyIhFsFjBkBfB}AdFcDzDmC|CiBfCsAPC`DkB|EcCxGwElAgATYzWoPnDsBrEoCpQmIhH{DfJoFzQ}Lt@YfB{@bBq@rCu@tAYXITKZc@nAkBVWfBwB~CqCbAkAxNqJlx@oi@fF}C~Ay@vCkAhTuHtRaHdBo@h@ElEOfDQ|Bi@jA]l@Wj@]`CcBfA_AZKLE^UlFiEjBuALGPQvBgAhIgFlHcGvBcBdG{F~A}AzUsVxOiPfIuIjAuAxAuBdFqIxAsCfBkEtAuE|AwFZqAbAwEfI{b@j@aDfCyMlGq]xBoLzGo]|Ime@tAeHvEgVfCsNf@_DVgCNoBLgDLeL?}FCwTf@{ILgAT}@Z{@T]j@q@t@i@ZQ\\\\Mv@UnAMrGQt@@jAPzCt@|Ct@d@JjAHf@?fACjAMp@Q|C{@pAUlC]jBMfBU~q@NtH@hFFt@F~ARbHnA`DlAlGhCnBt@`QhH`DjArAb@tElAdEt@`U`DxCb@vCXdEl@fCXvEPhe@HbSBhECnCBjBTfBLxAT|@Lp@TjBt@^TjCfArCh@bBn@dBpAtAlAt@`A~AtBn@p@l@f@nMzHl@Xj@TfATfAHbA?`AGrEe@pAK|BExAOvFM|AIjAUl@Ul@[fAy@nAkAUTTUdDpEtBtBPXdC`Dt@lAL\\\\lAfELX`BfCfAtA^t@Jt@Dj@T~@aC|CgBlCGd@FP^`@PLtAb@j@HPFHM\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"FF1\",\n\t\t\t\t\t\t\"routeColor\":
+        \"1e4286\",\n\t\t\t\t\t\t\"routeId\": \"RTD:FF1\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Denver - Boulder Station\",\n\t\t\t\t\t\t\"routeShortName\": \"FF1\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691788620000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:61398\",\n\t\t\t\t\t\t\t\"lat\":
+        39.75520186634174,\n\t\t\t\t\t\t\t\"lon\": -105.0025469557683,\n\t\t\t\t\t\t\t\"name\":
+        \"Union Station\",\n\t\t\t\t\t\t\t\"stopCode\": \"34344\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34344\",\n\t\t\t\t\t\t\t\"stopIndex\": 13,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114461703\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 374,\n\t\t\t\t\t\t\"duration\":
+        130,\n\t\t\t\t\t\t\"endTime\": 1691792110000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.75521085954509,\n\t\t\t\t\t\t\t\"lon\": -105.0025289693616,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 11,\n\t\t\t\t\t\t\t\"points\": \"ausqFxh{_Sj@u@\\\\DPVT@pBqCXa@t@cA`ArAPWgBcC\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691791980000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.7537719470083,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0008112675208,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 8059.560636187379,\n\t\t\t\t\t\t\"duration\":
+        660,\n\t\t\t\t\t\t\"endTime\": 1691793720000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:59055\",\n\t\t\t\t\t\t\t\"lat\": 39.7537719470083,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0008112675208,\n\t\t\t\t\t\t\t\"name\": \"Union Station (Track 7)\",\n\t\t\t\t\t\t\t\"stopCode\":
+        \"34781\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:34781\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        0,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\":
+        \"RTD:132915\",\n\t\t\t\t\t\t\"headsign\": \"Wheat Ridge Ward Station\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:59056\",\n\t\t\t\t\t\t\t\t\"lat\": 39.77367390603276,\n\t\t\t\t\t\t\t\t\"lon\":
+        -104.9968812376547,\n\t\t\t\t\t\t\t\t\"name\": \"41st / Fox Station (Track
+        1)\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34558\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34558\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 1,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:59057\",\n\t\t\t\t\t\t\t\t\"lat\": 39.80534796824882,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0053888080285,\n\t\t\t\t\t\t\t\t\"name\": \"Pecos Junction Station (Track
+        1)\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"34544\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34544\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 2,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 47,\n\t\t\t\t\t\t\t\"points\": \"oksqFp}z_SmKeOoBqE_@m@eBeCmAyA}BuC}@g@oCg@cA?oEjAyBp@_HnC{C`AkBd@iQnBePFaMg@ccAZ}C_@qA[{DuAyA]mA?iFLoNBgJp@cI?_HToUJaCVgDfAyBtAyBvBqQpUeF`K_Oj`@WtBB`BRzAnI`V~@|BhFfI^bATtADjBsA|c@\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"RAIL\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"G\",\n\t\t\t\t\t\t\"routeColor\":
+        \"f6b221\",\n\t\t\t\t\t\t\"routeId\": \"RTD:113G\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Union Station - Wheat Ridge  /  Ward\",\n\t\t\t\t\t\t\"routeShortName\":
+        \"G\",\n\t\t\t\t\t\t\"routeTextColor\": \"ffffff\",\n\t\t\t\t\t\t\"routeType\":
+        2,\n\t\t\t\t\t\t\"startTime\": 1691793060000,\n\t\t\t\t\t\t\"steps\": [],\n\t\t\t\t\t\t\"to\":
+        {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:59058\",\n\t\t\t\t\t\t\t\"lat\":
+        39.80401697415229,\n\t\t\t\t\t\t\t\"lon\": -105.0237349428725,\n\t\t\t\t\t\t\t\"name\":
+        \"Clear Creek / Federal Station (Track 1)\",\n\t\t\t\t\t\t\t\"stopCode\":
+        \"34530\",\n\t\t\t\t\t\t\t\"stopId\": \"RTD:34530\",\n\t\t\t\t\t\t\t\"stopIndex\":
+        3,\n\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\":
+        true,\n\t\t\t\t\t\t\"tripBlockId\": \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114448225\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 91,\n\t\t\t\t\t\t\"duration\":
+        130,\n\t\t\t\t\t\t\"endTime\": 1691793850000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.80399898774558,\n\t\t\t\t\t\t\t\"lon\": -105.0237349428725,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 6,\n\t\t\t\t\t\t\t\"points\": \"}e}qFjm_`SOPBo@EQ]KDmA\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691793720000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.80420583142274,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0230424662142,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"agencyId\":
+        \"RTD:RTD\",\n\t\t\t\t\t\t\"agencyName\": \"Regional Transportation District\",\n\t\t\t\t\t\t\"agencyTimeZoneOffset\":
+        -21600000,\n\t\t\t\t\t\t\"agencyUrl\": \"http://transitapp.com\",\n\t\t\t\t\t\t\"arrivalDelay\":
+        0,\n\t\t\t\t\t\t\"departureDelay\": 0,\n\t\t\t\t\t\t\"distance\": 4615.59757642372,\n\t\t\t\t\t\t\"duration\":
+        600,\n\t\t\t\t\t\t\"endTime\": 1691794860000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62916\",\n\t\t\t\t\t\t\t\"lat\": 39.80415187220261,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0230514594176,\n\t\t\t\t\t\t\t\"name\": \"Clear Creek-Federal Station
+        Gate B\",\n\t\t\t\t\t\t\t\"stopCode\": \"34532\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:34532\",\n\t\t\t\t\t\t\t\"stopIndex\": 39,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"globalRouteId\": \"RTD:10472\",\n\t\t\t\t\t\t\"headsign\":
+        \"Front Range Community College\",\n\t\t\t\t\t\t\"interlineWithPreviousLeg\":
+        false,\n\t\t\t\t\t\t\"intermediateStops\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62917\",\n\t\t\t\t\t\t\t\t\"lat\": 39.80562675755282,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0251468757993,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 60th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13742\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13742\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        40,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62918\",\n\t\t\t\t\t\t\t\t\"lat\": 39.80961074663905,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0251558690026,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 62nd Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13743\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13743\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        41,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62919\",\n\t\t\t\t\t\t\t\t\"lat\": 39.81315406876089,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0251468757993,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 64th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13745\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13745\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        42,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62920\",\n\t\t\t\t\t\t\t\t\"lat\": 39.81540236959962,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0250929165791,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 65th Pl\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13747\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13747\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        43,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62921\",\n\t\t\t\t\t\t\t\t\"lat\": 39.81801939177591,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0250299641556,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 67th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13749\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13749\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        44,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62922\",\n\t\t\t\t\t\t\t\t\"lat\": 39.82260592548693,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0248950661053,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 70th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13751\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13751\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        45,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62923\",\n\t\t\t\t\t\t\t\t\"lat\": 39.82765111256904,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0247511748516,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 72nd Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13753\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13753\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        46,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62924\",\n\t\t\t\t\t\t\t\t\"lat\": 39.82941378042661,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0247961408684,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / W 74th Ave\",\n\t\t\t\t\t\t\t\t\"stopCode\":
+        \"13757\",\n\t\t\t\t\t\t\t\t\"stopId\": \"RTD:13757\",\n\t\t\t\t\t\t\t\t\"stopIndex\":
+        47,\n\t\t\t\t\t\t\t\t\"vertexType\": \"TRANSIT\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"globalStopId\":
+        \"RTD:62925\",\n\t\t\t\t\t\t\t\t\"lat\": 39.83886563715264,\n\t\t\t\t\t\t\t\t\"lon\":
+        -105.0247152020382,\n\t\t\t\t\t\t\t\t\"name\": \"Federal Blvd / Cottonwood
+        Dr\",\n\t\t\t\t\t\t\t\t\"stopCode\": \"13803\",\n\t\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:13803\",\n\t\t\t\t\t\t\t\t\"stopIndex\": 48,\n\t\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 32,\n\t\t\t\t\t\t\t\"points\": \"uf}qFbi_`SBwAC]GIIK}CBy@FcAx@Vv@n@|AHXJh@z@zFBp@wj@?aOE[Q_GGyB?kCCmNIiF?oNUwGE_IQ{ECwGDgL?aMI{PBgUG{N?\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"BUS\",\n\t\t\t\t\t\t\"realTime\": false,\n\t\t\t\t\t\t\"route\": \"31\",\n\t\t\t\t\t\t\"routeColor\":
+        \"0076ce\",\n\t\t\t\t\t\t\"routeId\": \"RTD:31\",\n\t\t\t\t\t\t\"routeLongName\":
+        \"Federal Blvd\",\n\t\t\t\t\t\t\"routeShortName\": \"31\",\n\t\t\t\t\t\t\"routeTextColor\":
+        \"ffffff\",\n\t\t\t\t\t\t\"routeType\": 3,\n\t\t\t\t\t\t\"startTime\": 1691794260000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"globalStopId\": \"RTD:62926\",\n\t\t\t\t\t\t\t\"lat\":
+        39.84210319036041,\n\t\t\t\t\t\t\t\"lon\": -105.0247331884449,\n\t\t\t\t\t\t\t\"name\":
+        \"Federal Blvd / W 80th Ave\",\n\t\t\t\t\t\t\t\"stopCode\": \"13759\",\n\t\t\t\t\t\t\t\"stopId\":
+        \"RTD:13759\",\n\t\t\t\t\t\t\t\"stopIndex\": 49,\n\t\t\t\t\t\t\t\"vertexType\":
+        \"TRANSIT\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": true,\n\t\t\t\t\t\t\"tripBlockId\":
+        \"\",\n\t\t\t\t\t\t\"tripId\": \"RTD:114454393\",\n\t\t\t\t\t\t\"tripShortName\":
+        \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"distance\": 1590,\n\t\t\t\t\t\t\"duration\":
+        1342,\n\t\t\t\t\t\t\"endTime\": 1691796202000,\n\t\t\t\t\t\t\"from\": {\n\t\t\t\t\t\t\t\"lat\":
+        39.84213016997047,\n\t\t\t\t\t\t\t\"lon\": -105.0247241952416,\n\t\t\t\t\t\t\t\"name\":
+        \"\",\n\t\t\t\t\t\t\t\"vertexType\": \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legGeometry\":
+        {\n\t\t\t\t\t\t\t\"length\": 34,\n\t\t\t\t\t\t\t\"points\": \"itdrFps_`S?HdA??^@lB?^?`E?`CA~@?bEvC?AxD@xAPnBZ`EPt@nAfD`@zAHfA?tDzA?n@?j@?tA@j@?P??XEp@f@ZN^DjDApE?`BdHC\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"mode\":
+        \"WALK\",\n\t\t\t\t\t\t\"startTime\": 1691794860000,\n\t\t\t\t\t\t\"steps\":
+        [],\n\t\t\t\t\t\t\"to\": {\n\t\t\t\t\t\t\t\"lat\": 39.83668928194074,\n\t\t\t\t\t\t\t\"lon\":
+        -105.0373866255653,\n\t\t\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\t\t\"vertexType\":
+        \"NORMAL\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"transitLeg\": false\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"startTime\":
+        1691787979000,\n\t\t\t\t\"transfers\": 2,\n\t\t\t\t\"transitTime\": 4620,\n\t\t\t\t\"walkTime\":
+        2243,\n\t\t\t\t\"wheelchairNeed\": \"None\"\n\t\t\t}\n\t\t],\n\t\t\"to\":
+        {\n\t\t\t\"lat\": 39.8366982751441,\n\t\t\t\"lon\": -105.0371977682949,\n\t\t\t\"name\":
+        \"\",\n\t\t\t\"vertexType\": \"NORMAL\"\n\t\t}\n\t}\n}"
+  recorded_at: Fri, 11 Aug 2023 19:45:00 GMT
+recorded_with: VCR 6.2.0
