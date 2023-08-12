@@ -89,3 +89,4 @@ group :development do
 end
 
 gem "geocoder"
+gem "importmap-rails"

@@ -4,7 +4,7 @@
     <title>Commutes and Destinations Map</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="commutes.css" rel="stylesheet">
+    <%= stylesheet_link_tag "commutes", "data-turbo-track": "reload" %>
   </head>
   <body>
     <!-- Defined commutes SVGs -->
@@ -211,7 +211,6 @@
         </div>
       </div>
     </div>
-    <script src="commutes.js"></script>
     <script>
       const CONFIGURATION = {
         "defaultTravelMode": "PUBLIC_TRANSIT",
