@@ -24,7 +24,7 @@
         </div>
         <div class="card-footer">
           <div class="d-flex justify-content-center">
-            <%= link_to "Find Routes", market_routes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], latitude: @market.latitude, longitude: @market.longitude), method: :get, class: "btn btn-primary btn-lg w-100" %>
+            <%= link_to "Find Routes", market_commutes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], address: @market.address), method: :get, class: "btn btn-primary btn-lg w-100" %>
             <% if user_signed_in? %>
             <% if current_user.favorites.include?(@market.id) %>
               <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true, class: "btn btn-primary btn-lg w-100" %>
