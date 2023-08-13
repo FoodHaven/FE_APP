@@ -21,8 +21,11 @@ body {
 
 .commutes-info {
   flex: 0 0 110px;
-  max-width: 100%;
   overflow: hidden;
+  bottom: 50px;
+  width: 70%;
+  position: relative;
+  align-self: center;
 }
 
 .commutes-initial-state {
@@ -351,11 +354,12 @@ body {
 
 .commutes-map .map-view {
   background-color: rgb(229, 227, 223);
-  height: 100%;
-  left: 0;
+  left: 50%;
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 80%;
+  width: 70%;
 }
 
 .commutes-modal-container {
