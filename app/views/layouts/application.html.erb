@@ -28,6 +28,15 @@
               <%= button_to "Login with Google", '/auth/google_oauth2', class: "btn btn-outline-primary me-2" %>
             </div>
           <% end %>
+          <div class="dropdown">
+            <div class="btn-group">
+              <!-- Dark mode toggle button -->
+              <button id="darkModeToggle" class="btn btn-outline-primary me-2">Toggle Dark Mode</button>
+              <!-- Colorblind palette toggle buttons -->
+              <button id="protanopiaToggle" class="btn btn-outline-primary me-2" data-palette="protanopia">Protanopia</button>
+              <button id="deuteranopiaToggle" class="btn btn-outline-primary me-2" data-palette="deuteranopia">Deuteranopia</button>
+            </div>
+          </div>
         </div>
     </div>
   </div>

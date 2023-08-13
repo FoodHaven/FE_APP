@@ -9,7 +9,7 @@ RSpec.describe MarketService do
       latitude = 40.7128
       longitude = -74.0060
       radius = 10
-
+      # json_response = File.read('spec/fixtures/markets.json')
       stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
         .to_return(status: 200, body: '[{"name": "Market 1"}, {"name": "Market 2"}]', headers: { 'Content-Type' => 'application/json' })
       response = market_service.all_markets(latitude, longitude, radius)

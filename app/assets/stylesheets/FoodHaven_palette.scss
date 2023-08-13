@@ -45,3 +45,18 @@ $gradient-bottom-right: linear-gradient(135deg, #009fb7ff, #4c2c69ff, #f5e663ff,
 $gradient-top-left: linear-gradient(225deg, #009fb7ff, #4c2c69ff, #f5e663ff, #ef5b5bff, #2bc875ff);
 $gradient-bottom-left: linear-gradient(315deg, #009fb7ff, #4c2c69ff, #f5e663ff, #ef5b5bff, #2bc875ff);
 $gradient-radial: radial-gradient(#009fb7ff, #4c2c69ff, #f5e663ff, #ef5b5bff, #2bc875ff);
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Colorblind palette styles */
+body.protanopia {
+  /* Adjust colors for protanopia colorblindness */
+}
+
+body.deuteranopia {
+  /* Adjust colors for deuteranopia colorblindness */
+}
