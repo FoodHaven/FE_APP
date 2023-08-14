@@ -352,18 +352,16 @@ body {
 .commutes-map {
   flex: 1;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  display: flex;
 }
 
-.commutes-map .map-view {
-  background-color: rgb(229, 227, 223);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  height: 80%;
-  width: 70%;
+.map-view {
+  
+  flex-basis: 0;
+  flex-grow: 4;
+  height: 100%;
+  flex: auto;
 }
 
 .commutes-modal-container {
@@ -507,6 +505,22 @@ body {
   color: #1a73e8;
 }
 
+#directions-panel {
+  flex: 0 1 auto;
+  padding: 0;
+}
+#directions-panel > div {
+  padding: 0.5rem;
+}
+#directions-panel {
+  flex-basis: 15rem;
+  flex-grow: 1;
+  padding: 1rem;
+  max-width: 30rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
 .hide {
   display: none;
 }

@@ -650,6 +650,21 @@ function getCommutesInfo(directionResponse, destination) {
   destination.marker = marker;
   destination.polylines = {innerStroke, outerStroke};
   destination.bounds = bounds;
+
+  const directionsService = new google.maps.DirectionsService();
+  const request = {
+    origin: origin,
+    destination: destinationLocation,
+    travelMode: destination.travelModeEnum,
+  };
+  directionsService.route(request, (response, status) => {
+    if (status === "OK") {
+      directionsRenderer.setDirections(response);
+      directionsRenderer.setPanel(document.getElementById("directions-panel"));
+    } else {
+      console.error("Directions request failed due to " + status);
+    }
+  });
 }
 
 /**
@@ -716,6 +731,10 @@ function changeMapObjectStrokeWeight(destination, mouseOver) {
   }
 }
 
+const directionsRenderer = new google.maps.DirectionsRenderer({
+  map: commutesMap,
+  panel: document.getElementById("directions-panel"), 
+});
 /**
   * Handles route clicks. Originally active routes are set to inactive
   * states. Newly selected route's map polyline/marker objects and destination
