@@ -8,7 +8,6 @@ map: document.querySelector('.map-view'),
 initialStatePanel: document.querySelector('.commutes-initial-state'),
 destinationPanel: document.querySelector('.commutes-destinations'),
 modal: document.querySelector('.commutes-modal-container'),
-directions: document.querySelector(".panel"),
 };
 
 /**
@@ -777,8 +776,8 @@ function handleRouteClick(destination, destinationIdx) {
   destination.polylines.outerStroke.setOptions(
       {strokeColor: STROKE_COLORS.active.outerStroke, zIndex: 99});
 
-  destination.marker.setIcon(originMarkerIcon);
-  destination.marker.label.color = '#ffffff';
+
+  destination.marker.icon = '';
 
   commutesMap.fitBounds(destination.bounds);
 }
@@ -808,6 +807,10 @@ function createMarker(location, label) {
   if (isOrigin) {
     mapOptions.label.className += ' origin-pin-label';
     mapOptions.label.fontSize = '20px';
+  }
+  if (!isOrigin) {
+    mapOptions.label.fontSize = "0px";
+    mapOptions.label.color == null;
   }
   const marker = new google.maps.Marker(mapOptions);
 
