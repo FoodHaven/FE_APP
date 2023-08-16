@@ -1,6 +1,6 @@
 @import 'application.bootstrap';
 @import 'FoodHaven_palette';
-
+@import "commutes";
 .btn-primary {
   color: white;
   background-color: #009FB7;
