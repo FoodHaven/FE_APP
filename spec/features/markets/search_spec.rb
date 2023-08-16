@@ -35,9 +35,12 @@ RSpec.describe "Search for markets" do
       expect(markets.first[:attributes][:name]).to eq("Market in The Park")
       expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
     end
-    it "can search for markets by zip" do
+    it "can search for markets by address" do
       visit markets_search_path
-      fill_in :zip, with: 80041
+      fill_in :Street, with:  "6715 W Colfax Ave"
+      fill_in :City, with: "Lakewood"
+      fill_in :State, with: "CO"
+      fill_in :Zip, with: 80041
       select "10", from: "radius"
       click_on "Find Markets"
     end
@@ -58,14 +61,20 @@ RSpec.describe "Search for markets" do
         expect(page).to have_content("Keep Search Within (miles):")
         expect(page).to have_field(:radius)
         expect(page).to have_button("Find Markets")
-        expect(page).to have_field(:zip)
+        expect(page).to have_field(:Street)
+        expect(page).to have_field(:City)
+        expect(page).to have_field(:State)
+        expect(page).to have_field(:Zip)
+        expect(page).to have_content("Street")
+        expect(page).to have_content("City")
+        expect(page).to have_content("State")
         expect(page).to have_content("Zipcode")
       end
     end
     
     describe 'usability' do
-      it 'geolocates based on zipcode' do 
-        visit "/markets?zip=80111&radius=50"
+      it 'geolocates based on address' do 
+        visit "/markets?address=6715 W Colfax Ave, Lakewood, CO 80214&radius=50"
 
         expect(current_path).to eq(markets_path)
       end

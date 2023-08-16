@@ -62,9 +62,27 @@ function getLocation() {
   <%= f.hidden_field :longitude, id: "longitude-field" %>
 
 <div class="container">
-  <h6 class="text-center"><%= f.label :zip, "Zipcode:" %></h6>
+
   <div class="d-grid justify-content-center">
-    <%= f.text_field :zip %>
+    <h6 class="text-inline">
+      <%= f.label :Street, "Street:" %> <br> 
+    </h6>
+    <%= f.text_field :Street  %> <br>
+
+    <h6 class="text-inline">
+      <%= f.label :City, "City:" %> <br> 
+    </h6>
+    <%= f.text_field :City %> <br>
+
+    <h6 class="text-inline">
+      <%= f.label :State, "State:" %> <br> 
+    </h6>
+    <%= f.text_field :State %> <br>
+
+    <h6 class="text-inline">
+      <%= f.label :Zip, "Zipcode:" %> <br> 
+    </h6>
+    <%= f.text_field :Zip %> <br>
   </div>
 </div><br><br>
 
