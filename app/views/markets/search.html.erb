@@ -4,17 +4,18 @@
       Find a Market
     </h1>
   </div>
-</div><br><br>
+</div><br>
 
-<div class="container">
-  <div class="row">
-    <div class="d-grid">
-      <button class="btn btn-info" style="background-color: rgba(0, 159, 183, 1)" id="location">
-              Use My Location
-      </button>
+<div class="container py-3 mt-3">
+<div class="row">
+  <div class="col-4 mx-auto d-grid justify-content-center">
+    <div class="form-check form-switch ps-0">
+      <input class="form-check-input ms-auto mt-1" type="checkbox" id="location" onClick="disableInput()">
+      <label class="form-check-label ms-2" for="flexSwitchCheckDefault">Use My Location</label>
     </div>
   </div>
-</div><br>
+</div>
+</div>
 
 <div class="d-flex justify-content-center">
   <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
@@ -60,13 +61,58 @@ function getLocation() {
 <%= form_with url: markets_path, method: :get do |f| %>
   <%= f.hidden_field :latitude, id: 'latitude-field'  %>
   <%= f.hidden_field :longitude, id: "longitude-field" %>
-
-<div class="container">
-  <h6 class="text-center"><%= f.label :zip, "Zipcode:" %></h6>
-  <div class="d-grid justify-content-center">
-    <%= f.text_field :zip %>
+  <div class="row text-center py-3 mt-3">
+    <div class="col-4 mx-auto">
+      <div class="input-group input-group-static">
+        <input class="form-control" placeholder="Street address" type="text" id="address">
+      </div>
+    </div>
   </div>
-</div><br><br>
+  <br>
+  <div class="row text-center py-3 mt-3">
+    <div class="col-4 mx-auto">
+      <div class="input-group input-group-static">
+        <input class="form-control" placeholder="City" type="text" id="city">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row text-center py-3 mt-3">
+    <div class="col-4 mx-auto">
+      <div class="input-group input-group-static">
+        <input class="form-control" placeholder="State" type="text" id="state">
+      </div>
+    </div>
+  </div>
+  <div class="row text-center py-3 mt-3">
+    <div class="col-4 mx-auto">
+      <div class="input-group input-group-static">
+        <input class="form-control" placeholder="Zipcode" type="text" id="zipcode">
+      </div>
+    </div>
+  </div>
+  <br>
+
+<script>
+  const checkBox = document.getElementById("location");
+  const address = document.getElementById("address");
+  const city = document.getElementById("city");
+  const state = document.getElementById("state");
+  const zipcode = document.getElementById("zipcode");
+  checkBox.addEventListener("change", (event) => {
+    if (event.currentTarget.checked == true) {
+      address.disabled = true;
+      city.disabled = true;
+      state.disabled = true;
+      zipcode.disabled = true;
+    } else {
+      address.disabled = false;
+      city.disabled = false;
+      state.disabled = false;
+      zipcode.disabled = false;
+    }
+  })
+</script>
 
 <div class="container">
   <h6 class="text-center"><%= f.label :radius, "Keep Search Within (miles):" %></h6>
@@ -75,11 +121,11 @@ function getLocation() {
       <%= f.select :radius, [1, 10, 25, 50] %>
     </div>
   </div>
-</div><br><br>
+</div><br>
 
 <div class="container">
-  <div class="d-grid">
-  <%= f.submit "Find Markets", class:  "btn btn-info", style: "background-color: rgba(0, 159, 183, 1)"%>
+  <div class="d-grid justify-content-center">
+    <%= f.submit "Find Markets", class: "btn btn-info" %>
   </div>
 </div>
 <% end %>
