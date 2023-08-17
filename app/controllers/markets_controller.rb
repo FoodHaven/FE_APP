@@ -22,7 +22,7 @@ class MarketsController < ApplicationController
     params[:address] = "#{params[:Street]}, #{params[:City]}, #{params[:State]} #{params[:Zip]}"
   end
 
-  def geolocate_by_address 
+  def geolocate_by_address
     location = Geocoder.search(params[:address])
     params[:latitude] = location.first.data['lat']
     params[:longitude] = location.first.data['lon']
