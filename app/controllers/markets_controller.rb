@@ -6,7 +6,10 @@ class MarketsController < ApplicationController
     if params[:latitude] != "" && params[:longitude] != ""
       @markets = MarketFacade.new(params).all_markets
     else
-      geolocate_by_zip
+      address_format
+      coordinates = CoordinatesFacade.new(params[:address]).coordinates
+      params[:latitude] = coordinates[0].latitude
+      params[:longitude] = coordinates[0].longitude
       @markets = MarketFacade.new(params).all_markets
     end
   end
@@ -17,9 +20,7 @@ class MarketsController < ApplicationController
 
   private
 
-  def geolocate_by_zip 
-    location = Geocoder.search(params[:zip])
-    params[:latitude] = location.first.data['lat']
-    params[:longitude] = location.first.data['lon']
+  def address_format
+    params[:address] = "#{params[:street]}, #{params[:city]}, #{params[:state]} #{params[:zipcode]}"
   end
 end
