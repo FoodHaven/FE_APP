@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=6715%20W%20Colfax%20Ave,%20Lakewood,%20CO%2080214&key=AIzaSyAWqH7Rw6M7A3RIZ3u5UWPNegY6aiQkuCg
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=6715%20W%20Colfax%20Ave,%20Lakewood,%20CO%2080214&key=Hide_API
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 18 Aug 2023 18:52:09 GMT
+      - Fri, 18 Aug 2023 18:58:12 GMT
       Pragma:
       - no-cache
       Expires:
@@ -43,7 +43,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=106
+      - gfet4t7; dur=64
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
@@ -86,5 +86,5 @@ http_interactions:
         : -105.0719534302915\n               }\n            }\n         },\n         \"place_id\"
         : \"ChIJCc2cfCSHa4cRn3dXFexwXvM\",\n         \"types\" : \n         [\n            \"subpremise\"\n
         \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
-  recorded_at: Fri, 18 Aug 2023 18:52:09 GMT
+  recorded_at: Fri, 18 Aug 2023 18:58:12 GMT
 recorded_with: VCR 6.2.0
