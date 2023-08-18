@@ -7,7 +7,7 @@ class MarketsController < ApplicationController
       @markets = MarketFacade.new(params).all_markets
     else
       address_format
-      coordinates = CoordinatesFacade.new(params[:address]).coordiantes
+      coordinates = CoordinatesFacade.new(params[:address]).coordinates
       params[:latitude] = coordinates[0].latitude
       params[:longitude] = coordinates[0].longitude
       @markets = MarketFacade.new(params).all_markets

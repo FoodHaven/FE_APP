@@ -4,7 +4,7 @@ class CoordinatesFacade
     @address = params
   end
   
-  def coordiantes
+  def coordinates
     service.coordinates(@address)[:results].map do |data|
       Coordinate.new(data)
     end
