@@ -64,7 +64,7 @@ function getLocation() {
   <div class="row text-center py-3 mt-3">
     <div class="col-4 mx-auto">
       <div class="input-group input-group-static">
-        <input class="form-control" placeholder="Street address" type="text" id="address">
+        <%= f.text_field :street, {class:"form-control", placeholder:"Street Address", type:"text", id:"street"} %>
       </div>
     </div>
   </div>
@@ -72,7 +72,7 @@ function getLocation() {
   <div class="row text-center py-3 mt-3">
     <div class="col-4 mx-auto">
       <div class="input-group input-group-static">
-        <input class="form-control" placeholder="City" type="text" id="city">
+        <%= f.text_field :city, {class:"form-control", placeholder:"City", type:"text", id:"city"} %>
       </div>
     </div>
   </div>
@@ -80,14 +80,14 @@ function getLocation() {
   <div class="row text-center py-3 mt-3">
     <div class="col-4 mx-auto">
       <div class="input-group input-group-static">
-        <input class="form-control" placeholder="State" type="text" id="state">
+        <%= f.text_field :state, {class:"form-control", placeholder:"State", type:"text", id:"state"} %>
       </div>
     </div>
   </div>
   <div class="row text-center py-3 mt-3">
     <div class="col-4 mx-auto">
       <div class="input-group input-group-static">
-        <input class="form-control" placeholder="Zipcode" type="text" id="zipcode">
+        <%= f.text_field :zipcode, {class:"form-control", placeholder:"Zipcode", type:"text", id:"zipcode"} %>
       </div>
     </div>
   </div>
