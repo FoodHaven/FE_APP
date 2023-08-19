@@ -1,9 +1,16 @@
-<div class="container text-center my-5">
-  <h1 class="display-1">FOODHAVEN</h1>
+<div class="container">
+  <div class="display text-center">
+    <h1>
+      FOODHAVEN
+    </h1>
+  </div><br>
 
-  <div class="row justify-content-center my-3">
-    <div class="col-md-4 text-center">
-      <%= button_to "Find a market near you", markets_search_path, method: :get, class: "btn btn-primary btn-lg w-100" %>
+    <div class="row justify-content-center my-3">
+      <div class="col-md-4 text-center">
+        <div class="btn-group">
+          <%= button_to "Find a market near you", markets_search_path, method: :get, class: "btn bg-gradient-primary me-2" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
