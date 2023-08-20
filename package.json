@@ -10,7 +10,8 @@
     "open-app": "gulp open-app",
     "start": "npm run open-app",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp-watch"
+    "watch": "gulp-watch",
+    "compile-scss": "gulp compile-scss"
   },
   "repository": {
     "type": "git",
@@ -39,12 +40,13 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.3.0",
     "gulp-install": "^1.1.0",
+    "gulp-open": "^3.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-open": "^3.0.1",
     "sass": "^1.49.9"
   },
   "homepage": "https://creative-tim.com/product/material-kit"
