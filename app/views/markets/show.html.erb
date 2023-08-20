@@ -1,9 +1,9 @@
 <%= button_to "Go back to markets near me", :back, method: :get, class: "btn btn-outline-primary me-2 btn-lg" %> <br>
 <% if @market.present? %>
   <div class="col d-flex justify-content-center">
-    <div class="card" style="width:500pxpx">
-        <div class="card-header">
-          <div class="d-flex justify-content-center"><%= @market.name %></div>
+    <div class="card bg-gradient-light" style="width:500pxpx">
+        <div class="card-header bg-gradient-light">
+          <div class="d-flex justify-content-center text-black"><%= @market.name %></div>
         </div>
         <div class="card-body">
           <div class="d-flex justify-content-center">
