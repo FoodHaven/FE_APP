@@ -1,132 +1,76 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <div class="container">
   <div class="display text-center">
     <h1>
       Find a Market
     </h1>
   </div>
-</div><br>
-
-<div class="container py-3 mt-3">
-<div class="row">
-  <div class="col-4 mx-auto d-grid justify-content-center">
-    <div class="form-check form-switch ps-0">
-      <input class="form-check-input ms-auto mt-1" type="checkbox" id="location" onClick="disableInput()">
-      <label class="form-check-label ms-2" for="flexSwitchCheckDefault">Use My Location</label>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="d-flex justify-content-center">
-  <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
-  <span class="visually-hidden"></span>
-  </div>
-</div><br>
-
-<script>
-
-document.getElementById("location").addEventListener("click", getLocation)
-
-function getLocation() {
-  var spinner = document.getElementById('spinner');
-  spinner.style.display = 'block';
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        var latitudeField = document.getElementById('latitude-field');
-        var longitudeField = document.getElementById('longitude-field');
-
-        if (latitudeField && longitudeField) {
-          latitudeField.value = latitude;
-          longitudeField.value = longitude;
-        }
-        spinner.style.display = 'none';
-      },
-      function(error) {
-        console.error('Error getting geolocation:', error);
-        spinner.style.display = 'none';
-      }
-    );
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-    spinner.style.display = 'none';
-  }
-}
-</script>
-
-<%= form_with url: markets_path, method: :get do |f| %>
-  <%= f.hidden_field :latitude, id: 'latitude-field'  %>
-  <%= f.hidden_field :longitude, id: "longitude-field" %>
-  <div class="row text-center py-3 mt-3">
-    <div class="col-4 mx-auto">
-      <div class="input-group input-group-static">
-        <%= f.text_field :street, {class:"form-control", placeholder:"Street Address", type:"text", id:"street"} %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row text-center py-3 mt-3">
-    <div class="col-4 mx-auto">
-      <div class="input-group input-group-static">
-        <%= f.text_field :city, {class:"form-control", placeholder:"City", type:"text", id:"city"} %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row text-center py-3 mt-3">
-    <div class="col-4 mx-auto">
-      <div class="input-group input-group-static">
-        <%= f.text_field :state, {class:"form-control", placeholder:"State", type:"text", id:"state"} %>
-      </div>
-    </div>
-  </div>
-  <div class="row text-center py-3 mt-3">
-    <div class="col-4 mx-auto">
-      <div class="input-group input-group-static">
-        <%= f.text_field :zipcode, {class:"form-control", placeholder:"Zipcode", type:"text", id:"zipcode"} %>
-      </div>
-    </div>
-  </div>
   <br>
 
-<script>
-  const checkBox = document.getElementById("location");
-  const address = document.getElementById("street");
-  const city = document.getElementById("city");
-  const state = document.getElementById("state");
-  const zipcode = document.getElementById("zipcode");
-  checkBox.addEventListener("change", (event) => {
-    if (event.currentTarget.checked == true) {
-      address.disabled = true;
-      city.disabled = true;
-      state.disabled = true;
-      zipcode.disabled = true;
-    } else {
-      address.disabled = false;
-      city.disabled = false;
-      state.disabled = false;
-      zipcode.disabled = false;
-    }
-  })
-</script>
+  <div class="row">
+    <div class="col-4 mx-auto d-grid justify-content-center">
+      <div class="form-check form-switch ps-0">
+        <input class="form-check-input ms-auto mt-1" type="checkbox" id="location" onClick="disableInput()">
+        <label class="form-check-label ms-2" for="flexSwitchCheckDefault">Use My Location</label>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
-  <h6 class="text-center"><%= f.label :radius, "Keep Search Within (miles):" %></h6>
-  <div class="dropdown">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
+      <span class="visually-hidden"></span>
+    </div>
+  </div><br>
+
+  <script src="../../assets/geolocation"></script>
+
+  <%= form_with url: markets_path, method: :get do |f| %>
+    <%= f.hidden_field :latitude, id: 'latitude-field'  %>
+    <%= f.hidden_field :longitude, id: "longitude-field" %>
+    <div class="row text-center py-3 mt-3">
+      <div class="col-4 mx-auto">
+        <div class="input-group input-group-static">
+          <%= f.text_field :street, {class:"form-control", placeholder:"Street Address", type:"text", id:"street"} %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center py-3 mt-3">
+      <div class="col-4 mx-auto">
+        <div class="input-group input-group-static">
+          <%= f.text_field :city, {class:"form-control", placeholder:"City", type:"text", id:"city"} %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center py-3 mt-3">
+      <div class="col-4 mx-auto">
+        <div class="input-group input-group-static">
+          <%= f.text_field :state, {class:"form-control", placeholder:"State", type:"text", id:"state"} %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center py-3 mt-3">
+      <div class="col-4 mx-auto">
+        <div class="input-group input-group-static">
+          <%= f.text_field :zipcode, {class:"form-control", placeholder:"Zipcode", type:"text", id:"zipcode"} %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <script src="../../assets/disable_form"></script>
+
+    <h6 class="text-center"><%= f.label :radius, "Keep Search Within (miles):" %></h6>
+    <div class="dropdown">
+      <div class="d-grid justify-content-center">
+        <%= f.select :radius, [1, 10, 25, 50] %>
+      </div>
+    </div>
+    <br>
+
     <div class="d-grid justify-content-center">
-      <%= f.select :radius, [1, 10, 25, 50] %>
+      <%= f.submit "Find Markets", class: "btn btn-primary" %>
     </div>
-  </div>
-</div><br>
-
-<div class="container">
-  <div class="d-grid justify-content-center">
-    <%= f.submit "Find Markets", class: "btn btn-info" %>
-  </div>
+  <% end %>
 </div>
-<% end %>
