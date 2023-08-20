@@ -1,10 +1,7 @@
-
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= button_to "Go back to markets near me", :back, method: :get, class: "btn btn-outline-primary me-2 btn-lg" %> <br>
 <% if @market.present? %>
   <div class="col d-flex justify-content-center">
     <div class="card" style="width:500pxpx">
-      <div style="background-color: rgba(239, 91, 91)">
         <div class="card-header">
           <div class="d-flex justify-content-center"><%= @market.name %></div>
         </div>
@@ -23,7 +20,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <div class="d-flex justify-content-center">
+          <div class="d-flex-row justify-content-center">
             <%= link_to "Find Routes", market_commutes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], address: @market.address), method: :get, class: "btn btn-primary btn-lg w-100" %>
             <% if user_signed_in? %>
             <% if current_user.favorites.include?(@market.id) %>
@@ -36,7 +33,6 @@
           <% end %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 <% else %>
