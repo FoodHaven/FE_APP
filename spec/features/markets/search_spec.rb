@@ -35,9 +35,9 @@ RSpec.describe "Search for markets" do
       expect(markets.first[:attributes][:name]).to eq("Market in The Park")
       expect(markets.second[:attributes][:name]).to eq("Market in The Park - Lavretta Park")
     end
-    xit "can search for markets by address" do
+    it "can search for markets by address" do
       visit markets_search_path
-      fill_in "address", with:  "6715 W Colfax Ave"
+      fill_in "street", with:  "6715 W Colfax Ave"
       fill_in "City", with: "Lakewood"
       fill_in "State", with: "CO"
       fill_in "Zipcode", with: 80041
@@ -60,7 +60,7 @@ RSpec.describe "Search for markets" do
         expect(page).to have_content("Keep Search Within (miles):")
         expect(page).to have_field(:radius)
         expect(page).to have_button("Find Markets")
-        expect(page).to have_field(:address)
+        expect(page).to have_field(:street)
         expect(page).to have_field(:City)
         expect(page).to have_field(:State)
         expect(page).to have_field(:Zipcode)
