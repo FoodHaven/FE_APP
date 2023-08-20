@@ -17,6 +17,7 @@ class MarketService
   end
 
   def fetch_favorite_markets(market_ids)
+    return {} if market_ids.empty?
     market_ids_param = market_ids.map { |id| "market_ids[]=#{id}" }.join('&')
     get_url("/api/v1/favorites?#{market_ids_param}")
   end
