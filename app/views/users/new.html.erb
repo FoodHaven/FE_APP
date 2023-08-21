@@ -5,28 +5,28 @@
       <h2 class="text-center mb-4">User Registration</h2>
       <div id="registration_form">
         <%= form_with url: users_path, method: :post, local: true, html: { class: "registration-form" } do |f| %>
-          <div class="form-group">
+          <div class="input-group input-group-outline my-3">
             <%= f.label :name, "Name", class: "form-label" %>
             <%= f.text_field :name, class: "form-control" %>
           </div>
 
-          <div class="form-group mt-3">
+          <div class="input-group input-group-outline my-3">
             <%= f.label :email, "Email", class: "form-label" %>
             <%= f.text_field :email, class: "form-control" %>
           </div>
 
-          <div class="form-group mt-3">
+          <div class="input-group input-group-outline my-3">
             <%= f.label :password, "Password", class: "form-label" %>
             <%= f.password_field :password, class: "form-control" %>
           </div>
 
-          <div class="form-group mt-3">
+          <div class="input-group input-group-outline my-3">
             <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
 
-          <div class="form-group mt-4">
-            <%= f.submit "Create Account", class: "btn btn-primary btn-lg btn-block" %>
+          <div class="input-group input-group-outline my-3">
+            <%= f.submit "Create Account", class: "btn bg-gradient-primary me-2" %>
           </div>
         <% end %>
       </div>
