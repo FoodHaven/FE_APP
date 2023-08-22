@@ -2,87 +2,33 @@
 <% if @market.present? %>
   <div class="col d-flex justify-content-center">
     <div class="card bg-gradient-light" style="width:500pxpx">
-        <div class="card-header bg-gradient-light">
-          <div class="d-flex justify-content-center text-black"><%= @market.name %></div>
-        </div>
-        <div class="card-body">
-          <div class="d-flex justify-content-center">
-            <p class="font-weight-bold">
-              Address: <%= @market.address %> <br>
-              Site: <%= @market.site %> <br>
-              Location Description: <%= @market.description %> <br>
-              FNAP: <%= @market.fnap %><br>
-              SNAP: <%= @market.snap %><br>
-              Accepted Payments: <%= @market.payment %> <br>
-              latitude: <%= @market.latitude %> <br>
-              longitude: <%= @market.longitude %>
-            </p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex-row justify-content-center">
-          <% if !params[:original_lat].present? %>
-          <%= "No starting point found, please allow for location to find routes" %>
-          <div class="row">
-          <div class="col-4 mx-auto d-grid justify-content-center">
-            <div class="form-check form-switch ps-0">
-              <input class="form-check-input ms-auto mt-1" type="checkbox" id="location" onClick="disableInput()">
-              <label class="form-check-label ms-2" for="flexSwitchCheckDefault">Use My Location</label>
-            </div>
-          </div>
-        </div>
-      
+      <div class="card-header bg-gradient-light">
+        <div class="d-flex justify-content-center text-black"><%= @market.name %></div>
+      </div>
+      <div class="card-body">
         <div class="d-flex justify-content-center">
-          <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
-            <span class="visually-hidden"></span>
-          </div>
-        </div><br>
-      
-        <script src="../../assets/geolocation"></script>
-        <%= form_with url: market_commutes_path(@market.id), method: :get do |f| %>
-          <%= f.hidden_field :original_lat, id: 'original-lat-field'  %>
-          <%= f.hidden_field :original_lon, id: 'original-lng-field'  %>
-          <%= f.hidden_field :latitude, value: @market.latitude %>
-          <%= f.hidden_field :longitude, value: @market.longitude %>
-
-          <div class="row text-center py-3 mt-3">
-          <div class="col-4 mx-auto">
-            <div class="input-group input-group-static">
-              <%= f.text_field :street, {class:"form-control", placeholder:"Street Address", type:"text", id:"street"} %>
-            </div>
-          </div>
+          <p class="font-weight-bold">
+            Address: <%= @market.address %> <br>
+            Site: <%= @market.site %> <br>
+            Location Description: <%= @market.description %> <br>
+            FNAP: <%= @market.fnap %><br>
+            SNAP: <%= @market.snap %><br>
+            Accepted Payments: <%= @market.payment %> <br>
+            latitude: <%= @market.latitude %> <br>
+            longitude: <%= @market.longitude %>
+          </p>
         </div>
-        <br>
-        <div class="row text-center py-3 mt-3">
-          <div class="col-4 mx-auto">
-            <div class="input-group input-group-static">
-              <%= f.text_field :city, {class:"form-control", placeholder:"City", type:"text", id:"city"} %>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="row text-center py-3 mt-3">
-          <div class="col-4 mx-auto">
-            <div class="input-group input-group-static">
-              <%= f.text_field :state, {class:"form-control", placeholder:"State", type:"text", id:"state"} %>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="row text-center py-3 mt-3">
-          <div class="col-4 mx-auto">
-            <div class="input-group input-group-static">
-              <%= f.text_field :zipcode, {class:"form-control", placeholder:"Zipcode", type:"text", id:"zipcode"} %>
-            </div>
-          </div>
-        </div>
-        <%= f.submit "Find Routes", class: "btn btn-primary btn-lg w-100" %>
-        <% end %>
-        <script src="../../assets/disable_form"></script>
-      <% else %>
-        <%= link_to "Find Routes", market_commutes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], address: @market.address), method: :get, id: "market", class: "btn btn-primary btn-lg w-100" %>
-      <% end %>
-            <% if user_signed_in? %>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex-row justify-content-center">
+          <% if !params[:original_lat].present? %>
+            <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalCenter">
+              Find Routes
+            </button>
+          <% else %>
+            <%= link_to "Find Routes", market_commutes_path(@market.id, original_lon: params[:original_lon], original_lat: params[:original_lat], address: @market.address), method: :get, id: "market", class: "btn btn-primary btn-lg w-100" %>
+          <% end %>
+          <% if user_signed_in? %>
             <% if current_user.favorites.include?(@market.id) %>
               <%= button_to "Remove from Favorites", remove_from_favorites_market_path(@market.id), method: :delete, remote: true, class: "btn btn-primary btn-lg w-100" %>
             <% else %>
@@ -91,8 +37,82 @@
           <% else %>
             <%= button_to "Sign in to add to favorites", login_path, method: :get, class: "btn btn-primary btn-lg w-100" %>
           <% end %>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalCenter" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex justify-content-center">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">No starting point found please enter address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6 mx-auto d-grid justify-content-center">
+              <div class="form-check form-switch ps-0">
+                <input class="form-check-input ms-auto mt-1" type="checkbox" id="location" onClick="disableInput()">
+                <label class="form-check-label ms-2" for="flexSwitchCheckDefault">Use My Location</label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="d-flex justify-content-center">
+            <div class="spinner-grow text-warning" role="status" style="display: none" id ="spinner" >
+              <span class="visually-hidden"></span>
+            </div>
+          </div><br>
+          
+          <script src="../../assets/geolocation"></script>
+          <%= form_with url: market_commutes_path(@market.id), method: :get do |f| %>
+            <%= f.hidden_field :original_lat, id: 'original-lat-field'  %>
+            <%= f.hidden_field :original_lon, id: 'original-lng-field'  %>
+            <%= f.hidden_field :latitude, value: @market.latitude %>
+            <%= f.hidden_field :longitude, value: @market.longitude %>
+  
+            <div class="row text-center py-3 mt-3">
+              <div class="col-4 mx-auto">
+                <div class="input-group input-group-static">
+                  <%= f.text_field :street, {class:"form-control", placeholder:"Street Address", type:"text", id:"street"} %>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row text-center py-3 mt-3">
+              <div class="col-4 mx-auto">
+                <div class="input-group input-group-static">
+                  <%= f.text_field :city, {class:"form-control", placeholder:"City", type:"text", id:"city"} %>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row text-center py-3 mt-3">
+              <div class="col-4 mx-auto">
+                <div class="input-group input-group-static">
+                  <%= f.text_field :state, {class:"form-control", placeholder:"State", type:"text", id:"state"} %>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row text-center py-3 mt-3">
+              <div class="col-4 mx-auto">
+                <div class="input-group input-group-static">
+                  <%= f.text_field :zipcode, {class:"form-control", placeholder:"Zipcode", type:"text", id:"zipcode"} %>
+                </div>
+              </div>
+            </div>
+        
+            <script src="../../assets/disable_form"></script>
+        </div>
+            <div class="modal-footer">
+              <%= f.submit "Find Routes", class: "btn btn-primary btn-lg w-100" %>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 <% else %>
