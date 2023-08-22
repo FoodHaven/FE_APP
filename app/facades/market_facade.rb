@@ -1,8 +1,8 @@
 class MarketFacade
   attr_reader :id, :market_id, :latitude, :longitude, :radius
   def initialize(params)
-    @latitude = params[:latitude]
-    @longitude = params[:longitude]
+    @latitude = params[:original_lat]
+    @longitude = params[:original_lon]
     @radius = params[:radius]
     @id = params[:id].to_i || params[:market_id].to_i
   end
