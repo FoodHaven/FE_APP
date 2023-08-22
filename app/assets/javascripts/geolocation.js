@@ -10,8 +10,8 @@ document.getElementById("location").addEventListener("click", getLocation)
           var latitude = position.coords.latitude;
           var longitude = position.coords.longitude;
 
-          var latitudeField = document.getElementById('latitude-field');
-          var longitudeField = document.getElementById('longitude-field');
+          var latitudeField = document.getElementById('original-lat-field');
+          var longitudeField = document.getElementById('original-lng-field');
 
           if (latitudeField && longitudeField) {
             latitudeField.value = latitude;
