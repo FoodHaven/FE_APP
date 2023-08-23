@@ -22,4 +22,7 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @_current_user = nil
   end
+  def address_format
+    params[:address] = "#{params[:street]}, #{params[:city]}, #{params[:state]} #{params[:zipcode]}"
+  end
 end

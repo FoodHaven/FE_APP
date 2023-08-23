@@ -24,8 +24,8 @@
   <script src="../../assets/geolocation"></script>
 
   <%= form_with url: markets_path, method: :get do |f| %>
-    <%= f.hidden_field :latitude, id: 'latitude-field'  %>
-    <%= f.hidden_field :longitude, id: "longitude-field" %>
+    <%= f.hidden_field :original_lat, id: 'original-lat-field'  %>
+    <%= f.hidden_field :original_lon, id: 'original-lng-field'  %>
     <div class="row text-center py-3 mt-3">
       <div class="col-4 mx-auto">
         <div class="input-group input-group-static">

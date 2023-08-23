@@ -3,7 +3,7 @@ class MarketsController < ApplicationController
   end
 
   def index
-    if params[:latitude] != "" && params[:longitude] != ""
+    if params[:original_lat] != "" && params[:original_lon] != ""
       @markets = MarketFacade.new(params).all_markets
     else
       address_format
@@ -16,11 +16,5 @@ class MarketsController < ApplicationController
 
   def show
     @market = MarketFacade.new(params).market
-  end
-
-  private
-
-  def address_format
-    params[:address] = "#{params[:street]}, #{params[:city]}, #{params[:state]} #{params[:zipcode]}"
   end
 end
