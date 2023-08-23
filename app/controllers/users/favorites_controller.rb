@@ -6,6 +6,7 @@ class Users::FavoritesController < ApplicationController
     @favorite_markets = MarketService.new.fetch_favorite_markets(market_ids)
   end
 
+  
   def create
     market_service = MarketService.new
     @market = market_service.one_market(params[:id].to_i)
@@ -15,6 +16,7 @@ class Users::FavoritesController < ApplicationController
     end
     redirect_to market_path(@market[:data][:id])
   end
+
 
   def destroy
     market_service = MarketService.new
