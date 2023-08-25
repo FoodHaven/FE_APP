@@ -44,7 +44,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #e91e63;
+  --bs-primary: #e91e6;
   --bs-secondary: #7b809a;
   --bs-success: #4CAF50;
   --bs-info: #1A73E8;
@@ -76,7 +76,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #7b809a;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #f3f8ed;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -142,7 +142,7 @@ h6,
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.2;
-  color: #4c2c69ff;
+  color: #0b3005;
 }
 
 h1,
@@ -3708,19 +3708,19 @@ fieldset:disabled .btn {
 
 .btn-primary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #009fb7ff;
-  --bs-btn-border-color: #009fb7ff;
+  --bs-btn-bg: #51604f;
+  --bs-btn-border-color: #51604f;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: rgb(1, 78, 90);
   --bs-btn-hover-border-color: rgb(1, 78, 90);
   --bs-btn-focus-shadow-rgb: 198, 26, 84;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #009fb7ff;
-  --bs-btn-active-border-color: #009fb7ff;
+  --bs-btn-active-bg: #51604f;
+  --bs-btn-active-border-color: #0b3005;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #009fb7ff;
-  --bs-btn-disabled-border-color: #009fb7ff;
+  --bs-btn-disabled-bg: #859882;
+  --bs-btn-disabled-border-color: #859882;
 }
 
 .btn-secondary {
@@ -3911,19 +3911,19 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success {
-  --bs-btn-color: #4CAF50;
-  --bs-btn-border-color: #4CAF50;
+  --bs-btn-color: #FFD786;
+  --bs-btn-border-color: #FFD786;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #4CAF50;
-  --bs-btn-hover-border-color: #4CAF50;
+  --bs-btn-hover-bg: #FFBE3A;
+  --bs-btn-hover-border-color: #FFBE3A;
   --bs-btn-focus-shadow-rgb: 76, 175, 80;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #4CAF50;
-  --bs-btn-active-border-color: #4CAF50;
+  --bs-btn-active-bg: #FFD786;
+  --bs-btn-active-border-color: #FFD786;
   --bs-btn-active-shadow: none;
-  --bs-btn-disabled-color: #4CAF50;
+  --bs-btn-disabled-color: #FFE8B9;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #4CAF50;
+  --bs-btn-disabled-border-color: #FFE8B9;
   --bs-gradient: none;
 }
 
@@ -3962,19 +3962,19 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-danger {
-  --bs-btn-color: #F44335;
-  --bs-btn-border-color: #F44335;
+  --bs-btn-color: #FFD786;
+  --bs-btn-border-color: #FFD786;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #F44335;
-  --bs-btn-hover-border-color: #F44335;
+  --bs-btn-hover-bg: #FFbE3A;
+  --bs-btn-hover-border-color: #FFBE3A;
   --bs-btn-focus-shadow-rgb: 244, 67, 53;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #F44335;
-  --bs-btn-active-border-color: #F44335;
+  --bs-btn-active-bg: #FFD786;
+  --bs-btn-active-border-color: #FFD786;
   --bs-btn-active-shadow: none;
-  --bs-btn-disabled-color: #F44335;
+  --bs-btn-disabled-color: #FFE8B9;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #F44335;
+  --bs-btn-disabled-border-color: #FFE8B9;
   --bs-gradient: none;
 }
 
@@ -20626,13 +20626,14 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
+  background-color: #51604f;
   box-shadow: 0 3px 3px 0 rgba(0, 88, 102, 0.15), 0 3px 1px -2px rgba(0, 88, 102, 0.2), 0 1px 5px 0 rgba(0, 88, 102, 0.15);
 }
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
-  background-color: #005866;
-  border-color: #005866;
+  background-color: #0b3005;
+  border-color: #0b3005;
   box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.4), 0 4px 23px 0 rgba(233, 30, 99, 0.15), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
 }
 
@@ -20891,7 +20892,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: .75;
   box-shadow: none;
-  color: #F44335;
+  color: #FFD786;
 }
 
 .btn-light,
@@ -22741,7 +22742,7 @@ label,
 }
 
 .bg-gradient-primary {
-  background-image: linear-gradient(195deg, #EC407A 0%, #D81B60 100%);
+  background-image: linear-gradient(195deg, #B09F4F 0%, #B09F4F 100%);
 }
 
 .bg-gradient-secondary {
@@ -22769,7 +22770,7 @@ label,
 }
 
 .bg-gradient-dark {
-  background-image: linear-gradient(195deg, #42424a 0%, #191919 100%);
+  background-image: linear-gradient(195deg, #42424a 0%, #0b3005 100%);
 }
 
 .bg-gradient-faded-primary {

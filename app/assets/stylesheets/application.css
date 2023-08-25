@@ -2,3 +2,38 @@
 @import "commutes";
 @import "geolocation";
 @import "disable_form";
+
+.logo-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 20%;
+}
+
+.slogan-text {
+  width: 70%;
+  margin: 0;
+}
+
+.image-button-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.market-image {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.market-button {
+  width: 60%;
+}

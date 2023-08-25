@@ -1,16 +1,13 @@
-<div class="container">
-  <div class="display text-center">
-    <h1>
-      FOODHAVEN
-    </h1>
-  </div><br>
+<div class="logo-text-container">
+  <%= image_tag 'logo.png', alt: 'FOODHAVEN Logo', class: 'logo' %>
+  <h3 class="slogan-text">
+    Farm-Fresh Food, One Tap Away. SNAP, Ride, and Shop with FoodHaven!
+  </h3>
+</div>
 
-    <div class="row justify-content-center my-3">
-      <div class="col-md-4 text-center">
-        <div class="btn-group">
-          <%= button_to "Find a market near you", markets_search_path, method: :get, class: "btn bg-gradient-primary me-2" %>
-        </div>
-      </div>
-    </div>
+<div class="image-button-container">
+  <%= image_tag 'market1.jpg', alt: 'Market Image', class: 'market-image' %>
+  <div class="btn-container">
+    <%= button_to "Find a market near you", markets_search_path, method: :get, class: "btn bg-gradient-primary market-button" %>
   </div>
 </div>

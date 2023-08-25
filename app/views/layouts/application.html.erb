@@ -35,13 +35,13 @@
     </nav>
   <% else %>
   <!-- Navbar for Visitor -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white z-index-3 py-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark z-index-3 py-3">
     <div class="container">
       <ul class="navbar-nav ms-auto">
         <div class="btn-group">
-          <%= button_to "Register for new account", new_user_path, method: :get, class: "btn btn-outline-primary me-2" %>
-          <%= button_to "Login", login_path, method: :get, class: "btn btn-outline-primary me-2" %>
-          <%= button_to "Login with Google", '/auth/google_oauth2', class: "btn btn-outline-primary me-2" %>
+          <%= button_to "Register for new account", new_user_path, method: :get, class: "btn btn-outline-danger me-2 btn-lg" %>
+          <%= button_to "Login", login_path, method: :get, class: "btn btn-outline-success btn-lg" %>
+          <%= button_to "Login with Google", '/auth/google_oauth2', class: "btn btn-outline-success btn-lg" %>
         </div>
       </ul>
     </div>
