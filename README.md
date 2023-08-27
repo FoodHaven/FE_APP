@@ -5,7 +5,7 @@ In a world with food deserts, Food Haven supplies the public with location servi
 
 ## Features
 
-- **Light/Dark Mode Toggle**: Allow users to switch between light and dark themes.
+- <s> **Light/Dark Mode Toggle**: Allow users to switch between light and dark themes. </s>
 - **Cross Platform**: Compatible with various devices and operating systems.
 - **User Geolocation**: Utilize user's location for personalized content or services.
 - **Responsive Web Design**: Ensures optimal viewing experience across different devices and screen sizes.
