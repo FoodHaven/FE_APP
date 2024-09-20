@@ -7,7 +7,7 @@ RSpec.describe "Market show page" do
     longitude = 88.045015
     radius = 5
     params = latitude, longitude, radius
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/2")
+    stub_request(:get, "hhttps://foodhaven-df0d805938ff.herokuapp.com/markets/2")
     markets = JSON.parse(json_response, symbolize_names: true)[:data]
     expect(markets.first).to be_a(Hash)
     expect(markets.first[:attributes][:name]).to eq("Market in The Park")

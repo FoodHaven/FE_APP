@@ -30,7 +30,7 @@ RSpec.describe 'Favorites', type: :feature do
       }
     }
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
+    stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/markets/#{market_id}")
       .to_return(body: { data: market_data }.to_json, status: 200)
 
     visit market_path(market_id)
@@ -61,12 +61,12 @@ RSpec.describe 'Favorites', type: :feature do
       }
     }
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
+    stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/markets/#{market_id}")
     .to_return(body: { data: market_data }.to_json, status: 200)
 
     user.favorites << market_id.to_i
     user.save
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/1").
+    stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/markets/1").
     with(
       headers: {
         'Accept'=>'*/*',
@@ -92,12 +92,13 @@ RSpec.describe 'Favorites', type: :feature do
 
     user.save
 
-    stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids[]=1&market_ids[]=2").
+    stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/favorites?market_ids[]=1&market_ids[]=2").
       to_return(status: 200, body: { data: [favorite_market1, favorite_market2] }.to_json, headers: { 'Content-Type' => 'application/json' })
 
     visit '/users/favorites'
 
     expect(page).to have_content('Favorite Markets')
+    
     expect(page).to have_link('Market 1', href: market_path(favorite_market1[:id]))
     expect(page).to have_link('Market 2', href: market_path(favorite_market2[:id]))
   end
@@ -123,7 +124,7 @@ RSpec.describe 'Favorites', type: :feature do
         }
       }
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
+      stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/markets/#{market_id}")
         .to_return(body: { data: market_data }.to_json, status: 200)
       visit market_path(market_id)
 

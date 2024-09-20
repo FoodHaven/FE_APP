@@ -19,7 +19,7 @@ RSpec.describe "Search for markets" do
       latitude = 30.69035
       longitude = -88.045015
       radius = 5
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids%5B%5D=1&market_ids%5B%5D=2").
+      stub_request(:get, "https://foodhaven-df0d805938ff.herokuapp.com/markets/?market_ids%5B%5D=1&market_ids%5B%5D=2").
           with(
             headers: {
             'Accept'=>'*/*',
