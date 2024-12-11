@@ -1,5 +1,5 @@
 class MarketFacade
-  attr_reader :id, :market_id, :latitude, :longitude, :radius
+  attr_reader :id, :market_id, :original_lat, :original_lon, :radius
   def initialize(params)
     @latitude = params[:original_lat]
     @longitude = params[:original_lon]
