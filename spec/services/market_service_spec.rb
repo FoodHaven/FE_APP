@@ -10,7 +10,7 @@ RSpec.describe MarketService do
       longitude = -74.0060
       radius = 10
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
+      stub_request(:get, "#{Figaro.env.Elastic_Beanstalk}/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
         .to_return(status: 200, body: '[{"name": "Market 1"}, {"name": "Market 2"}]', headers: { 'Content-Type' => 'application/json' })
       response = market_service.all_markets(latitude, longitude, radius)
 
@@ -25,7 +25,7 @@ RSpec.describe MarketService do
     it 'fetches a single market by ID' do
       market_id = 1
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/markets/#{market_id}")
+      stub_request(:get, "#{Figaro.env.Elastic_Beanstalk}/markets/#{market_id}")
         .to_return(status: 200, body: '{"name": "Market 1"}', headers: { 'Content-Type' => 'application/json' })
 
       response = market_service.one_market(market_id)
@@ -39,7 +39,7 @@ RSpec.describe MarketService do
     it 'fetches favorite markets for given IDs' do
       market_ids = [1, 2]
 
-      stub_request(:get, "https://foodhaven-be.onrender.com/api/v1/favorites?market_ids[]=1&market_ids[]=2")
+      stub_request(:get, "#{Figaro.env.Elastic_Beanstalk}/favorites?market_ids[]=1&market_ids[]=2")
         .to_return(status: 200, body: '[{"name": "Market 1"}, {"name": "Market 2"}]', headers: { 'Content-Type' => 'application/json' })
 
       response = market_service.fetch_favorite_markets(market_ids)
