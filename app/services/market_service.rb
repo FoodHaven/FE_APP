@@ -9,7 +9,7 @@ class MarketService
   end
 
   def all_markets(latitude, longitude, radius)
-    get_url("/markets?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
+    get_url("/markets/search?latitude=#{latitude}&longitude=#{longitude}&radius=#{radius}")
   end
 
   def one_market(id)
