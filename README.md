@@ -5,10 +5,13 @@ In a world with food deserts, Food Haven supplies the public with location servi
 
 ## Features
 
-- **Light/Dark Mode Toggle**: Allow users to switch between light and dark themes.
 - **Cross Platform**: Compatible with various devices and operating systems.
 - **User Geolocation**: Utilize user's location for personalized content or services.
 - **Responsive Web Design**: Ensures optimal viewing experience across different devices and screen sizes.
+
+## Planned Feature
+
+- **Light/Dark Mode Toggle**: Allow users to switch between light and dark themes.
 
 ## Tech Stack
 
@@ -70,7 +73,7 @@ To run tests, run the following command
 This project interacts with  external APIs to provide additional functionality and data. Below are the details of the APIs consumed:
 
 ### Microservice
-- **Endpoint**: `https://foodhaven-be.onrender.com`
+- **Endpoint**: This Microservice is deployed to AWS on Elastic Beanstalk with an EC2 instance and a RDS
 - **Usage**: USDA Local Food Portal farmers market directory [here](https://www.usdalocalfoodportal.com/fe/datasharing/)
 - **Documentation**: [Microservice Documentation](https://github.com/FoodHaven/microservice_sinatra)
 
